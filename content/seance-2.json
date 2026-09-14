@@ -1,0 +1,391 @@
+{
+  "version": 1,
+  "id": "seance-2",
+  "titre": "Comment ça marche ?",
+  "objectifs": [
+    "comprendre comment votre ordinateur et le serveur se parlent ;",
+    "découper une adresse web en plusieurs parties ;",
+    "utiliser les favoris, l'historique et les onglets du navigateur."
+  ],
+  "etapes": [
+    {
+      "id": "s2-etape-1",
+      "titre": "Rappel : le client et le serveur",
+      "blocs": [
+        { "type": "paragraphe", "texte": "On continue là où on s'était arrêtés. Vous vous souvenez ? Internet, navigateur, serveur…" },
+        {
+          "type": "illustration",
+          "fichier": "assets/images/02-client-serveur-courrier.png",
+          "alt": "Dessin : à gauche, une personne assise devant son ordinateur poste une lettre dans une boîte aux lettres. Au milieu, une flèche bleue va vers la droite et une flèche rouge revient vers la gauche. À droite, un bâtiment de la poste porte le mot « Serveur ».",
+          "legende": "Le client envoie une demande, le serveur répond."
+        },
+        { "type": "paragraphe", "texte": "Votre ordinateur s'appelle le **client**. C'est lui qui demande une page." },
+        { "type": "paragraphe", "texte": "Le **serveur** reçoit la demande. Il cherche la page. Il la renvoie au client." },
+        {
+          "type": "liste",
+          "numerotee": true,
+          "elements": [
+            "Vous tapez une adresse : c'est la lettre que vous postez.",
+            "La demande voyage jusqu'au serveur : c'est la flèche bleue.",
+            "Le serveur renvoie la page : c'est la flèche rouge.",
+            "La page s'affiche dans votre navigateur."
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s2-e01",
+          "type": "qcm_unique",
+          "question": "Qui envoie la page web à votre ordinateur ?",
+          "options": [
+            { "id": "a", "texte": "Le clavier." },
+            { "id": "b", "texte": "Le serveur." },
+            { "id": "c", "texte": "La souris." },
+            { "id": "d", "texte": "La barre d'adresse." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le serveur garde les sites. Quand votre ordinateur demande une page, le serveur la lui envoie. Comme la poste qui livre une lettre.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s2-e02",
+          "type": "qcm_unique",
+          "question": "Dans le web, comment appelle-t-on votre ordinateur, celui qui demande une page ?",
+          "options": [
+            { "id": "a", "texte": "Le client." },
+            { "id": "b", "texte": "Le serveur." },
+            { "id": "c", "texte": "Le navigateur." }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "L'ordinateur qui demande s'appelle le client. L'ordinateur qui répond s'appelle le serveur. Le navigateur est l'application que le client utilise pour afficher la page.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 10
+        }
+      ]
+    },
+    {
+      "id": "s2-etape-2",
+      "titre": "Découper une adresse web",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Une adresse web, c'est comme une adresse postale. Elle a plusieurs parties. Chaque partie a un sens." },
+        { "type": "paragraphe", "texte": "Regardez cette adresse : **www.wikipedia.org/wiki/Informatique**" },
+        {
+          "type": "tableau",
+          "legende": "Les parties de l'adresse www.wikipedia.org/wiki/Informatique",
+          "entetes": ["Partie", "Nom", "Ce que ça veut dire"],
+          "lignes": [
+            ["www", "Le préfixe", "Cela veut dire « world wide web ». C'est pour dire : c'est sur le web."],
+            ["wikipedia", "Le nom du site", "C'est l'identité du site."],
+            [".org", "La terminaison", "Elle dit le type du site. « .org » veut dire organisation."],
+            ["/wiki/Informatique", "Le chemin", "C'est la page précise que l'on cherche."]
+          ]
+        },
+        { "type": "paragraphe", "texte": "Le nom du site et la terminaison forment ensemble le **nom de domaine** : wikipedia.org." },
+        { "type": "sous_titre", "texte": "Des terminaisons courantes" },
+        {
+          "type": "liste",
+          "elements": [
+            "**.fr** : France.",
+            "**.com** : commercial (une entreprise, par exemple).",
+            "**.org** : organisation (une association, par exemple).",
+            "**.edu** : éducation."
+          ]
+        },
+        { "type": "sous_titre", "texte": "Comme une adresse postale" },
+        { "type": "paragraphe", "texte": "Le nom de domaine (wikipedia.org), c'est comme la ville : on sait chez qui on va." },
+        { "type": "paragraphe", "texte": "Le chemin (/wiki/Informatique), c'est comme la rue et le numéro : on arrive devant la bonne porte." },
+        {
+          "type": "illustration",
+          "fichier": "assets/images/03-anatomie-url-adresse-postale.png",
+          "alt": "Schéma « Anatomie d'une URL » qui compare une adresse web à une adresse postale classique. Le détail est écrit juste après l'image.",
+          "legende": "Une adresse web découpée en parties, à côté d'une adresse postale.",
+          "transcription": {
+            "titre": "Ce qui est écrit sur le schéma :",
+            "elements": [
+              "En haut, l'adresse web https://www.monsite.fr/page1 est découpée en 4 parties de couleur.",
+              "https:// : le protocole.",
+              "www : le sous-domaine.",
+              "monsite.fr : le nom de domaine.",
+              "/page1 : le chemin d'accès.",
+              "En bas, une adresse postale classique : 15 rue de la Paix, 75001 Paris. Elle est découpée en numéro, nom de la rue, code postal et ville.",
+              "Des flèches relient les parties de l'adresse web aux parties de l'adresse postale."
+            ]
+          }
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Le protocole https://",
+          "texte": "Au début de l'adresse, on voit souvent **https://**. Le « s » veut dire que la connexion est protégée. On en reparlera à la séance 5."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s2-e03",
+          "type": "texte_libre",
+          "mode": "comparaison",
+          "question": "Voici une adresse : www.youtube.com/watch?v=abc123. Quel est le nom du site ?",
+          "reponsesAcceptees": ["youtube", "youtube.com", "www.youtube.com"],
+          "reponseModele": "youtube (le nom de domaine complet est youtube.com)",
+          "explicationCorrection": "Dans www.youtube.com/watch?v=abc123, le nom du site est « youtube ». La terminaison est « .com ». Le chemin est « /watch?v=abc123 » : c'est une vidéo précise.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s2-e04",
+          "type": "texte_libre",
+          "mode": "comparaison",
+          "question": "Dans la même adresse, www.youtube.com/watch?v=abc123, quelle est la terminaison ?",
+          "reponsesAcceptees": [".com", "com"],
+          "reponseModele": ".com",
+          "explicationCorrection": "La terminaison est « .com ». Elle vient juste après le nom du site. « .com » veut dire commercial.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s2-e05",
+          "type": "texte_libre",
+          "mode": "comparaison",
+          "question": "Voici une adresse : www.google.com/search. Quel est le chemin ?",
+          "reponsesAcceptees": ["/search", "search"],
+          "reponseModele": "/search",
+          "explicationCorrection": "Le chemin est la partie qui commence par une barre « / » après le nom de domaine. Ici, c'est « /search » : la page des résultats de recherche.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 10
+        },
+        {
+          "id": "s2-e06",
+          "type": "qcm_unique",
+          "question": "Voici une adresse : www.francetravail.fr. Que veut dire la terminaison « .fr » ?",
+          "options": [
+            { "id": "a", "texte": "Gratuit." },
+            { "id": "b", "texte": "France." },
+            { "id": "c", "texte": "Formulaire." },
+            { "id": "d", "texte": "Faux." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "« .fr » veut dire France. Dans cette adresse, il n'y a pas de chemin : on arrive sur la page d'accueil du site.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s2-e07",
+          "type": "qcm_unique",
+          "question": "Dans l'adresse www.wikipedia.org/wiki/Informatique, quelle partie indique la page précise ?",
+          "options": [
+            { "id": "a", "texte": "www" },
+            { "id": "b", "texte": "wikipedia" },
+            { "id": "c", "texte": ".org" },
+            { "id": "d", "texte": "/wiki/Informatique" }
+          ],
+          "reponseCorrecte": "d",
+          "explicationCorrection": "Le chemin « /wiki/Informatique » indique la page précise. C'est comme la rue et le numéro dans une adresse postale.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 10
+        }
+      ]
+    },
+    {
+      "id": "s2-etape-3",
+      "titre": "Les favoris et l'historique",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Vous allez souvent sur les mêmes sites ? Écrire l'adresse à chaque fois, c'est long." },
+        { "type": "sous_titre", "texte": "Les favoris" },
+        { "type": "paragraphe", "texte": "Un **favori**, c'est comme un marque-page dans un livre. Vous le posez sur un site. La prochaine fois, vous retrouvez le site en un clic." },
+        {
+          "type": "liste",
+          "numerotee": true,
+          "elements": [
+            "Allez sur un site que vous aimez.",
+            "En haut à droite de la barre d'adresse, cliquez sur l'**étoile**. Au clavier : Ctrl + D.",
+            "Une petite fenêtre s'ouvre. Vous pouvez garder le nom proposé.",
+            "Cliquez sur « OK » ou « Terminé »."
+          ]
+        },
+        { "type": "paragraphe", "texte": "Pour retrouver un favori : ouvrez le menu des favoris. Cliquez sur le site. Vous y êtes." },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Vous ne trouvez pas l'étoile ?",
+          "texte": "Ce n'est pas grave. Sa place change un peu selon le navigateur. Demandez au formateur."
+        },
+        { "type": "sous_titre", "texte": "L'historique" },
+        { "type": "paragraphe", "texte": "L'**historique**, c'est la liste des sites que vous avez visités. Le navigateur la garde." },
+        {
+          "type": "liste",
+          "elements": [
+            "Pour voir l'historique : menu du navigateur, puis « Historique ». Au clavier : Ctrl + H.",
+            "Cliquez sur un site de la liste pour y revenir.",
+            "Pour effacer l'historique : menu « Historique », puis « Effacer les données de navigation »."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Attention avant d'effacer",
+          "texte": "Si vous effacez les données de navigation, le travail de cet atelier peut être effacé aussi. Avant, cliquez sur « Enregistrer mon travail dans un fichier »."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s2-e08",
+          "type": "qcm_unique",
+          "question": "À quoi sert un favori ?",
+          "options": [
+            { "id": "a", "texte": "À retrouver un site en un clic, comme un marque-page." },
+            { "id": "b", "texte": "À protéger l'ordinateur contre les virus." },
+            { "id": "c", "texte": "À effacer un site d'Internet." },
+            { "id": "d", "texte": "À écrire un email." }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "Un favori garde l'adresse d'un site. Vous le retrouvez ensuite en un clic, sans taper l'adresse. C'est comme un marque-page dans un livre.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s2-e09",
+          "type": "qcm_unique",
+          "question": "Sur la plupart des navigateurs, quelle icône permet d'ajouter un favori ?",
+          "options": [
+            { "id": "a", "texte": "Une poubelle." },
+            { "id": "b", "texte": "Une étoile." },
+            { "id": "c", "texte": "Une flèche ←." },
+            { "id": "d", "texte": "Une croix X." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "L'étoile se trouve en général au bout de la barre d'adresse. Au clavier, le raccourci Ctrl + D fait la même chose.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s2-e10",
+          "type": "qcm_unique",
+          "question": "Qu'est-ce que l'historique du navigateur ?",
+          "options": [
+            { "id": "a", "texte": "La liste des sites que vous avez visités." },
+            { "id": "b", "texte": "La liste de vos mots de passe." },
+            { "id": "c", "texte": "L'histoire d'Internet." },
+            { "id": "d", "texte": "La liste de vos favoris." }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "L'historique garde la liste des sites visités. Il permet de revenir sur un site déjà vu. On peut aussi l'effacer.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s2-e11",
+          "type": "qcm_unique",
+          "question": "Vous utilisez un ordinateur partagé. Vous ne voulez pas que les autres voient les sites que vous avez visités. Que faites-vous ?",
+          "options": [
+            { "id": "a", "texte": "J'ajoute les sites à mes favoris." },
+            { "id": "b", "texte": "J'ouvre un nouvel onglet." },
+            { "id": "c", "texte": "J'efface l'historique, après avoir enregistré mon travail dans un fichier." },
+            { "id": "d", "texte": "Je ne fais rien, personne ne peut voir." }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "Effacer l'historique retire la liste des sites visités. Attention : effacer les données de navigation peut aussi effacer le travail de cet atelier. Enregistrez-le dans un fichier avant.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        }
+      ]
+    },
+    {
+      "id": "s2-etape-4",
+      "titre": "Les onglets",
+      "blocs": [
+        { "type": "paragraphe", "texte": "En haut du navigateur, il peut y avoir plusieurs **onglets**. Chaque onglet montre une page." },
+        { "type": "paragraphe", "texte": "Les onglets permettent d'avoir plusieurs sites ouverts en même temps. On passe de l'un à l'autre en cliquant dessus." },
+        {
+          "type": "liste",
+          "elements": [
+            "**Ouvrir un onglet** : cliquez sur le « + » à côté des onglets. Au clavier : Ctrl + T.",
+            "**Aller sur un autre onglet** : cliquez dessus.",
+            "**Fermer un onglet** : cliquez sur la petite croix X de l'onglet. Au clavier : Ctrl + W."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Un exemple",
+          "texte": "Vous lisez un article sur un film. Vous ouvrez un nouvel onglet pour chercher plus d'informations. Une fois lu, vous fermez cet onglet. Vous êtes de retour sur l'article."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Pas trop d'onglets",
+          "texte": "Trop d'onglets ouverts, c'est difficile de s'y retrouver. Fermez ceux dont vous n'avez plus besoin."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s2-e12",
+          "type": "qcm_unique",
+          "question": "Quel raccourci clavier ouvre un nouvel onglet ?",
+          "options": [
+            { "id": "a", "texte": "Ctrl + T" },
+            { "id": "b", "texte": "Ctrl + W" },
+            { "id": "c", "texte": "F5" },
+            { "id": "d", "texte": "Entrée" }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "Ctrl + T ouvre un nouvel onglet. Ctrl + W ferme l'onglet. F5 recharge la page. Vous pouvez aussi cliquer sur le « + ».",
+          "difficulte": "moyen"
+        },
+        {
+          "id": "s2-e13",
+          "type": "qcm_unique",
+          "question": "Comment fermer un onglet avec la souris ?",
+          "options": [
+            { "id": "a", "texte": "Je clique sur l'étoile." },
+            { "id": "b", "texte": "Je clique sur la petite croix X de l'onglet." },
+            { "id": "c", "texte": "J'éteins l'ordinateur." },
+            { "id": "d", "texte": "Je clique sur la flèche ←." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "La petite croix X sur l'onglet le ferme. Les autres onglets restent ouverts.",
+          "difficulte": "facile"
+        }
+      ]
+    },
+    {
+      "id": "s2-etape-5",
+      "titre": "Petit défi",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Pour finir la séance, voici un petit défi. Si vous êtes bloqué, levez la main." },
+        {
+          "type": "liste",
+          "numerotee": true,
+          "elements": [
+            "Ouvrez un nouvel onglet.",
+            "Tapez l'adresse d'un site que vous connaissez.",
+            "Quand le site s'affiche, ajoutez-le à vos favoris.",
+            "Fermez l'onglet. Vous revenez sur cette page."
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s2-e14",
+          "type": "qcm_multiple",
+          "question": "Pendant le défi, quelles actions deviez-vous faire ?",
+          "options": [
+            { "id": "a", "texte": "Ouvrir un nouvel onglet." },
+            { "id": "b", "texte": "Éteindre l'ordinateur." },
+            { "id": "c", "texte": "Taper l'adresse d'un site." },
+            { "id": "d", "texte": "Ajouter le site aux favoris." },
+            { "id": "e", "texte": "Effacer l'historique." },
+            { "id": "f", "texte": "Fermer l'onglet." }
+          ],
+          "reponsesCorrectes": ["a", "c", "d", "f"],
+          "explicationCorrection": "Le défi avait 4 actions : ouvrir un onglet, taper une adresse, ajouter un favori, fermer l'onglet. Il ne fallait ni éteindre l'ordinateur, ni effacer l'historique.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s2-e15",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Écrivez les étapes pour ajouter un site à vos favoris.",
+          "reponseModele": "1. Je vais sur le site. 2. Je clique sur l'étoile au bout de la barre d'adresse (ou Ctrl + D). 3. Je garde le nom proposé. 4. Je clique sur « OK ».",
+          "explicationCorrection": "Vos mots peuvent être différents. Vérifiez seulement que vous avez les étapes principales : aller sur le site, cliquer sur l'étoile, valider.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 30
+        }
+      ]
+    }
+  ]
+}

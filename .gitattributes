@@ -1,0 +1,7 @@
+# Fins de ligne identiques pour tout le monde (Windows, Mac, Linux, GitHub)
+* text=auto eol=lf
+
+# Fichiers binaires : jamais modifiés par Git
+*.png binary
+*.jpg binary
+*.pdf binary

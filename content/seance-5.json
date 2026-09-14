@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "id": "seance-5",
+  "titre": "Sécurité, fiabilité et bilan",
+  "objectifs": [
+    "reconnaître les pièges courants du web ;",
+    "connaître les règles de sécurité de base ;",
+    "faire le bilan de ce que vous avez appris."
+  ],
+  "etapes": [
+    {
+      "id": "s5-etape-1",
+      "titre": "Pourquoi la sécurité est importante",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Depuis le début, on parle du fonctionnement du web. Il y a aussi une question humaine : la **sécurité**." },
+        { "type": "paragraphe", "texte": "Dans les métiers du numérique, vous serez peut-être responsable des données d'autres personnes." },
+        { "type": "paragraphe", "texte": "Un développeur doit penser à la sécurité de son site. Un technicien du support doit protéger les personnes qu'il aide." },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Pas de panique",
+          "texte": "Les risques existent : faux sites, vols de mots de passe, virus. Mais il y a des protections simples. Ce n'est pas compliqué : c'est du bon sens et de bonnes habitudes."
+        }
+      ]
+    },
+    {
+      "id": "s5-etape-2",
+      "titre": "Les pièges courants et les protections",
+      "blocs": [
+        { "type": "sous_titre", "texte": "Piège 1 : les faux sites (hameçonnage)" },
+        { "type": "paragraphe", "texte": "Un faux site ressemble à un vrai site. Il sert à voler vos identifiants. On appelle ça l'**hameçonnage**, ou « phishing » en anglais." },
+        { "type": "paragraphe", "texte": "Exemple : un faux site de France Travail qui vous demande votre mot de passe." },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Les signes d'alerte",
+          "elements": [
+            "L'adresse est un peu différente. Par exemple : francetravaill.com au lieu de francetravail.fr.",
+            "La page ne ressemble pas tout à fait au vrai site.",
+            "On vous emmène sur une autre page de façon bizarre.",
+            "Un email vous demande de cliquer vite sur un lien."
+          ]
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "**Protection** : vérifiez l'adresse avant de taper votre mot de passe.",
+            "**Protection** : allez directement sur le site officiel. Tapez l'adresse vous-même, ou utilisez un favori.",
+            "**Protection** : en cas de doute, ne cliquez pas sur un lien reçu par email."
+          ]
+        },
+        { "type": "sous_titre", "texte": "Piège 2 : les mots de passe faibles" },
+        { "type": "paragraphe", "texte": "Un mot de passe faible peut être deviné très vite." },
+        {
+          "type": "liste",
+          "elements": [
+            "**Mots de passe faibles** : 123456, password, azerty, votre prénom, votre date de naissance.",
+            "**Exemple de mot de passe fort** : Mq7$Lp2@kX9# (n'utilisez pas celui-ci : il est écrit ici, donc il n'est plus secret)."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Un bon mot de passe",
+          "elements": [
+            "Il est long : au moins 12 caractères.",
+            "Il mélange des lettres, des chiffres et des caractères spéciaux.",
+            "Il ne contient pas d'informations personnelles.",
+            "Il est différent pour chaque site important.",
+            "Si vous avez beaucoup de comptes, un gestionnaire de mots de passe peut les garder pour vous. Par exemple : Bitwarden ou 1Password."
+          ]
+        },
+        { "type": "sous_titre", "texte": "Piège 3 : trop de données personnelles" },
+        { "type": "paragraphe", "texte": "Votre adresse, votre téléphone, votre email ont de la valeur pour les arnaqueurs." },
+        {
+          "type": "liste",
+          "elements": [
+            "**Signe d'alerte** : un site demande trop d'informations, ou des informations bizarres.",
+            "**Protection** : ne donnez que les informations vraiment nécessaires.",
+            "**Protection** : lisez la politique de confidentialité pour savoir ce que le site fait de vos données.",
+            "**Protection** : vérifiez les réglages de confidentialité sur les réseaux sociaux."
+          ]
+        },
+        { "type": "sous_titre", "texte": "Piège 4 : les virus et logiciels malveillants" },
+        { "type": "paragraphe", "texte": "Un **logiciel malveillant** est un programme qui s'installe sur votre ordinateur pour lui faire du mal." },
+        {
+          "type": "liste",
+          "elements": [
+            "**Il peut entrer par** : un téléchargement sur un site douteux, un email avec une pièce jointe bizarre, une clé USB inconnue.",
+            "**Signe d'alerte** : l'ordinateur devient très lent, plante souvent, ou vous n'avez plus accès à vos fichiers.",
+            "**Protection** : un antivirus à jour, et les mises à jour de sécurité de l'ordinateur.",
+            "**Protection** : téléchargez seulement depuis des sites fiables. N'ouvrez pas les pièces jointes inattendues."
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s5-e01",
+          "type": "qcm_unique",
+          "question": "Vous recevez un email : « Cliquez ici pour vérifier votre compte Facebook. » Que faites-vous ?",
+          "options": [
+            { "id": "a", "texte": "Je clique tout de suite sur le lien." },
+            { "id": "b", "texte": "Je ne clique pas. Si j'ai un doute, je vais moi-même sur facebook.com." },
+            { "id": "c", "texte": "Je réponds à l'email avec mon mot de passe." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Ce type d'email est souvent un piège. Le lien peut mener à un faux site. Pour vérifier votre compte, tapez vous-même l'adresse du vrai site, ou utilisez un favori.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s5-e02",
+          "type": "qcm_unique",
+          "question": "Quel mot de passe est le plus solide ?",
+          "options": [
+            { "id": "a", "texte": "123456" },
+            { "id": "b", "texte": "azerty" },
+            { "id": "c", "texte": "Karim1990" },
+            { "id": "d", "texte": "Mq7$Lp2@kX9#" }
+          ],
+          "reponseCorrecte": "d",
+          "explicationCorrection": "« Mq7$Lp2@kX9# » a 12 caractères et mélange lettres, chiffres et caractères spéciaux. « 123456 » et « azerty » sont devinés en une seconde. Un prénom avec une année de naissance est aussi très facile à deviner.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s5-e03",
+          "type": "qcm_multiple",
+          "question": "Quels signes doivent vous alerter dans un email ?",
+          "options": [
+            { "id": "a", "texte": "L'expéditeur est inconnu et il y a une pièce jointe bizarre." },
+            { "id": "b", "texte": "On vous demande votre mot de passe." },
+            { "id": "c", "texte": "C'est un message du formateur que vous attendiez, sans lien ni pièce jointe." },
+            { "id": "d", "texte": "On vous demande de cliquer vite sur un lien pour « vérifier » votre compte." }
+          ],
+          "reponsesCorrectes": ["a", "b", "d"],
+          "explicationCorrection": "Un expéditeur inconnu avec une pièce jointe, une demande de mot de passe, un lien à cliquer vite : ce sont des signes d'hameçonnage. Un message attendu, d'une personne connue, sans lien ni pièce jointe, est normal.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s5-e04",
+          "type": "qcm_unique",
+          "question": "Un site de jeux gratuits vous demande votre numéro de sécurité sociale. Que faites-vous ?",
+          "options": [
+            { "id": "a", "texte": "Je le donne, c'est gratuit." },
+            { "id": "b", "texte": "Je ne le donne pas. Ce site n'en a pas besoin." },
+            { "id": "c", "texte": "Je donne celui d'un ami." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Un site de jeux n'a aucune raison de connaître votre numéro de sécurité sociale. Ne donnez que les informations vraiment utiles. Une demande bizarre est un signe d'alerte.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s5-e05",
+          "type": "qcm_unique",
+          "question": "Vous recevez un email de votre banque. Il vous demande votre mot de passe. Que pensez-vous ?",
+          "options": [
+            { "id": "a", "texte": "C'est normal, la banque en a besoin." },
+            { "id": "b", "texte": "C'est un piège. Une banque ne demande jamais votre mot de passe par email." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Les banques ne demandent jamais votre mot de passe par email. Ne répondez pas et ne cliquez pas. En cas de doute, appelez votre banque au numéro habituel.",
+          "difficulte": "facile"
+        }
+      ]
+    },
+    {
+      "id": "s5-etape-3",
+      "titre": "Mes 10 règles de sécurité sur le web",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Voici les règles à retenir. Vous pouvez imprimer cette page (Ctrl + P) ou l'ajouter à vos favoris." },
+        {
+          "type": "liste",
+          "numerotee": true,
+          "elements": [
+            "Je vérifie l'adresse du site avant de taper mon mot de passe.",
+            "J'utilise un mot de passe long et compliqué : au moins 12 caractères, avec un mélange.",
+            "Je ne clique jamais sur un lien suspect dans un email.",
+            "Je vais directement sur le site officiel : avec un favori, ou en tapant l'adresse moi-même.",
+            "Je regarde si l'adresse commence par « https » et s'il y a un cadenas. Mais le cadenas ne prouve pas que le site est honnête.",
+            "Je ne donne pas d'informations personnelles si ce n'est pas utile.",
+            "Je lis la politique de confidentialité. C'est long, mais c'est utile.",
+            "Je fais les mises à jour de mon ordinateur.",
+            "Je me méfie : une banque ne demande jamais mon mot de passe par email.",
+            "Si quelque chose me semble bizarre, je cherche ou je demande de l'aide."
+          ]
+        },
+        {
+          "type": "illustration",
+          "fichier": "assets/images/08-dix-regles-securite.png",
+          "alt": "Affiche « Les 10 règles de sécurité sur le web — Mémo ». Dix petits dessins dans des cercles, chacun avec une règle courte. Les règles sont écrites juste après l'image.",
+          "legende": "L'affiche mémo des 10 règles de sécurité.",
+          "transcription": {
+            "titre": "Les règles écrites sur l'affiche :",
+            "numerotee": true,
+            "elements": [
+              "Verrouillez vos comptes (dessin d'un cadenas).",
+              "Mots de passe uniques (dessin d'une clé).",
+              "Activez la 2FA (dessin d'un téléphone qui affiche un code).",
+              "Mises à jour régulières (dessin de flèches en rond).",
+              "Méfiez-vous des emails suspects (dessin d'une enveloppe barrée).",
+              "Vérifiez les liens (dessin d'une chaîne et d'une loupe).",
+              "Sauvegardez vos données (dessin d'un nuage avec une flèche).",
+              "Wi-Fi public : prudence (dessin du symbole wifi avec un point d'exclamation).",
+              "Protégez vos appareils (dessin d'un bouclier).",
+              "Respectez vos données perso (dessin d'une personne avec un cadenas)."
+            ]
+          }
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            { "terme": "La 2FA (double vérification)", "definition": "En plus du mot de passe, le site vous demande un code. Ce code arrive souvent sur votre téléphone. Même si quelqu'un vole votre mot de passe, il ne peut pas entrer sans ce code." },
+            { "terme": "Wi-Fi public", "definition": "Le wifi d'un café, d'une gare ou d'une bibliothèque. Tout le monde peut s'y connecter. Évitez d'y faire vos achats ou d'aller sur votre banque." },
+            { "terme": "Sauvegarder ses données", "definition": "Garder une copie de vos fichiers importants ailleurs : sur une clé USB ou sur un disque. Si l'ordinateur tombe en panne, vous ne perdez rien." }
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s5-e06",
+          "type": "qcm_unique",
+          "question": "Vous êtes sur une page de connexion. Avant de taper votre mot de passe, que vérifiez-vous d'abord ?",
+          "options": [
+            { "id": "a", "texte": "La couleur de la page." },
+            { "id": "b", "texte": "L'adresse du site, dans la barre d'adresse." },
+            { "id": "c", "texte": "Le nombre de publicités." },
+            { "id": "d", "texte": "L'heure qu'il est." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "C'est la règle numéro 1 : vérifier l'adresse. Un faux site peut copier les couleurs et le logo du vrai site. Mais son adresse est différente.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s5-e07",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Choisissez une règle de sécurité. Expliquez avec vos mots pourquoi elle est importante.",
+          "reponseModele": "Je choisis la règle : « Je vérifie l'adresse avant de taper mon mot de passe. » C'est important, car un faux site peut ressembler au vrai. Si je tape mon mot de passe sur un faux site, quelqu'un peut me le voler.",
+          "explicationCorrection": "Toutes les règles sont importantes. L'essentiel est de comprendre à quoi sert la règle que vous avez choisie.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 30
+        }
+      ]
+    },
+    {
+      "id": "s5-etape-4",
+      "titre": "Mon bilan personnel",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Pendant cet atelier, vous avez appris beaucoup de choses. C'est le moment de faire le point." },
+        {
+          "type": "illustration",
+          "fichier": "assets/images/09-bilan-progression.png",
+          "alt": "Dessin d'un chemin qui serpente, comme un jeu de l'oie. Une personne marche sur le chemin, du panneau « Débutant » vers un drapeau « Confiant ». Quatre étapes sont indiquées le long du chemin. Elles sont écrites juste après l'image.",
+          "legende": "Mon parcours : de débutant à confiant.",
+          "transcription": {
+            "titre": "Les étapes du parcours :",
+            "numerotee": true,
+            "elements": [
+              "Départ : Débutant.",
+              "Découvrir : j'explore et j'apprends.",
+              "Comprendre : j'observe, je pose des questions.",
+              "Pratiquer : je me forme et je m'entraîne.",
+              "Appliquer : j'expérimente et je progresse.",
+              "Arrivée : Confiant."
+            ]
+          }
+        },
+        { "type": "sous_titre", "texte": "La feuille « Moi et le web »" },
+        { "type": "paragraphe", "texte": "Le formateur va vous donner une feuille de bilan. Elle est pour vous, pas pour une note. Répondez honnêtement : il n'y a pas de mauvaise réponse." },
+        {
+          "type": "liste",
+          "elements": [
+            "Ce que j'ai réussi à faire.",
+            "Ce qui a été difficile.",
+            "Comment j'ai essayé de résoudre les problèmes.",
+            "Ce qui m'a aidé.",
+            "Ce dont j'ai besoin pour progresser.",
+            "La prochaine action que je veux essayer.",
+            "Mon avis sur l'atelier."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Vos réponses restent privées",
+          "texte": "Ce bilan se remplit sur la feuille, avec le formateur. Il n'est pas enregistré dans cette application. Le formateur vous demandera votre accord avant d'en parler avec l'équipe."
+        }
+      ]
+    },
+    {
+      "id": "s5-etape-5",
+      "titre": "Et maintenant ?",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Vous arrivez au bout de l'atelier. Bravo !" },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Vous avez appris à :",
+          "elements": [
+            "naviguer sur le web ;",
+            "comprendre une adresse web ;",
+            "chercher une information et vérifier la source ;",
+            "résoudre un problème avec une méthode ;",
+            "vous protéger sur Internet."
+          ]
+        },
+        { "type": "paragraphe", "texte": "Les prochains ateliers vont aller plus loin. Vous utiliserez tout ce que vous avez appris ici." },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Pensez à votre travail",
+          "texte": "Pour garder votre travail, cliquez sur « Enregistrer mon travail dans un fichier »."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s5-e08",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Écrivez une chose que vous retenez de cet atelier.",
+          "reponseModele": "Toutes les réponses sont bonnes. Par exemple : « Je sais vérifier l'adresse d'un site avant de taper mon mot de passe. » ou « Une erreur 404 n'est pas de ma faute. »",
+          "explicationCorrection": "Merci pour votre réponse. Vous pouvez la partager avec le groupe si vous le souhaitez.",
+          "difficulte": "facile"
+        }
+      ]
+    }
+  ]
+}

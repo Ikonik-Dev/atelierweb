@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--
+    Ce titre est remplacé au démarrage par les textes de content/interface.json.
+    Il reste seulement si l'application ne peut pas démarrer.
+  -->
+  <title>Culture informatique et Web</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <!-- Module ES natif : aucune compilation, aucune dépendance externe. -->
+  <script type="module" src="js/app.js"></script>
+</head>
+<body>
+  <!--
+    Structure de la page. Les zones sont vides : app.js les remplit
+    avec les textes des fichiers JSON du dossier content/.
+  -->
+  <a id="lien-evitement" class="lien-evitement" href="#contenu" hidden></a>
+
+  <header id="entete" class="entete" hidden>
+    <div class="entete-interieur">
+      <p class="nom-application">
+        <a id="lien-accueil-titre" href="#/"></a>
+        <span id="sous-titre" class="sous-titre"></span>
+      </p>
+      <nav id="menu-seances" class="menu-seances">
+        <ul id="liste-seances"></ul>
+      </nav>
+      <p id="repere" class="repere"></p>
+    </div>
+  </header>
+
+  <!-- Sauvegarde : l'avertissement sur la limite du localStorage reste visible en permanence. -->
+  <aside id="sauvegarde" class="sauvegarde" aria-labelledby="titre-sauvegarde" hidden>
+    <p id="titre-sauvegarde" class="titre-sauvegarde"></p>
+    <p id="avertissement-sauvegarde"></p>
+    <div class="zone-boutons">
+      <button type="button" id="bouton-exporter" class="bouton bouton-secondaire"></button>
+      <button type="button" id="bouton-importer" class="bouton bouton-secondaire"></button>
+    </div>
+    <input type="file" id="champ-import" accept=".json,application/json" hidden>
+    <p id="statut-sauvegarde" class="statut-sauvegarde" role="status"></p>
+  </aside>
+
+  <main id="contenu" tabindex="-1">
+    <!--
+      MESSAGE DE SECOURS — seule exception à la règle « tous les textes dans les JSON ».
+      Il ne peut pas venir d'un JSON : il sert justement quand les JSON ou le
+      JavaScript ne peuvent pas se charger (par exemple si index.html est ouvert
+      par double-clic). Il apparaît après quelques secondes si rien n'a démarré.
+    -->
+    <div id="message-demarrage" class="message-demarrage">
+      <h1>Culture informatique et Web</h1>
+      <p><strong>L'application n'a pas pu démarrer.</strong></p>
+      <p>Si vous êtes stagiaire : prévenez le formateur.</p>
+      <p>Pour le formateur : ouvrez l'application avec son adresse en ligne (GitHub Pages), ou avec un petit serveur local. Elle ne fonctionne pas si on ouvre le fichier index.html par double-clic. Voir le fichier README.md, partie « Tester sur son ordinateur ».</p>
+      <p id="detail-demarrage" class="detail-demarrage"></p>
+      <noscript><p>Le JavaScript est désactivé dans ce navigateur. Il est nécessaire pour cette application.</p></noscript>
+    </div>
+  </main>
+
+  <footer id="pied" class="pied" hidden>
+    <p id="texte-pied"></p>
+  </footer>
+
+  <!-- Zone lue par les lecteurs d'écran pour les annonces (résultat, fin du délai...). -->
+  <div id="annonces" class="visuellement-cache" aria-live="polite"></div>
+
+  <!-- Fenêtre de confirmation avant de remplacer le travail par un fichier importé. -->
+  <dialog id="dialogue-import" class="dialogue" aria-labelledby="titre-dialogue">
+    <form method="dialog">
+      <h2 id="titre-dialogue"></h2>
+      <div id="texte-dialogue"></div>
+      <div class="zone-boutons">
+        <button type="submit" value="annuler" id="bouton-annuler" class="bouton bouton-principal"></button>
+        <button type="submit" value="confirmer" id="bouton-confirmer" class="bouton bouton-secondaire"></button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>

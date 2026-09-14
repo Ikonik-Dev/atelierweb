@@ -1,0 +1,305 @@
+{
+  "version": 1,
+  "id": "seance-1",
+  "titre": "Qu'est-ce que le web ?",
+  "objectifs": [
+    "comprendre la différence entre Internet, le web et un navigateur ;",
+    "apprendre 5 mots importants ;",
+    "ouvrir un navigateur et visiter un site."
+  ],
+  "etapes": [
+    {
+      "id": "s1-etape-1",
+      "titre": "Bienvenue",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Pendant cet atelier, vous allez explorer le web." },
+        { "type": "paragraphe", "texte": "Il n'y a pas de piège. On apprend en faisant." },
+        { "type": "paragraphe", "texte": "Vous ne pouvez rien casser. L'ordinateur est fait pour ça." },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous êtes bloqué",
+          "texte": "Levez la main. Le formateur vient vous aider."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s1-e01",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Quels sites web avez-vous déjà utilisés ? Écrivez un ou deux noms.",
+          "reponseModele": "Il n'y a pas de mauvaise réponse. Par exemple : Google, YouTube, le site de la CAF, le site de France Travail, une banque en ligne.",
+          "explicationCorrection": "Vous utilisez peut-être déjà le web sans le savoir. Dans cet atelier, vous allez comprendre comment il marche.",
+          "difficulte": "facile"
+        }
+      ]
+    },
+    {
+      "id": "s1-etape-2",
+      "titre": "Le web, c'est comme une poste géante",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Imaginez : vous êtes chez vous. Vous voulez envoyer une lettre à un ami." },
+        { "type": "paragraphe", "texte": "Vous écrivez l'adresse sur l'enveloppe. La poste lit l'adresse. Elle livre la lettre." },
+        { "type": "sous_titre", "texte": "Avec le web, c'est pareil" },
+        {
+          "type": "liste",
+          "elements": [
+            "**Vous**, c'est votre ordinateur.",
+            "**L'adresse sur l'enveloppe**, c'est l'adresse du site. Par exemple : google.com.",
+            "**La poste**, ce sont les serveurs. Un serveur est un ordinateur qui garde les sites."
+          ]
+        },
+        { "type": "paragraphe", "texte": "Quand vous écrivez « google.com », vous dites : « Je veux parler au serveur de Google. »" },
+        { "type": "paragraphe", "texte": "Le serveur vous répond. Il vous envoie la page." }
+      ],
+      "exercices": [
+        {
+          "id": "s1-e02",
+          "type": "qcm_unique",
+          "question": "Dans l'exemple de la poste, qui joue le rôle de la poste ?",
+          "options": [
+            { "id": "a", "texte": "Votre ordinateur." },
+            { "id": "b", "texte": "Les serveurs." },
+            { "id": "c", "texte": "Le clavier." },
+            { "id": "d", "texte": "L'écran." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Les serveurs sont comme la poste. Ils reçoivent votre demande. Ils vous envoient la page. Votre ordinateur, lui, c'est vous à la maison.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s1-e03",
+          "type": "qcm_unique",
+          "question": "Dans l'exemple de la poste, qu'est-ce qui ressemble à l'adresse écrite sur l'enveloppe ?",
+          "options": [
+            { "id": "a", "texte": "La souris." },
+            { "id": "b", "texte": "Le serveur." },
+            { "id": "c", "texte": "L'adresse du site, par exemple google.com." },
+            { "id": "d", "texte": "Le mot de passe." }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "L'adresse du site, c'est comme l'adresse sur l'enveloppe. Elle dit où va votre demande.",
+          "difficulte": "facile"
+        }
+      ]
+    },
+    {
+      "id": "s1-etape-3",
+      "titre": "5 mots à connaître",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Voici 5 mots importants. Vous n'avez pas besoin de tout retenir maintenant. On va les revoir plusieurs fois." },
+        {
+          "type": "definitions",
+          "elements": [
+            { "terme": "Internet", "definition": "Tous les ordinateurs connectés du monde entier." },
+            { "terme": "Le web", "definition": "Les sites et les pages que l'on voit. C'est une partie d'Internet seulement." },
+            { "terme": "Un navigateur", "definition": "L'application pour voir les pages web. Par exemple : Chrome, Firefox, Edge ou Safari." },
+            { "terme": "Une adresse web", "definition": "L'adresse d'une page. Par exemple : google.com ou youtube.com." },
+            { "terme": "Un serveur", "definition": "Un ordinateur géant qui garde les sites. Il les envoie à votre ordinateur." }
+          ]
+        },
+        {
+          "type": "illustration",
+          "fichier": "assets/images/01-internet-web-navigateur-metro.png",
+          "alt": "Dessin : une personne entre dans une station de métro avec sa carte de transport à la main. Derrière elle, un plan de Paris avec des lignes de métro de toutes les couleurs. Les lignes relient des lieux connus : la tour Eiffel, le Sacré-Cœur, Notre-Dame et la colonne de la Bastille.",
+          "legende": "Internet, le web et le navigateur, comme le métro parisien."
+        },
+        { "type": "sous_titre", "texte": "Comme le métro parisien" },
+        {
+          "type": "liste",
+          "elements": [
+            "**Internet**, c'est tout le réseau du métro : les tunnels, les rails et les lignes qui relient la ville.",
+            "**Le web**, ce sont les lieux que vous visitez : la tour Eiffel, le Sacré-Cœur… Chaque lieu est comme un site.",
+            "**Le navigateur**, c'est la rame de métro : c'est elle qui vous emmène jusqu'au site."
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s1-e04",
+          "type": "qcm_unique",
+          "question": "Qu'est-ce qu'un navigateur ?",
+          "options": [
+            { "id": "a", "texte": "Un ordinateur géant qui garde les sites." },
+            { "id": "b", "texte": "L'application pour voir les pages web, comme Chrome, Firefox ou Edge." },
+            { "id": "c", "texte": "Tous les ordinateurs connectés du monde." },
+            { "id": "d", "texte": "L'adresse d'une page." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le navigateur est l'application qui vous montre les pages web. Dans l'exemple du métro, c'est la rame qui vous emmène jusqu'au site.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s1-e05",
+          "type": "qcm_unique",
+          "question": "Qu'est-ce qu'Internet ?",
+          "options": [
+            { "id": "a", "texte": "Tous les ordinateurs connectés du monde entier." },
+            { "id": "b", "texte": "Une seule page web." },
+            { "id": "c", "texte": "Le nom d'un navigateur." },
+            { "id": "d", "texte": "Un mot de passe." }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "Internet relie tous les ordinateurs du monde. C'est comme tout le réseau du métro, avec ses tunnels et ses lignes.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s1-e06",
+          "type": "qcm_multiple",
+          "question": "Parmi ces noms, lesquels sont des navigateurs ?",
+          "options": [
+            { "id": "a", "texte": "Chrome" },
+            { "id": "b", "texte": "Wikipédia" },
+            { "id": "c", "texte": "Firefox" },
+            { "id": "d", "texte": "YouTube" },
+            { "id": "e", "texte": "Edge" }
+          ],
+          "reponsesCorrectes": ["a", "c", "e"],
+          "explicationCorrection": "Chrome, Firefox et Edge sont des navigateurs : ce sont des applications pour voir les pages web. Wikipédia et YouTube sont des sites : on les visite avec un navigateur.",
+          "difficulte": "moyen"
+        },
+        {
+          "id": "s1-e07",
+          "type": "qcm_unique",
+          "question": "Le web et Internet, est-ce la même chose ?",
+          "options": [
+            { "id": "a", "texte": "Oui, c'est exactement la même chose." },
+            { "id": "b", "texte": "Non. Le web est une partie d'Internet." },
+            { "id": "c", "texte": "Non. Internet est une partie du web." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Internet, c'est tout le réseau. Le web, ce sont les sites et les pages que l'on voit. Le web est donc une partie d'Internet. Comme les lieux à visiter font partie de la ville reliée par le métro.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 10
+        }
+      ]
+    },
+    {
+      "id": "s1-etape-4",
+      "titre": "Toucher le web : exploration guidée",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Maintenant, vous allez vraiment utiliser le navigateur." },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Votre travail est gardé",
+          "texte": "Pendant la mission, vous allez quitter cette page. Ce n'est pas grave. Pour revenir ici, cliquez sur la flèche ← en haut à gauche du navigateur."
+        },
+        { "type": "sous_titre", "texte": "Mission : visiter deux sites" },
+        {
+          "type": "liste",
+          "numerotee": true,
+          "elements": [
+            "Regardez en haut du navigateur. Il y a une barre avec une adresse : c'est la **barre d'adresse**. Cliquez dedans.",
+            "Effacez ce qu'il y a dedans. Tapez : **youtube.com**. Appuyez sur la touche Entrée.",
+            "Attendez. La page va se charger. C'est normal si c'est un peu lent.",
+            "Quand la page s'affiche, regardez. Cliquez sur un lien : une photo ou un titre. La page change. C'est normal : c'est un lien.",
+            "Cliquez sur la flèche ← en haut à gauche. Vous revenez à la page d'avant. C'est le bouton **Retour**.",
+            "Cliquez dans la barre d'adresse. Tapez : **wikipedia.org**. Appuyez sur Entrée.",
+            "Regardez la barre d'adresse. Elle a changé. C'est normal : vous êtes sur un autre site.",
+            "Cliquez sur la flèche ← plusieurs fois pour revenir sur cette page."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous tapez mal l'adresse",
+          "texte": "Ne vous inquiétez pas. Le navigateur peut vous aider. Vous pouvez aussi recommencer."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s1-e08",
+          "type": "qcm_unique",
+          "question": "Où tapez-vous l'adresse d'un site ?",
+          "options": [
+            { "id": "a", "texte": "N'importe où sur la page." },
+            { "id": "b", "texte": "Dans la barre d'adresse, en haut du navigateur." },
+            { "id": "c", "texte": "Dans la barre des tâches, en bas de l'écran." },
+            { "id": "d", "texte": "Sur le bureau de l'ordinateur." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "L'adresse d'un site se tape dans la barre d'adresse, en haut du navigateur. Ensuite, on appuie sur la touche Entrée.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s1-e09",
+          "type": "qcm_unique",
+          "question": "Vous cliquez sur la flèche ← en haut à gauche du navigateur. Que se passe-t-il ?",
+          "options": [
+            { "id": "a", "texte": "Le navigateur se ferme." },
+            { "id": "b", "texte": "L'ordinateur s'éteint." },
+            { "id": "c", "texte": "Vous revenez à la page d'avant." },
+            { "id": "d", "texte": "La page est effacée d'Internet." }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "La flèche ← est le bouton Retour. Il vous ramène à la page que vous regardiez juste avant. Rien n'est cassé ni effacé.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s1-e10",
+          "type": "qcm_unique",
+          "question": "Vous passez du site youtube.com au site wikipedia.org. Que se passe-t-il dans la barre d'adresse ?",
+          "options": [
+            { "id": "a", "texte": "Rien ne change." },
+            { "id": "b", "texte": "L'adresse change, car vous êtes sur un autre site." },
+            { "id": "c", "texte": "La barre d'adresse disparaît." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Chaque site a sa propre adresse. Quand vous changez de site, l'adresse change. Et le contenu de la page change aussi.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s1-e11",
+          "type": "qcm_unique",
+          "question": "Vous avez tapé une adresse. La page met du temps à s'afficher. Que faites-vous ?",
+          "options": [
+            { "id": "a", "texte": "J'attends un peu. C'est normal." },
+            { "id": "b", "texte": "J'éteins l'ordinateur tout de suite." },
+            { "id": "c", "texte": "Je clique partout sur l'écran." },
+            { "id": "d", "texte": "Je pense que j'ai cassé l'ordinateur." }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "Pendant le chargement, le serveur reçoit votre demande. Il cherche la page. Il vous l'envoie. Cela peut prendre quelques secondes. C'est normal : on attend.",
+          "difficulte": "facile"
+        }
+      ]
+    },
+    {
+      "id": "s1-etape-5",
+      "titre": "Ce que je retiens",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Bravo ! Vous avez ouvert un navigateur et visité deux sites." },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "À retenir",
+          "elements": [
+            "Internet relie tous les ordinateurs du monde.",
+            "Le web, ce sont les sites et les pages. C'est une partie d'Internet.",
+            "Le navigateur est l'application pour voir les pages web.",
+            "On tape l'adresse d'un site dans la barre d'adresse, puis on appuie sur Entrée."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Parlons-en",
+          "texte": "Qu'est-ce qui a été facile ? Qu'est-ce qui a été difficile ? Vous pouvez en parler avec le formateur. Il n'y a pas de réponse juste : c'est votre expérience qui compte."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s1-e12",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Expliquez avec vos mots : qu'est-ce qu'un navigateur ?",
+          "reponseModele": "Un navigateur est une application pour voir les sites web. Par exemple : Chrome, Firefox ou Edge. On tape l'adresse du site dans la barre d'adresse.",
+          "explicationCorrection": "Votre réponse n'a pas besoin d'être identique. L'important est l'idée : le navigateur est l'outil qui vous montre les pages web.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 30
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "version": 1,
+  "id": "seance-3",
+  "titre": "Chercher et vérifier",
+  "objectifs": [
+    "comprendre comment marche un moteur de recherche ;",
+    "écrire une recherche précise ;",
+    "lire une page de résultats ;",
+    "vérifier si une source est fiable."
+  ],
+  "etapes": [
+    {
+      "id": "s3-etape-1",
+      "titre": "Pourquoi apprendre à chercher ?",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Chercher sur Internet, ça semble simple. Mais c'est une compétence très importante." },
+        { "type": "paragraphe", "texte": "Un technicien informatique a un problème. Il cherche la solution en ligne." },
+        { "type": "paragraphe", "texte": "Un développeur ne sait pas comment faire quelque chose. Il cherche aussi en ligne." },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Dans les métiers du numérique",
+          "texte": "Savoir **bien chercher** et **vérifier l'information**, c'est indispensable. Aujourd'hui, on s'entraîne."
+        }
+      ]
+    },
+    {
+      "id": "s3-etape-2",
+      "titre": "Le moteur de recherche",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Un **moteur de recherche** est un site qui trouve des pages pour vous. Par exemple : Google, Bing, Qwant ou DuckDuckGo." },
+        {
+          "type": "illustration",
+          "fichier": "assets/images/04-moteur-recherche-bibliotheque.png",
+          "alt": "Dessin : dans une grande bibliothèque, une bibliothécaire souriante tend un livre à un visiteur, par-dessus le comptoir. Derrière eux, de très longues étagères remplies de livres.",
+          "legende": "Le moteur de recherche, comme la bibliothécaire de votre quartier."
+        },
+        { "type": "sous_titre", "texte": "Comme à la bibliothèque du quartier" },
+        { "type": "paragraphe", "texte": "Dans une bibliothèque, il y a des milliers de livres. Vous demandez à la bibliothécaire : « Je cherche un livre sur les chats. »" },
+        { "type": "paragraphe", "texte": "Elle connaît les rayons. Elle vous apporte les livres les plus utiles." },
+        { "type": "paragraphe", "texte": "Le moteur de recherche fait pareil avec des milliards de pages web. Il vous montre d'abord celles qui semblent les plus utiles." },
+        { "type": "sous_titre", "texte": "Lire un résultat" },
+        {
+          "type": "liste",
+          "elements": [
+            "**Le titre** : il est souvent en bleu. On clique dessus pour ouvrir la page.",
+            "**L'adresse du site** : elle dit d'où vient la page.",
+            "**La description** : quelques lignes pour savoir de quoi parle la page."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Avant de cliquer",
+          "texte": "Lisez le titre, l'adresse et la description. Ça vous dit si c'est ce que vous cherchez. Chercher, c'est sans danger : vous ne pouvez rien casser."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s3-e01",
+          "type": "qcm_unique",
+          "question": "Un moteur de recherche ressemble à…",
+          "options": [
+            { "id": "a", "texte": "un facteur qui livre des colis." },
+            { "id": "b", "texte": "une bibliothécaire qui trouve les livres utiles pour vous." },
+            { "id": "c", "texte": "un cadenas qui protège une porte." },
+            { "id": "d", "texte": "un feu rouge." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Comme une bibliothécaire, le moteur de recherche connaît des milliards de pages. Vous lui dites ce que vous cherchez. Il vous montre les pages les plus utiles en premier.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s3-e02",
+          "type": "qcm_multiple",
+          "question": "Parmi ces noms, lesquels sont des moteurs de recherche ?",
+          "options": [
+            { "id": "a", "texte": "Google" },
+            { "id": "b", "texte": "Firefox" },
+            { "id": "c", "texte": "Qwant" },
+            { "id": "d", "texte": "Edge" },
+            { "id": "e", "texte": "Bing" }
+          ],
+          "reponsesCorrectes": ["a", "c", "e"],
+          "explicationCorrection": "Google, Qwant et Bing sont des moteurs de recherche : des sites qui trouvent des pages. Firefox et Edge sont des navigateurs : des applications pour voir les pages.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 10
+        },
+        {
+          "id": "s3-e03",
+          "type": "qcm_unique",
+          "question": "Sur une page de résultats, que lisez-vous avant de cliquer ?",
+          "options": [
+            { "id": "a", "texte": "Rien. Je clique toujours sur le premier résultat." },
+            { "id": "b", "texte": "Le titre, l'adresse du site et la description." },
+            { "id": "c", "texte": "Seulement les publicités." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le titre, l'adresse et la description vous aident à choisir. Le premier résultat n'est pas toujours le meilleur : c'est parfois une publicité.",
+          "difficulte": "facile"
+        }
+      ]
+    },
+    {
+      "id": "s3-etape-3",
+      "titre": "Écrire une bonne recherche",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Chercher efficacement, ce n'est pas taper n'importe quoi." },
+        { "type": "paragraphe", "texte": "Si vous tapez seulement « problème », le moteur ne sait pas de quel problème vous parlez." },
+        {
+          "type": "tableau",
+          "legende": "Trois recherches, de la moins précise à la plus précise",
+          "entetes": ["Recherche", "Ce que l'on tape", "Résultat"],
+          "lignes": [
+            ["Pas précise", "problème", "Des résultats au hasard, pas utiles."],
+            ["Précise", "ordinateur ne démarre pas", "Des résultats plus utiles."],
+            ["Très précise", "Windows 11 ordinateur ne démarre pas écran noir", "Des résultats ciblés sur votre problème."]
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "À retenir",
+          "elements": [
+            "Utilisez les mots importants.",
+            "Soyez précis : nom du logiciel, message d'erreur…",
+            "Pas besoin d'écrire une phrase complète.",
+            "Si les résultats ne conviennent pas, changez vos mots et recommencez."
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s3-e04",
+          "type": "qcm_unique",
+          "question": "Quelle recherche est la plus précise ?",
+          "options": [
+            { "id": "a", "texte": "problème" },
+            { "id": "b", "texte": "ordinateur" },
+            { "id": "c", "texte": "Windows 11 ordinateur ne démarre pas écran noir" },
+            { "id": "d", "texte": "aide" }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "Plus vous donnez de mots importants, mieux le moteur comprend. Ici : le système (Windows 11), le problème (ne démarre pas) et ce que vous voyez (écran noir).",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s3-e05",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Vous cherchez le site officiel de France Travail. Qu'écrivez-vous dans le moteur de recherche ?",
+          "reponseModele": "France Travail site officiel. Ou directement l'adresse : francetravail.fr",
+          "explicationCorrection": "Plusieurs réponses sont possibles. L'important est d'écrire le nom exact de l'organisme. Ajouter « site officiel » aide à éviter les faux sites.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s3-e06",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Votre navigateur Chrome ne répond plus. Qu'écrivez-vous dans le moteur de recherche pour trouver de l'aide ?",
+          "reponseModele": "Chrome ne répond plus. Ou : pourquoi Google Chrome plante",
+          "explicationCorrection": "Une bonne recherche donne le nom du logiciel (Chrome) et le problème (ne répond plus, plante). Si les résultats ne conviennent pas, essayez d'autres mots.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        }
+      ]
+    },
+    {
+      "id": "s3-etape-4",
+      "titre": "Vérifier si une source est fiable",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Tout ce qui est sur Internet n'est pas vrai. Avant de croire une information, on vérifie la source." },
+        { "type": "paragraphe", "texte": "Une **source**, c'est le site ou la personne qui donne l'information." },
+        {
+          "type": "tableau",
+          "legende": "Grille pour vérifier une source",
+          "entetes": ["À regarder", "Bon signe", "Mauvais signe"],
+          "lignes": [
+            ["La source", "Site officiel (.gouv.fr), université, grande organisation connue", "Site inconnu, blog personnel sans références"],
+            ["L'auteur", "Nom et métier affichés", "Anonyme ou pseudo"],
+            ["La date", "Récente, moins de 2 ans", "Très ancienne, ou pas de date"],
+            ["Le contenu", "Clair, bien rangé, sans fautes", "Désordonné, plein de fautes"],
+            ["Les publicités", "Peu nombreuses", "Partout, qui clignotent, bizarres"],
+            ["Le ton", "Calme, avec des références", "« J'ai la vérité absolue ! », titres qui font peur"]
+          ]
+        },
+        {
+          "type": "illustration",
+          "fichier": "assets/images/05-grille-credibilite-sources.png",
+          "alt": "Dessin qui compare deux pages web côte à côte : à gauche une page « Fiable », à droite une page « Douteuse ». Le détail est écrit juste après l'image.",
+          "legende": "Une page fiable et une page douteuse.",
+          "transcription": {
+            "titre": "Ce que montre le dessin :",
+            "elements": [
+              "À gauche, une étiquette verte « Fiable » avec un bouclier. La page a l'adresse https://www.site-exemple.com avec un cadenas fermé. On voit une date (2026-06-01) et le nom de l'auteur (Marie Dupont). La page est bien rangée.",
+              "À droite, une étiquette orange « Douteuse » avec un triangle d'attention. La page a l'adresse www.site-douteux.com avec un cadenas barré. Des publicités s'ouvrent partout : « GRATUIT !!! », « Gagnez maintenant ! Cliquez ici », « % % % Voir plus », « Téléchargez vite !!! »."
+            ]
+          }
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Le cadenas ne suffit pas",
+          "texte": "Le cadenas veut dire que la connexion est protégée. Il ne dit pas si le site est honnête. Un faux site peut aussi avoir un cadenas. Regardez toujours les autres signes."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s3-e07",
+          "type": "qcm_unique",
+          "question": "Vous lisez un article. Il n'y a pas d'auteur ni de date. Il y a des publicités partout. Le titre dit : « La vérité que personne ne veut vous dire ! ». Cet article est-il fiable ?",
+          "options": [
+            { "id": "a", "texte": "Oui, car il est sur Internet." },
+            { "id": "b", "texte": "Oui, car le titre est rassurant." },
+            { "id": "c", "texte": "Non, il y a plusieurs signaux d'alerte." }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "Pas d'auteur, pas de date, trop de publicités, un titre qui prétend avoir « la vérité » : ce sont 4 signaux d'alerte. Il vaut mieux chercher la même information sur un site plus sérieux.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s3-e08",
+          "type": "qcm_multiple",
+          "question": "Quels sont des bons signes pour une source ?",
+          "options": [
+            { "id": "a", "texte": "Le nom de l'auteur est affiché." },
+            { "id": "b", "texte": "Il y a beaucoup de publicités qui clignotent." },
+            { "id": "c", "texte": "La date est récente." },
+            { "id": "d", "texte": "Le texte est plein de fautes." },
+            { "id": "e", "texte": "C'est un site officiel, par exemple en .gouv.fr." },
+            { "id": "f", "texte": "Le titre dit : « Vous n'allez pas y croire !!! »" }
+          ],
+          "reponsesCorrectes": ["a", "c", "e"],
+          "explicationCorrection": "Un auteur identifié, une date récente et un site officiel sont de bons signes. Les publicités qui clignotent, les fautes et les titres exagérés sont des signaux d'alerte.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s3-e09",
+          "type": "qcm_unique",
+          "question": "Un site a un petit cadenas à côté de son adresse. Est-ce que cela prouve qu'il dit la vérité ?",
+          "options": [
+            { "id": "a", "texte": "Oui, le cadenas prouve que le site est honnête." },
+            { "id": "b", "texte": "Non. Le cadenas protège le trajet des informations, pas la vérité du contenu." },
+            { "id": "c", "texte": "Oui, seuls les sites de l'État ont un cadenas." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le cadenas, c'est comme une enveloppe fermée : pendant le trajet, personne ne peut lire la lettre. Mais une lettre dans une enveloppe fermée peut quand même dire des choses fausses. Un faux site peut avoir un cadenas.",
+          "difficulte": "difficile",
+          "tempsMinimumSecondes": 15
+        }
+      ]
+    },
+    {
+      "id": "s3-etape-5",
+      "titre": "Mission : une recherche complète",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Dernier exercice de la séance. Vous allez chercher une réponse, puis vérifier la source." },
+        { "type": "paragraphe", "texte": "La question est : **Qu'est-ce qu'un certificat SSL ?**" },
+        {
+          "type": "liste",
+          "numerotee": true,
+          "elements": [
+            "Ouvrez un nouvel onglet (Ctrl + T).",
+            "Écrivez votre recherche dans le moteur de recherche.",
+            "Lisez les titres, les adresses et les descriptions.",
+            "Ouvrez le résultat qui vous semble le plus sérieux.",
+            "Vérifiez la source avec la grille : auteur, date, type de site, publicités.",
+            "Revenez sur cette page pour répondre."
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s3-e10",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Écrivez en une ou deux phrases ce que vous avez trouvé : qu'est-ce qu'un certificat SSL ?",
+          "reponseModele": "Un certificat SSL est comme une carte d'identité pour un site web. Il permet une connexion protégée entre l'ordinateur et le site. C'est grâce à lui qu'on voit le cadenas et le « https ».",
+          "explicationCorrection": "Votre réponse n'a pas besoin d'être identique. Retenez l'idée : le certificat permet une connexion protégée. Mais, comme le cadenas, il ne prouve pas que le site est honnête.",
+          "difficulte": "difficile",
+          "tempsMinimumSecondes": 45
+        },
+        {
+          "id": "s3-e11",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Quel site avez-vous utilisé ? Lui faites-vous confiance ? Expliquez pourquoi.",
+          "reponseModele": "J'ai utilisé le site cybermalveillance.gouv.fr. Je lui fais confiance : c'est un site officiel de l'État (.gouv.fr), la page est datée et claire, il n'y a pas de publicité.",
+          "explicationCorrection": "Il n'y a pas une seule bonne réponse. L'important est de justifier avec les critères de la grille : le type de site, l'auteur, la date, le contenu, les publicités.",
+          "difficulte": "difficile",
+          "tempsMinimumSecondes": 30
+        }
+      ]
+    }
+  ]
+}

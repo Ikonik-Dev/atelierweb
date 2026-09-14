@@ -1,0 +1,173 @@
+{
+  "version": 1,
+  "application": {
+    "titre": "Culture informatique et Web",
+    "sousTitre": "Atelier en 5 séances",
+    "langueDates": "fr-FR"
+  },
+  "seances": [
+    "seance-1.json",
+    "seance-2.json",
+    "seance-3.json",
+    "seance-4.json",
+    "seance-5.json"
+  ],
+  "titrePage": {
+    "accueil": "Accueil — {application}",
+    "seance": "{seance} — {application}",
+    "ecran": "{ecran} — {seance} — {application}",
+    "erreur": "Page introuvable — {application}"
+  },
+  "icones": {
+    "juste": "✔",
+    "faux": "✘",
+    "neutre": "➜",
+    "info": "ℹ",
+    "attention": "⚠",
+    "astuce": "★"
+  },
+  "navigation": {
+    "lienEvitement": "Aller au contenu",
+    "menuSeances": "Menu des séances",
+    "accueil": "Accueil",
+    "seanceCourte": "Séance {numero}",
+    "seanceComplete": "Séance {numero} : {titre}",
+    "navigationEcrans": "Passer à l'écran précédent ou suivant",
+    "precedent": "← Précédent",
+    "suivant": "Suivant →",
+    "seanceSuivante": "Aller à la séance suivante →",
+    "retourAccueil": "Revenir à l'accueil",
+    "commencerSeance": "Commencer la séance",
+    "continuerSeance": "Continuer la séance",
+    "repere": "Vous êtes ici :",
+    "repereAccueil": "Accueil",
+    "repereSeance": "Séance {numero}",
+    "repereIntro": "Présentation",
+    "repereEtape": "Étape {etape} sur {totalEtapes}",
+    "repereExercice": "Exercice {exercice} sur {totalExercices}",
+    "planSeance": "Plan de la séance",
+    "presentation": "Présentation de la séance",
+    "etapeTitre": "Étape {numero} : {titre}",
+    "exerciceTitre": "Exercice {numero} sur {total}",
+    "exerciceFait": "(fait)",
+    "exerciceAFaire": "(à faire)",
+    "ecranActuel": "(vous êtes ici)",
+    "objectifs": "Dans cette séance, vous allez :",
+    "finSeance": "Vous êtes arrivé à la fin de la séance. Bravo pour votre travail !"
+  },
+  "accueil": {
+    "introduction": [
+      "Bienvenue dans l'atelier « Culture informatique et Web ».",
+      "Vous allez découvrir comment marche le web.",
+      "Vous avancez à votre rythme. Il n'y a pas de piège.",
+      "Si vous êtes bloqué, levez la main. Le formateur vient vous aider."
+    ],
+    "titreModeEmploi": "Comment faire les exercices ?",
+    "modeEmploi": [
+      "Lisez bien la question.",
+      "Choisissez votre réponse.",
+      "Cliquez sur « Valider ma réponse ».",
+      "Cliquez sur « Voir la correction ».",
+      "Lisez l'explication. Ensuite, passez à la suite."
+    ],
+    "attentionDefinitif": "Attention : après la validation, vous ne pouvez plus changer votre réponse. Prenez votre temps.",
+    "titreSeances": "Les séances",
+    "progression": "Exercices faits : {faits} sur {total}",
+    "seanceTerminee": "Tous les exercices de cette séance sont faits."
+  },
+  "exercice": {
+    "boutonValider": "Valider ma réponse",
+    "boutonVoirCorrection": "Voir la correction",
+    "messageRepondre": "Répondez à la question. Ensuite, vous pourrez valider.",
+    "messageDelai": "Prenez le temps de bien lire. Le bouton « Valider ma réponse » sera bientôt disponible.",
+    "annonceDelaiTermine": "Vous pouvez maintenant valider votre réponse.",
+    "messagePret": "Quand vous êtes prêt, cliquez sur « Valider ma réponse ».",
+    "avertissementDefinitif": "Attention : après la validation, vous ne pourrez plus changer votre réponse.",
+    "messageReponseEnregistree": "Votre réponse est enregistrée. Vous pouvez maintenant voir la correction.",
+    "messageReponseNonSauvegardee": "Votre réponse est gardée sur cette page. Mais elle n'est pas enregistrée sur l'ordinateur. Pensez à enregistrer votre travail dans un fichier.",
+    "messageCorrectionVerrouillee": "Vous devez d'abord répondre, puis cliquer sur « Valider ma réponse ». Ensuite, vous pourrez voir la correction.",
+    "messageDejaValide": "Vous avez déjà répondu à cet exercice. Votre réponse ne peut plus être changée.",
+    "titreCorrection": "Correction",
+    "resultatJuste": "Bonne réponse",
+    "resultatFaux": "Ce n'est pas la bonne réponse",
+    "resultatNonNote": "Comparez votre réponse avec l'exemple",
+    "encouragementFaux": "Ce n'est pas grave. Lisez l'explication pour comprendre.",
+    "titreExplication": "Explication"
+  },
+  "types": {
+    "qcm_unique": {
+      "consigne": "Choisissez une seule réponse.",
+      "votreReponse": "Votre réponse :",
+      "bonneReponse": "La bonne réponse :"
+    },
+    "qcm_multiple": {
+      "consigne": "Plusieurs réponses sont possibles. Cochez toutes les bonnes réponses.",
+      "cocheeJuste": "Bonne réponse. Vous l'avez cochée.",
+      "nonCocheeJuste": "Bonne réponse. Vous ne l'avez pas cochée.",
+      "cocheeFausse": "Mauvaise réponse. Vous l'avez cochée.",
+      "nonCocheeFausse": "Mauvaise réponse. Vous ne l'avez pas cochée : c'est bien."
+    },
+    "texte_libre": {
+      "consigneModele": "Écrivez votre réponse avec vos mots. Les fautes d'orthographe ne comptent pas.",
+      "consigneComparaison": "Écrivez votre réponse dans la case. Les majuscules et les accents ne comptent pas.",
+      "votreReponse": "Votre réponse :",
+      "reponseModele": "Exemple de réponse :",
+      "reponseAttendue": "Réponse attendue :"
+    }
+  },
+  "sauvegarde": {
+    "titre": "Sauvegarde de votre travail",
+    "avertissement": "Votre travail est gardé sur cet ordinateur seulement. Pour le garder, cliquez sur « Enregistrer mon travail dans un fichier ».",
+    "avertissementIndisponible": "Attention : ce navigateur ne peut pas garder votre travail. Si vous fermez la page, votre travail sera perdu. Avant de partir, cliquez sur « Enregistrer mon travail dans un fichier ».",
+    "avertissementEchecEcriture": "Attention : votre dernière réponse n'a pas pu être gardée sur cet ordinateur. Cliquez sur « Enregistrer mon travail dans un fichier ».",
+    "boutonExporter": "Enregistrer mon travail dans un fichier",
+    "boutonImporter": "Reprendre un travail enregistré",
+    "nomFichierExport": "mon-travail-culture-web-{date}.json",
+    "messageExportOk": "C'est fait. Le fichier s'appelle « {nom} ». Il est souvent dans le dossier « Téléchargements ». Gardez-le sur une clé USB ou dans vos documents.",
+    "messageExportErreur": "Le fichier n'a pas pu être créé. Prévenez le formateur.",
+    "importTitre": "Reprendre un travail enregistré",
+    "importResume": "Exercices faits dans ce fichier : {nombre}.",
+    "importDate": "Date d'enregistrement du fichier : {date}.",
+    "importAvertissement": "Attention : votre travail sur cet ordinateur sera remplacé. Exercices faits sur cet ordinateur : {nombre}.",
+    "importInconnus": "Exercices du fichier qui n'existent plus dans l'atelier : {nombre}. Ils seront gardés, mais pas affichés.",
+    "importQuestion": "Voulez-vous remplacer votre travail par celui du fichier ?",
+    "importConfirmer": "Oui, remplacer mon travail",
+    "importAnnuler": "Non, garder mon travail actuel",
+    "importOk": "Votre travail est rechargé.",
+    "importAnnule": "Rien n'a changé. Votre travail actuel est gardé.",
+    "importErreurLecture": "Le fichier n'a pas pu être lu. Choisissez le fichier « mon-travail-culture-web » que vous avez enregistré.",
+    "importErreurFormat": "Ce fichier n'est pas un travail enregistré de cet atelier. Choisissez le bon fichier : son nom commence par « mon-travail-culture-web ».",
+    "importErreurVersion": "Ce fichier vient d'une autre version de l'atelier. Il ne peut pas être rechargé. Montrez-le au formateur."
+  },
+  "piedDePage": "Atelier « Culture informatique et Web ». Aucune donnée n'est envoyée sur Internet : votre travail reste dans ce navigateur. Les illustrations ont été créées avec une intelligence artificielle.",
+  "erreurs": {
+    "titreContenu": "Un fichier de contenu a un problème",
+    "aideStagiaire": "Si vous êtes stagiaire : prévenez le formateur. Vous pouvez faire une autre séance.",
+    "aideFormateur": "Pour le formateur : corrigez le fichier indiqué, puis rechargez la page.",
+    "fichierIntrouvable": "Le fichier « {fichier} » est introuvable. Vérifiez son nom (en minuscules) et sa place dans le dossier content.",
+    "jsonInvalide": "Le fichier « {fichier} » n'est pas un JSON valide. Vérifiez les virgules, les guillemets et les accolades. Rappel : pas de commentaire, et pas de virgule après le dernier élément d'une liste. Détail technique : {detail}",
+    "emplacement": "Fichier : {fichier}. Élément : {id}. Champ : {champ}.",
+    "codes": {
+      "champManquant": "Ce champ est obligatoire. Il est absent ou vide.",
+      "typeTexte": "Ce champ doit être un texte entre guillemets.",
+      "typeListe": "Ce champ doit être une liste entre crochets [ ].",
+      "typeObjet": "Cet élément doit être un objet entre accolades { }.",
+      "typeEntierPositif": "Ce champ doit être un nombre entier, 0 ou plus, sans guillemets.",
+      "valeurNonAutorisee": "La valeur « {valeur} » n'est pas autorisée. Valeurs possibles : {valeurs}.",
+      "listeVide": "Cette liste ne doit pas être vide.",
+      "optionsInsuffisantes": "Il faut au moins 2 options.",
+      "idOptionEnDouble": "Deux options ont le même id : « {valeur} ».",
+      "reponseInexistante": "La réponse « {valeur} » ne correspond à aucun id d'option.",
+      "reponseEnDouble": "La réponse « {valeur} » est écrite deux fois.",
+      "idEnDouble": "L'id « {valeur} » est déjà utilisé ailleurs. Chaque id doit être unique dans tout le projet.",
+      "formatIdExercice": "L'id « {valeur} » n'a pas la bonne forme. Exemple de bonne forme : s1-e01.",
+      "typeInconnu": "Le type « {valeur} » n'existe pas. Types possibles : {valeurs}.",
+      "versionInconnue": "La version « {valeur} » n'est pas reconnue. Version possible : {valeurs}.",
+      "reponsesAccepteesManquantes": "En mode « comparaison », il faut une liste « reponsesAcceptees » avec au moins une réponse."
+    },
+    "titreSeanceIndisponible": "Cette séance n'est pas disponible",
+    "texteSeanceIndisponible": "Le fichier de cette séance a un problème.",
+    "titrePageIntrouvable": "Cette page n'existe pas",
+    "textePageIntrouvable": "L'adresse ne correspond à aucune page de l'atelier. Cliquez sur « Revenir à l'accueil »."
+  }
+}

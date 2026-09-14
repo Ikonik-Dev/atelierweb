@@ -1,0 +1,356 @@
+{
+  "version": 1,
+  "id": "seance-4",
+  "titre": "Problèmes et solutions",
+  "objectifs": [
+    "comprendre les messages d'erreur les plus courants ;",
+    "suivre une méthode simple pour résoudre un problème ;",
+    "garder son calme face à une erreur."
+  ],
+  "etapes": [
+    {
+      "id": "s4-etape-1",
+      "titre": "Les erreurs ne sont pas des catastrophes",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Parfois, sur le web, quelque chose ne marche pas. Une page ne s'affiche pas. Un message apparaît." },
+        { "type": "paragraphe", "texte": "**C'est normal. Ce n'est pas votre faute. Vous n'avez pas cassé l'ordinateur.**" },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Comme un feu rouge",
+          "texte": "Un message d'erreur, c'est comme un feu rouge. Il ne vous punit pas. Il vous dit : « Stop, il y a un problème ici. » C'est une information pour vous aider."
+        },
+        {
+          "type": "illustration",
+          "fichier": "assets/images/06-quatre-erreurs-courantes.png",
+          "alt": "Quatre panneaux ronds bleus, comme des panneaux de signalisation. Le sens de chaque panneau est écrit juste après l'image.",
+          "legende": "Les 4 erreurs courantes.",
+          "transcription": {
+            "titre": "Les 4 panneaux :",
+            "numerotee": true,
+            "elements": [
+              "Une page blanche avec le symbole du wifi barré : la page ne s'affiche pas, il n'y a pas de connexion.",
+              "Un panneau « 404 » et un chemin qui s'arrête sur une croix : la page est introuvable.",
+              "Un sablier et un compteur de vitesse : la page est trop lente, le délai d'attente est dépassé.",
+              "Un cadenas barré avec un triangle d'attention : la connexion n'est pas sûre."
+            ]
+          }
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            { "terme": "Erreur 404 (« Page introuvable »)", "definition": "La page n'existe pas, ou elle a été supprimée, ou l'adresse est mal écrite. Ce n'est pas votre faute." },
+            { "terme": "Erreur de connexion (« Impossible de se connecter »)", "definition": "Votre ordinateur n'arrive pas à parler au serveur. Le wifi est peut-être coupé, ou le serveur est en panne." },
+            { "terme": "Délai dépassé (« timeout »)", "definition": "Le serveur met trop de temps à répondre." },
+            { "terme": "« La connexion n'est pas sûre »", "definition": "Le certificat de sécurité du site manque ou a un problème. Attention : risque pour vos informations." }
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s4-e01",
+          "type": "qcm_unique",
+          "question": "Un message d'erreur apparaît à l'écran. Avez-vous cassé l'ordinateur ?",
+          "options": [
+            { "id": "a", "texte": "Oui, il faut appeler un réparateur." },
+            { "id": "b", "texte": "Non. Le message est une information pour m'aider à comprendre le problème." },
+            { "id": "c", "texte": "Oui, c'est de ma faute." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Un message d'erreur est comme un feu rouge : il signale un problème, il ne veut pas dire que vous avez tout cassé. Tout le monde rencontre des erreurs, même les informaticiens.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s4-e02",
+          "type": "qcm_unique",
+          "question": "Vous voyez « Erreur 404 ». Qu'est-ce que cela veut dire ?",
+          "options": [
+            { "id": "a", "texte": "Mon ordinateur a un virus." },
+            { "id": "b", "texte": "La page n'existe pas ou l'adresse est mal écrite." },
+            { "id": "c", "texte": "Internet est en panne dans tout le pays." },
+            { "id": "d", "texte": "Mon mot de passe est faux." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "404 est un code. Il veut dire : page introuvable. La page a peut-être été supprimée, ou l'adresse contient une faute. Vérifiez l'adresse, ou cherchez la page depuis l'accueil du site.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s4-e03",
+          "type": "qcm_unique",
+          "question": "Le navigateur affiche : « La connexion n'est pas sûre ». Que faites-vous ?",
+          "options": [
+            { "id": "a", "texte": "Je tape quand même mon mot de passe." },
+            { "id": "b", "texte": "Je ne me connecte pas à mon compte. Je ferme la page et je vais ailleurs." },
+            { "id": "c", "texte": "Je donne mon numéro de carte bancaire." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Sur une page « non sûre », vos informations peuvent être lues par d'autres. Ne tapez jamais de mot de passe ni de données personnelles. Si c'est un site connu, vous pouvez contacter son service d'aide.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 10
+        }
+      ]
+    },
+    {
+      "id": "s4-etape-2",
+      "titre": "Une méthode en 5 étapes",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Quand quelque chose ne marche pas, pas de panique. Utilisez une méthode simple. C'est la même méthode que les informaticiens." },
+        {
+          "type": "illustration",
+          "fichier": "assets/images/07-guide-depannage-logigramme.png",
+          "alt": "Schéma en 5 cases reliées par des flèches, de gauche à droite. Chaque case a un numéro, un petit dessin et une phrase. Les 5 étapes sont écrites juste après l'image.",
+          "legende": "Le guide de dépannage en 5 étapes.",
+          "transcription": {
+            "titre": "Les 5 étapes du schéma :",
+            "numerotee": true,
+            "elements": [
+              "J'observe (dessin d'un œil).",
+              "Je cherche la cause (dessin d'une loupe).",
+              "J'essaie une solution (dessin d'une clé à molette).",
+              "Je vérifie (dessin d'une liste cochée).",
+              "Je recommence ou je demande de l'aide (dessin de flèches en rond et d'une bouée)."
+            ]
+          }
+        },
+        {
+          "type": "tableau",
+          "legende": "La méthode de dépannage avec des exemples",
+          "entetes": ["Étape", "Ce que je fais", "Exemple"],
+          "lignes": [
+            ["1. J'observe", "Qu'est-ce qui ne marche pas, exactement ?", "Page blanche, message d'erreur, lenteur."],
+            ["2. Je cherche la cause", "Qu'est-ce qui pourrait causer ça ?", "Wifi coupé, serveur en panne, page supprimée."],
+            ["3. J'essaie une solution", "Je teste une solution logique.", "Rafraîchir la page, vérifier le wifi, aller ailleurs."],
+            ["4. Je vérifie", "Est-ce que ça marche maintenant ?", "La page s'affiche ? L'erreur a disparu ?"],
+            ["5. Je recommence ou je demande de l'aide", "Si ça ne marche pas : autre solution, ou aide.", "Chercher « Erreur 404 » en ligne, appeler le support."]
+          ]
+        },
+        { "type": "sous_titre", "texte": "Un exemple" },
+        {
+          "type": "liste",
+          "numerotee": true,
+          "elements": [
+            "**J'observe** : la page YouTube reste blanche.",
+            "**Je cherche la cause** : peut-être que je n'ai pas de connexion Internet.",
+            "**J'essaie une solution** : je regarde le wifi. Il est éteint. Je l'allume.",
+            "**Je vérifie** : la page s'affiche. C'est résolu !"
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Plusieurs chemins",
+          "texte": "Souvent, plusieurs solutions peuvent marcher. On avance en essayant. Ce n'est pas grave si la première solution ne marche pas."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s4-e04",
+          "type": "qcm_unique",
+          "question": "Quelque chose ne marche pas. Quelle est la première étape de la méthode ?",
+          "options": [
+            { "id": "a", "texte": "J'éteins tout." },
+            { "id": "b", "texte": "J'observe ce qui ne marche pas." },
+            { "id": "c", "texte": "Je demande tout de suite à quelqu'un de le faire à ma place." },
+            { "id": "d", "texte": "Je clique partout." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "On commence par observer : page blanche ? message d'erreur ? lenteur ? Bien observer aide à trouver la cause, puis la bonne solution.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s4-e05",
+          "type": "qcm_multiple",
+          "question": "Vous allez sur un site. La page met 2 minutes à se charger. Quelles solutions pouvez-vous essayer ?",
+          "options": [
+            { "id": "a", "texte": "Attendre encore un peu." },
+            { "id": "b", "texte": "Rafraîchir la page (touche F5)." },
+            { "id": "c", "texte": "Donner mon mot de passe à une fenêtre qui promet d'accélérer Internet." },
+            { "id": "d", "texte": "Essayer un autre navigateur." },
+            { "id": "e", "texte": "Vérifier si le wifi marche bien." }
+          ],
+          "reponsesCorrectes": ["a", "b", "d", "e"],
+          "explicationCorrection": "Attendre, rafraîchir, changer de navigateur et vérifier le wifi sont de bonnes idées. Par contre, une fenêtre qui promet d'accélérer Internet contre votre mot de passe est un piège.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        }
+      ]
+    },
+    {
+      "id": "s4-etape-3",
+      "titre": "Mises en situation",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Voici 4 situations. Pour chacune, utilisez la méthode : j'observe, je cherche la cause, j'essaie, je vérifie." },
+        { "type": "paragraphe", "texte": "Il n'y a pas de réponse parfaite. Prenez votre temps." },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Le formateur est là",
+          "texte": "Essayez d'abord seul quelques minutes. Si vous êtes vraiment bloqué, levez la main."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s4-e06",
+          "type": "qcm_unique",
+          "question": "Situation 1. Vous voulez aller sur www.google.com. Rien ne s'affiche : la page reste blanche. Que faites-vous en premier ?",
+          "options": [
+            { "id": "a", "texte": "Je rafraîchis la page, puis je regarde si le wifi est connecté." },
+            { "id": "b", "texte": "Je désinstalle le navigateur." },
+            { "id": "c", "texte": "J'appelle le formateur sans rien regarder." },
+            { "id": "d", "texte": "Je clique partout sur l'écran." }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "On commence par les solutions simples : rafraîchir la page, puis vérifier la connexion. Souvent, le problème vient de la connexion, pas du site.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s4-e07",
+          "type": "qcm_unique",
+          "question": "Situation 2. On vous a donné un lien. Vous cliquez et vous voyez « Erreur 404 ». Que faites-vous ?",
+          "options": [
+            { "id": "a", "texte": "Je lis le message, je vérifie l'adresse, puis je vais sur l'accueil du site pour chercher la page." },
+            { "id": "b", "texte": "J'éteins l'ordinateur." },
+            { "id": "c", "texte": "Je recommence 50 fois le même lien." }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "404 veut dire : page introuvable. L'adresse est peut-être mal écrite, ou la page a changé de place. Depuis l'accueil du site, ou avec un moteur de recherche, vous pouvez souvent la retrouver.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s4-e08",
+          "type": "qcm_unique",
+          "question": "Situation 3. Vous regardez une vidéo. Elle se charge très lentement. Que pouvez-vous faire ?",
+          "options": [
+            { "id": "a", "texte": "Rien, c'est cassé pour toujours." },
+            { "id": "b", "texte": "Attendre un peu, rafraîchir, ou revenir plus tard." },
+            { "id": "c", "texte": "Acheter un nouvel ordinateur." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Une page peut être lente pour plusieurs raisons : connexion faible, site très chargé, vidéo lourde. Vous avez plusieurs options : attendre, rafraîchir, ou faire autre chose et revenir plus tard.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s4-e09",
+          "type": "qcm_unique",
+          "question": "Situation 4. Vous voulez vous connecter à votre compte. Le site dit : « Mot de passe incorrect ». Que faites-vous ?",
+          "options": [
+            { "id": "a", "texte": "J'essaie tous les mots de passe que je connais, 20 fois de suite." },
+            { "id": "b", "texte": "Je réessaie calmement. Si ça ne marche pas, je clique sur « Mot de passe oublié »." },
+            { "id": "c", "texte": "J'envoie mon mot de passe par email à quelqu'un pour qu'il vérifie." },
+            { "id": "d", "texte": "Je crée un nouveau compte à chaque fois." }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Vérifiez d'abord que la touche « Verr. Maj » n'est pas activée, puis réessayez calmement. Sinon, utilisez « Mot de passe oublié ». Trop d'essais peuvent bloquer le compte. Et on ne donne jamais son mot de passe à quelqu'un.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s4-e10",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Reprenez la situation 1 (page blanche). Racontez, étape par étape, ce que vous feriez.",
+          "reponseModele": "1. J'observe : la page reste blanche. 2. Je cherche la cause : peut-être pas de connexion. 3. J'essaie : je rafraîchis la page, puis je vérifie le wifi. 4. Je vérifie : la page s'affiche ? 5. Sinon, j'essaie un autre site ou je demande de l'aide.",
+          "explicationCorrection": "Votre réponse peut être différente. Vérifiez que vous avez suivi l'ordre de la méthode : observer, chercher la cause, essayer, vérifier, puis recommencer ou demander de l'aide.",
+          "difficulte": "difficile",
+          "tempsMinimumSecondes": 45
+        }
+      ]
+    },
+    {
+      "id": "s4-etape-4",
+      "titre": "Mon guide de dépannage",
+      "blocs": [
+        { "type": "paragraphe", "texte": "Voici votre guide de dépannage. Gardez-le avec vous. Quand vous avez un problème, regardez ce guide." },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Imprimer le guide",
+          "texte": "Vous pouvez imprimer cette page avec Ctrl + P."
+        },
+        { "type": "sous_titre", "texte": "La page ne s'affiche pas" },
+        {
+          "type": "liste",
+          "elements": [
+            "Vérifier ma connexion Internet : le wifi est-il allumé ?",
+            "Rafraîchir la page : touche F5, ou la flèche en rond.",
+            "Attendre : la page peut être lente.",
+            "Essayer une autre adresse : est-ce que le site existe ?",
+            "Fermer et rouvrir le navigateur."
+          ]
+        },
+        { "type": "sous_titre", "texte": "Erreur 404 (page introuvable)" },
+        {
+          "type": "liste",
+          "elements": [
+            "La page n'existe plus, ou l'adresse est mal écrite.",
+            "Vérifier l'adresse, ou retourner à l'accueil du site.",
+            "Chercher la page avec un moteur de recherche."
+          ]
+        },
+        { "type": "sous_titre", "texte": "Erreur de connexion" },
+        {
+          "type": "liste",
+          "elements": [
+            "Vérifier le wifi.",
+            "Essayer un autre site : le problème touche-t-il tous les sites, ou un seul ?",
+            "Redémarrer la box Internet.",
+            "Si un seul site ne marche pas : attendre qu'il soit réparé."
+          ]
+        },
+        { "type": "sous_titre", "texte": "La page est très lente" },
+        {
+          "type": "liste",
+          "elements": [
+            "Attendre un peu.",
+            "Rafraîchir la page.",
+            "Essayer un autre navigateur.",
+            "Vérifier que le wifi marche bien."
+          ]
+        },
+        { "type": "sous_titre", "texte": "Page « non sûre »" },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Attention",
+          "texte": "Ne vous connectez pas à un compte sur cette page. Ne tapez aucun mot de passe."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Fermer la page et aller ailleurs.",
+            "Si c'est un site connu, contacter son service d'aide."
+          ]
+        },
+        { "type": "sous_titre", "texte": "Je suis bloqué et rien ne marche" },
+        {
+          "type": "liste",
+          "elements": [
+            "Fermer et rouvrir le navigateur.",
+            "Redémarrer l'ordinateur.",
+            "Chercher le message d'erreur avec un moteur de recherche.",
+            "Demander de l'aide."
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s4-e11",
+          "type": "qcm_unique",
+          "question": "Un site ne marche pas. Vous voulez savoir si le problème vient de votre connexion ou de ce site seulement. Que faites-vous ?",
+          "options": [
+            { "id": "a", "texte": "J'essaie d'aller sur un autre site." },
+            { "id": "b", "texte": "J'efface tous mes favoris." },
+            { "id": "c", "texte": "Je change mon mot de passe." }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "Si les autres sites marchent, le problème vient de ce site seulement : il faut attendre qu'il soit réparé. Si aucun site ne marche, le problème vient sans doute de la connexion.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        }
+      ]
+    }
+  ]
+}
