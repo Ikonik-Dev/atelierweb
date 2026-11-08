@@ -501,7 +501,7 @@ Une entrée par évolution majeure : règle ajoutée, modifiée ou supprimée, n
 - **Décision** :
   - ajout de `seance-6.json` (DNS, requête et réponse, fichiers d'une page, codes 200/301/304/404/500) et `seance-7.json` (manipulations dans l'onglet Réseau des outils de développement, cas de technicien support) ; contenu uniquement en JSON, aucun changement de code ;
   - les consignes de ces séances renvoient vers Teams plutôt que « levez la main » ;
-  - la preuve de travail est le fichier d'export existant (« Enregistrer mon travail dans un fichier »), envoyé au formateur sur Teams ;
+  - la preuve de travail est le fichier d'export existant (« Enregistrer mon travail dans un fichier »), envoyé au formateur sur Discord, en message privé (les points de la journée restent sur Teams) ;
   - chaque mission F12 a un tableau « Ce que l'on voit » : chemin équivalent pour un stagiaire qui ne peut pas utiliser les outils de développement (lecteur d'écran, fort zoom).
 - **Raison** : la séparation contenu/logique (D-001) permet d'ajouter des séances sans développeur ; les outils de développement sont présents dans Edge, Chrome, Firefox et Opera.
 - **Conséquences et limites acceptées** :
