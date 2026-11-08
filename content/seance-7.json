@@ -1,0 +1,668 @@
+{
+  "version": 1,
+  "id": "seance-7",
+  "titre": "Enquête : observer les échanges avec F12",
+  "objectifs": [
+    "ouvrir les outils de développement du navigateur ;",
+    "voir les requêtes et les réponses dans l'onglet Réseau ;",
+    "lire un code de réponse pour comprendre une panne."
+  ],
+  "etapes": [
+    {
+      "id": "s7-etape-1",
+      "titre": "Ouvrir les outils du navigateur",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Les navigateurs ont des outils cachés. Les développeurs et les techniciens s'en servent tous les jours."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Aujourd'hui, vous allez utiliser l'onglet **Réseau**. Il montre toutes les requêtes et toutes les réponses."
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Vous ne pouvez rien casser",
+          "texte": "Ces outils regardent ce qui se passe. Ils ne changent rien sur le site. Si vous êtes perdu, fermez-les avec F12."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Comment les ouvrir"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Appuyez sur la touche **F12** du clavier.",
+            "Ou bien : appuyez en même temps sur **Ctrl**, **Maj** et **I**.",
+            "Ou bien, dans le menu du navigateur (les 3 points ou les 3 traits en haut à droite) : « Plus d'outils », puis « Outils de développement »."
+          ]
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Une fenêtre s'ouvre, souvent en bas ou à droite de la page. En haut de cette fenêtre, il y a des onglets."
+        },
+        {
+          "type": "liste",
+          "numerotee": true,
+          "elements": [
+            "Cliquez sur l'onglet **Réseau**. En anglais, il s'appelle **Network**.",
+            "Cochez la case **Désactiver le cache**. En anglais : **Disable cache**. Ainsi, le navigateur redemande tous les fichiers à chaque fois."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Les outils prennent trop de place ?",
+          "texte": "Vous pouvez agrandir la fenêtre du navigateur. Vous pouvez aussi tirer le bord des outils avec la souris."
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Si vous ne pouvez pas utiliser ces outils",
+          "texte": "Par exemple avec un lecteur d'écran ou un fort zoom. Prévenez le formateur sur Teams. Puis utilisez le tableau « Ce que l'on voit » de chaque mission pour répondre."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous êtes bloqué",
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Teams. Dites le numéro de la séance et de l'exercice."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s7-e01",
+          "type": "qcm_unique",
+          "question": "Quelle touche ouvre les outils de développement ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Échap"
+            },
+            {
+              "id": "b",
+              "texte": "F5"
+            },
+            {
+              "id": "c",
+              "texte": "F12"
+            },
+            {
+              "id": "d",
+              "texte": "Entrée"
+            }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "F12 ouvre et ferme les outils. F5, vous allez vous en servir juste après : elle recharge la page.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s7-e02",
+          "type": "texte_libre",
+          "mode": "comparaison",
+          "question": "Comment s'appelle l'onglet qui montre les requêtes ? Écrivez son nom en français ou en anglais.",
+          "reponsesAcceptees": [
+            "réseau",
+            "reseau",
+            "network"
+          ],
+          "fautesAcceptees": 1,
+          "reponseModele": "Réseau (en anglais : Network)",
+          "explicationCorrection": "L'onglet Réseau montre chaque fichier demandé, et la réponse du serveur.",
+          "difficulte": "facile"
+        }
+      ]
+    },
+    {
+      "id": "s7-etape-2",
+      "titre": "Mission 1 : regarder l'atelier se charger",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Votre première enquête porte sur cette application, l'atelier."
+        },
+        {
+          "type": "liste",
+          "numerotee": true,
+          "elements": [
+            "Gardez les outils ouverts sur l'onglet Réseau.",
+            "Appuyez sur **F5** pour recharger la page.",
+            "Regardez la liste qui se remplit. Chaque ligne est une requête."
+          ]
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Pour chaque ligne, regardez surtout deux colonnes :"
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            {
+              "terme": "Nom (Name, ou Fichier)",
+              "definition": "Le nom du fichier demandé."
+            },
+            {
+              "terme": "État (Status)",
+              "definition": "Le code de la réponse du serveur. Par exemple : 200."
+            }
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Vous ne trouvez pas un fichier ?",
+          "texte": "Il y a souvent une case « Filtrer » en haut de la liste. Tapez une partie du nom, par exemple « seance ». La liste n'affiche plus que les fichiers qui contiennent ce mot."
+        },
+        {
+          "type": "tableau",
+          "legende": "Ce que l'on voit : extrait de la liste après rechargement",
+          "entetes": [
+            "Nom",
+            "État",
+            "Type"
+          ],
+          "lignes": [
+            [
+              "atelierweb/ (la page principale)",
+              "200",
+              "document (HTML)"
+            ],
+            [
+              "styles.css",
+              "200",
+              "feuille de style (CSS)"
+            ],
+            [
+              "app.js",
+              "200",
+              "script (JavaScript)"
+            ],
+            [
+              "interface.json",
+              "200",
+              "données"
+            ],
+            [
+              "seance-1.json",
+              "200",
+              "données"
+            ],
+            [
+              "seance-6.json",
+              "200",
+              "données"
+            ],
+            [
+              "… et une quinzaine d'autres lignes",
+              "200",
+              "…"
+            ]
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s7-e03",
+          "type": "qcm_unique",
+          "question": "Après avoir rechargé la page, combien de lignes voyez-vous à peu près dans l'onglet Réseau ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Une seule ligne."
+            },
+            {
+              "id": "b",
+              "texte": "Environ 3 lignes."
+            },
+            {
+              "id": "c",
+              "texte": "Plus de 10 lignes."
+            }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "L'atelier demande une vingtaine de fichiers : la page, le style, les programmes JavaScript, les contenus des séances. Une seule page = beaucoup de requêtes, comme vu ce matin.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 30
+        },
+        {
+          "id": "s7-e04",
+          "type": "qcm_unique",
+          "question": "Cherchez la ligne « seance-1.json ». Quel est son état (son code) ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "200"
+            },
+            {
+              "id": "b",
+              "texte": "404"
+            },
+            {
+              "id": "c",
+              "texte": "500"
+            },
+            {
+              "id": "d",
+              "texte": "Je ne trouve pas cette ligne."
+            }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "200 : tout va bien, le serveur a envoyé le fichier. Ce fichier contient les textes et les questions de la séance 1. Si vous ne trouviez pas la ligne, utilisez la case « Filtrer » la prochaine fois.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 30
+        },
+        {
+          "id": "s7-e05",
+          "type": "qcm_unique",
+          "question": "Le fichier « styles.css » est dans la liste. À quoi sert-il ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Il contient les questions des exercices."
+            },
+            {
+              "id": "b",
+              "texte": "Il donne les couleurs et la mise en forme de l'atelier."
+            },
+            {
+              "id": "c",
+              "texte": "Il enregistre votre travail."
+            },
+            {
+              "id": "d",
+              "texte": "Il trouve l'adresse IP du serveur."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le fichier CSS donne l'apparence : couleurs, tailles, placement. C'est la peinture du meuble en kit.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s7-e06",
+          "type": "qcm_unique",
+          "question": "Vous voyez beaucoup de fichiers qui finissent par « .js ». Qu'est-ce que c'est ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Des images."
+            },
+            {
+              "id": "b",
+              "texte": "Des programmes JavaScript : ils font réagir l'atelier quand vous cliquez."
+            },
+            {
+              "id": "c",
+              "texte": "Des pages d'erreur."
+            },
+            {
+              "id": "d",
+              "texte": "Des vidéos."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Les fichiers .js sont des programmes JavaScript. Par exemple, ils activent le bouton « Valider ma réponse » et affichent la correction.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        }
+      ]
+    },
+    {
+      "id": "s7-etape-3",
+      "titre": "Mission 2 : provoquer une erreur 404",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Maintenant, vous allez demander une page qui n'existe pas. Exprès."
+        },
+        {
+          "type": "liste",
+          "numerotee": true,
+          "elements": [
+            "Ouvrez un **nouvel onglet** (Ctrl + T).",
+            "Ouvrez les outils (F12), sur l'onglet Réseau.",
+            "Copiez l'adresse de l'atelier dans la barre d'adresse.",
+            "À la fin de l'adresse, ajoutez : **page-qui-n-existe-pas**",
+            "Appuyez sur Entrée. Regardez la page et la première ligne de l'onglet Réseau.",
+            "Fermez cet onglet et revenez à l'atelier."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Un exemple d'adresse",
+          "texte": "Si l'adresse de l'atelier finit par « /atelierweb/ », la nouvelle adresse finit par « /atelierweb/page-qui-n-existe-pas »."
+        },
+        {
+          "type": "tableau",
+          "legende": "Ce que l'on voit",
+          "entetes": [
+            "Nom",
+            "État",
+            "Ce qui s'affiche"
+          ],
+          "lignes": [
+            [
+              "page-qui-n-existe-pas",
+              "404",
+              "Une page « 404 – File not found » du serveur GitHub."
+            ]
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s7-e07",
+          "type": "qcm_unique",
+          "question": "Quel est l'état (le code) de la page « page-qui-n-existe-pas » ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "200"
+            },
+            {
+              "id": "b",
+              "texte": "404"
+            },
+            {
+              "id": "c",
+              "texte": "500"
+            },
+            {
+              "id": "d",
+              "texte": "304"
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "404 : le serveur dit « je n'ai pas cette page ». Vous avez demandé une adresse qui n'existe pas. Le problème vient de la demande.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s7-e08",
+          "type": "qcm_unique",
+          "question": "Une page d'erreur s'est affichée. Qui l'a envoyée ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Votre ordinateur, tout seul."
+            },
+            {
+              "id": "b",
+              "texte": "Le serveur. Il a reçu la demande et il a répondu « introuvable »."
+            },
+            {
+              "id": "c",
+              "texte": "Personne : la connexion internet était coupée."
+            },
+            {
+              "id": "d",
+              "texte": "Le DNS."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le serveur a bien reçu votre demande. Il a répondu avec une page d'erreur et le code 404. Si internet était coupé, il n'y aurait aucune réponse du serveur, et le navigateur afficherait son propre message.",
+          "difficulte": "difficile",
+          "tempsMinimumSecondes": 20
+        }
+      ]
+    },
+    {
+      "id": "s7-etape-4",
+      "titre": "Mission 3 : enquêter sur un vrai site",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Comparons avec un grand site public."
+        },
+        {
+          "type": "liste",
+          "numerotee": true,
+          "elements": [
+            "Ouvrez un nouvel onglet.",
+            "Ouvrez les outils (F12), sur l'onglet Réseau. Vérifiez que « Désactiver le cache » est coché.",
+            "Allez sur **service-public.fr**.",
+            "Attendez que la page soit chargée.",
+            "Regardez la barre tout en bas de l'onglet Réseau. Elle donne le nombre de requêtes."
+          ]
+        },
+        {
+          "type": "tableau",
+          "legende": "Ce que l'on voit (les chiffres changent d'un jour à l'autre)",
+          "entetes": [
+            "Information",
+            "Exemple"
+          ],
+          "lignes": [
+            [
+              "Nombre de requêtes",
+              "Plusieurs dizaines"
+            ],
+            [
+              "Types de fichiers",
+              "HTML, CSS, JavaScript, images, polices de caractères"
+            ],
+            [
+              "Serveurs contactés",
+              "Le serveur du site, mais aussi d'autres serveurs"
+            ]
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Plusieurs serveurs pour une seule page",
+          "texte": "Une page peut demander des fichiers à plusieurs serveurs. Par exemple : un serveur pour les images, un autre pour compter les visites. C'est normal. Mais c'est aussi pour cela que des entreprises suivent ce que vous faites sur le web."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s7-e09",
+          "type": "qcm_unique",
+          "question": "Comparez avec l'atelier. Le site service-public.fr fait-il plus ou moins de requêtes ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Moins de requêtes."
+            },
+            {
+              "id": "b",
+              "texte": "Plus de requêtes."
+            },
+            {
+              "id": "c",
+              "texte": "Exactement le même nombre."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Un grand site a plus d'images, plus de programmes et plus de mises en forme. Donc plus de fichiers, donc plus de requêtes.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 30
+        },
+        {
+          "id": "s7-e10",
+          "type": "qcm_unique",
+          "question": "Pourquoi une page avec beaucoup de requêtes peut-elle être lente ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Parce que l'écran est trop petit."
+            },
+            {
+              "id": "b",
+              "texte": "Parce que chaque fichier doit être demandé puis reçu. Plus il y a de fichiers, plus il y a d'allers-retours."
+            },
+            {
+              "id": "c",
+              "texte": "Parce que le DNS est fermé le soir."
+            },
+            {
+              "id": "d",
+              "texte": "Parce que le navigateur est trop récent."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Chaque requête est un aller-retour entre le client et le serveur. Avec une connexion lente, tous ces allers-retours s'additionnent.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        }
+      ]
+    },
+    {
+      "id": "s7-etape-5",
+      "titre": "Mission 4 : jouer au technicien",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Vous êtes technicien support. Des utilisateurs vous appellent. Vous ouvrez l'onglet Réseau pour comprendre."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "La bonne méthode",
+          "texte": "Observer, chercher la cause, puis agir. Comme dans la séance 4."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Code en **4** : la demande a un problème. Vérifiez l'adresse, le lien.",
+            "Code en **5** : le serveur a un problème. Prévenez les personnes qui gèrent le site.",
+            "**Aucune réponse** du serveur : vérifiez d'abord la connexion internet de l'utilisateur."
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s7-e11",
+          "type": "qcm_unique",
+          "question": "Une collègue dit : « Le site interne ne marche plus. » Dans l'onglet Réseau, la page principale a le code 500. Que faites-vous ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Je lui dis de changer d'ordinateur."
+            },
+            {
+              "id": "b",
+              "texte": "Je préviens l'équipe qui gère le serveur du site."
+            },
+            {
+              "id": "c",
+              "texte": "Je lui dis de vérifier l'orthographe de l'adresse."
+            },
+            {
+              "id": "d",
+              "texte": "Je supprime ses favoris."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "500 : le problème est dans le serveur. Ni la collègue ni son ordinateur ne sont en cause. Il faut prévenir les personnes qui gèrent ce serveur.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s7-e12",
+          "type": "qcm_unique",
+          "question": "Un utilisateur dit : « Il manque le logo sur la page. » Tout est en 200, sauf la ligne « logo.png » en 404. Que pensez-vous ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Tout le site est en panne."
+            },
+            {
+              "id": "b",
+              "texte": "Le fichier du logo est introuvable. Le reste de la page fonctionne."
+            },
+            {
+              "id": "c",
+              "texte": "L'ordinateur de l'utilisateur a un virus."
+            },
+            {
+              "id": "d",
+              "texte": "Le DNS ne marche pas."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Une seule requête est en erreur. La page s'affiche, mais sans le logo. Il faut signaler à l'équipe du site que l'image manque ou que son adresse est fausse.",
+          "difficulte": "difficile",
+          "tempsMinimumSecondes": 25
+        },
+        {
+          "id": "s7-e13",
+          "type": "qcm_unique",
+          "question": "Un utilisateur dit : « Aucun site ne s'ouvre. » L'onglet Réseau n'affiche aucune réponse, sur aucun site. Que vérifiez-vous en premier ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "La connexion internet de l'utilisateur : wifi, câble, box."
+            },
+            {
+              "id": "b",
+              "texte": "Le code 500 du serveur."
+            },
+            {
+              "id": "c",
+              "texte": "Les couleurs du fichier CSS."
+            },
+            {
+              "id": "d",
+              "texte": "L'historique de navigation."
+            }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "Aucun site ne répond : le problème est sûrement du côté du client. On vérifie d'abord la connexion. C'est la cause la plus fréquente.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        }
+      ]
+    },
+    {
+      "id": "s7-etape-6",
+      "titre": "Bilan et preuve de travail",
+      "blocs": [
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "À retenir",
+          "elements": [
+            "F12 ouvre les outils de développement.",
+            "L'onglet Réseau montre chaque requête et chaque réponse.",
+            "Le code de la réponse aide à trouver d'où vient une panne.",
+            "Ces outils servent tous les jours aux développeurs et aux techniciens."
+          ]
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Ce matin, vous avez répondu à une question. Répondez à la même question maintenant. Puis comparez."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous avez fini en avance",
+          "texte": "Refaites la mission 3 avec un autre site que vous utilisez souvent. Comptez les requêtes. Cherchez une ligne qui n'est pas en 200."
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Avant le rendez-vous Teams de fin de journée",
+          "elements": [
+            "Cliquez sur « Enregistrer mon travail dans un fichier », en bas de la page.",
+            "Le fichier est souvent dans le dossier « Téléchargements ».",
+            "Envoyez ce fichier au formateur sur Discord, en message privé. C'est la preuve de votre travail de la journée."
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s7-e14",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Avec vos mots : que se passe-t-il quand vous tapez une adresse et appuyez sur Entrée ?",
+          "reponseModele": "Le DNS trouve l'adresse IP du serveur. Le navigateur envoie une requête. Le serveur répond avec un code (200 si tout va bien) et un fichier HTML. Ce fichier demande d'autres fichiers : CSS, JavaScript, images. Le navigateur assemble tout et affiche la page.",
+          "explicationCorrection": "Comparez avec votre réponse de ce matin (séance 6, exercice 1). Qu'avez-vous ajouté ? C'est ce que vous avez appris aujourd'hui.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 45
+        }
+      ]
+    }
+  ]
+}

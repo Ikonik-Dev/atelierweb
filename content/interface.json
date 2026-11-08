@@ -10,7 +10,9 @@
     "seance-2.json",
     "seance-3.json",
     "seance-4.json",
-    "seance-5.json"
+    "seance-5.json",
+    "seance-6.json",
+    "seance-7.json"
   ],
   "titrePage": {
     "accueil": "Accueil — {application}",
