@@ -6,7 +6,7 @@
 >
 > Si une demande contredit une règle de ce fichier, **le signaler explicitement avant d'implémenter**. Ne jamais trancher en silence (voir section 5).
 
-**Dernière mise à jour** : 2026-09-14
+**Dernière mise à jour** : 2026-11-08
 
 ---
 
@@ -33,7 +33,7 @@
 
 - **FALC** (Facile à lire et à comprendre) : phrases courtes, une idée par phrase, mots du quotidien, tout mot technique expliqué.
 - **Analogies de la vie quotidienne en Île-de-France** : métro parisien, courrier postal, adresse postale, bibliothèque de quartier, feux de signalisation, etc.
-- Découpage : **5 séances**, illustrées par **9 illustrations**.
+- Découpage : **7 séances** (5 séances du livret d'origine + 2 séances client/serveur, voir D-009), illustrées par **9 illustrations**.
 
 ### 1.3 Objectif technique
 
@@ -43,7 +43,7 @@
 
 ### 1.4 Déroulé d'une séance
 
-- La séance a lieu **en présentiel**.
+- La séance a lieu **en présentiel**, ou **à distance** les jours de télétravail des stagiaires (voir D-009).
 - Les stagiaires avancent **en autonomie partielle** sur leur poste.
 - Le formateur **circule entre les stagiaires**. Il n'est pas en permanence à côté de chacun.
 
@@ -213,7 +213,9 @@ culture-web/
 │   ├── seance-2.json
 │   ├── seance-3.json
 │   ├── seance-4.json
-│   └── seance-5.json
+│   ├── seance-5.json
+│   ├── seance-6.json           # Client et serveur : le trajet d'une page (D-009)
+│   └── seance-7.json           # Enquête avec F12, onglet Réseau (D-009)
 │
 └── assets/
     └── images/                 # Les 9 illustrations
@@ -489,3 +491,22 @@ Une entrée par évolution majeure : règle ajoutée, modifiée ou supprimée, n
 - **Raison** : règle 2.4 (aucune donnée de santé ou de handicap dans le fichier exporté) ; le livret prévoit la transmission à l'équipe avec consentement, sur papier.
 - **Conséquences et limites acceptées** : pas de version numérique du bilan.
 - **Sections du CLAUDE.md impactées** : 2.4
+
+### D-009 — Séances 6 et 7 sur le client/serveur, utilisables à distance
+
+- **Date** : 2026-11-08
+- **Statut** : Acceptée (demandée par le formateur)
+- **Demandée ou validée par** : formateur
+- **Contexte** : journée « Culture Web et fonctionnement client/serveur » pour un groupe ayant déjà fait les séances 1 à 5. Ce jour-là, les stagiaires sont en télétravail : autonomie, auto-correction, points Teams avec le formateur au début, à midi et en fin de journée, et envoi d'une preuve de travail. Deux règles du fichier étaient contredites : « 5 séances » (1.2) et « séance en présentiel » (1.4).
+- **Décision** :
+  - ajout de `seance-6.json` (DNS, requête et réponse, fichiers d'une page, codes 200/301/304/404/500) et `seance-7.json` (manipulations dans l'onglet Réseau des outils de développement, cas de technicien support) ; contenu uniquement en JSON, aucun changement de code ;
+  - les consignes de ces séances renvoient vers Teams plutôt que « levez la main » ;
+  - la preuve de travail est le fichier d'export existant (« Enregistrer mon travail dans un fichier »), envoyé au formateur sur Teams ;
+  - chaque mission F12 a un tableau « Ce que l'on voit » : chemin équivalent pour un stagiaire qui ne peut pas utiliser les outils de développement (lecteur d'écran, fort zoom).
+- **Raison** : la séparation contenu/logique (D-001) permet d'ajouter des séances sans développeur ; les outils de développement sont présents dans Edge, Chrome, Firefox et Opera.
+- **Conséquences et limites acceptées** :
+  - les missions de la séance 7 dépendent de l'état du site en ligne (nombre de requêtes approximatif, page 404 de GitHub Pages) ; les questions demandent des ordres de grandeur, pas des chiffres exacts ;
+  - le fichier d'export est en JSON, peu lisible à l'œil : pour le consulter, le formateur l'importe dans une fenêtre de navigation privée ;
+  - les textes d'accueil communs (`interface.json`) parlent encore de « lever la main » : non modifiés, car les autres jours restent en présentiel ;
+  - test NVDA non réalisé lors de cet ajout (contenu seul, aucun composant nouveau).
+- **Sections du CLAUDE.md impactées** : 1.2, 1.4, 3.1

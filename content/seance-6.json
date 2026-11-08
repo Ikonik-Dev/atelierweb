@@ -1,0 +1,691 @@
+{
+  "version": 1,
+  "id": "seance-6",
+  "titre": "Client et serveur : le trajet d'une page",
+  "objectifs": [
+    "comprendre ce qui se passe quand vous tapez une adresse ;",
+    "savoir à quoi sert l'annuaire du web (le DNS) ;",
+    "savoir qu'une page web est faite de plusieurs fichiers ;",
+    "comprendre les réponses du serveur : 200, 404, 500."
+  ],
+  "etapes": [
+    {
+      "id": "s6-etape-1",
+      "titre": "Une journée en autonomie",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Aujourd'hui, vous travaillez depuis chez vous. Vous avancez seul, à votre rythme."
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Le programme de la journée",
+          "elements": [
+            "Le matin : la séance 6, sur le trajet d'une page web.",
+            "L'après-midi : la séance 7, une enquête avec les outils du navigateur.",
+            "Rendez-vous sur Teams avec le formateur : au début de la journée, à midi et en fin de journée."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "À la fin de la journée",
+          "elements": [
+            "Cliquez sur « Enregistrer mon travail dans un fichier ». Ce bouton est en bas de la page.",
+            "Envoyez ce fichier au formateur sur Teams. C'est la preuve de votre travail."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous êtes bloqué",
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Teams. Dites le numéro de la séance et de l'exercice."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Pour commencer, une question sans note. Écrivez ce que vous pensez. Ce soir, vous comparerez avec ce que vous avez appris."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s6-e01",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Avec vos mots : que se passe-t-il quand vous tapez une adresse et appuyez sur Entrée ?",
+          "reponseModele": "Il n'y a pas de mauvaise réponse. Par exemple : « Mon ordinateur demande la page à un serveur. Le serveur l'envoie. Le navigateur l'affiche. »",
+          "explicationCorrection": "Gardez votre réponse en tête. À la fin de la séance 7, vous répondrez à la même question.",
+          "difficulte": "facile"
+        }
+      ]
+    },
+    {
+      "id": "s6-etape-2",
+      "titre": "L'annuaire du web",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Vous voulez appeler un ami. Vous connaissez son nom, mais pas son numéro par cœur."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Vous cherchez son nom dans les contacts de votre téléphone. Le téléphone trouve le numéro. Ensuite, il appelle."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Sur le web, c'est pareil"
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Les ordinateurs ne comprennent pas les noms comme « service-public.fr ». Ils ont besoin d'un numéro."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Ce numéro s'appelle une **adresse IP**. Par exemple : 160.92.168.33."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Un annuaire géant fait le lien entre le nom et le numéro. Cet annuaire s'appelle le **DNS**."
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            {
+              "terme": "Le nom de domaine",
+              "definition": "Le nom du site, facile à retenir pour les humains. Par exemple : service-public.fr."
+            },
+            {
+              "terme": "L'adresse IP",
+              "definition": "Le numéro d'un ordinateur sur Internet. Il est fait de chiffres séparés par des points."
+            },
+            {
+              "terme": "Le DNS",
+              "definition": "L'annuaire d'Internet. Il trouve l'adresse IP qui correspond à un nom de domaine."
+            }
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Bon à savoir",
+          "texte": "Tout cela se passe en une fraction de seconde. Vous ne le voyez pas."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s6-e02",
+          "type": "qcm_unique",
+          "question": "À quoi sert le DNS ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "À afficher les couleurs de la page."
+            },
+            {
+              "id": "b",
+              "texte": "À trouver le numéro (l'adresse IP) d'un site à partir de son nom."
+            },
+            {
+              "id": "c",
+              "texte": "À protéger l'ordinateur contre les virus."
+            },
+            {
+              "id": "d",
+              "texte": "À ranger les favoris."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le DNS, c'est l'annuaire du web. Comme les contacts de votre téléphone : vous cherchez un nom, il vous donne le numéro.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 10
+        },
+        {
+          "id": "s6-e03",
+          "type": "qcm_unique",
+          "question": "Lequel de ces exemples est une adresse IP ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "www.ameli.fr"
+            },
+            {
+              "id": "b",
+              "texte": "Ameli"
+            },
+            {
+              "id": "c",
+              "texte": "185.45.12.7"
+            },
+            {
+              "id": "d",
+              "texte": "ameli@ameli.fr"
+            }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "Une adresse IP est faite de chiffres séparés par des points. « www.ameli.fr » est un nom de domaine. Le DNS fait le lien entre les deux.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 10
+        },
+        {
+          "id": "s6-e04",
+          "type": "qcm_unique",
+          "question": "Le DNS ne répond pas. Que se passe-t-il ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "La page s'affiche quand même, mais sans couleurs."
+            },
+            {
+              "id": "b",
+              "texte": "Le navigateur ne trouve pas le serveur. La page ne s'affiche pas."
+            },
+            {
+              "id": "c",
+              "texte": "L'ordinateur s'éteint."
+            },
+            {
+              "id": "d",
+              "texte": "Le site est supprimé."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Sans annuaire, l'ordinateur ne connaît pas le numéro du serveur. Il ne peut pas lui envoyer de demande. Le navigateur affiche alors un message comme « Ce site est inaccessible ».",
+          "difficulte": "difficile",
+          "tempsMinimumSecondes": 15
+        }
+      ]
+    },
+    {
+      "id": "s6-etape-3",
+      "titre": "La demande et la réponse",
+      "blocs": [
+        {
+          "type": "illustration",
+          "fichier": "assets/images/02-client-serveur-courrier.png",
+          "alt": "Dessin : à gauche, une personne assise devant son ordinateur poste une lettre dans une boîte aux lettres. Au milieu, une flèche bleue va vers la droite et une flèche rouge revient vers la gauche. À droite, un bâtiment de la poste porte le mot « Serveur ».",
+          "legende": "Le client envoie une demande. Le serveur envoie une réponse."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Vous connaissez déjà le **client** (votre ordinateur) et le **serveur** (l'ordinateur qui garde le site)."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Voici le trajet complet d'une page, étape par étape."
+        },
+        {
+          "type": "liste",
+          "numerotee": true,
+          "elements": [
+            "Vous tapez l'adresse et vous appuyez sur Entrée.",
+            "Le DNS trouve l'adresse IP du serveur.",
+            "Le navigateur envoie une **demande** au serveur : « Envoyez-moi cette page, s'il vous plaît. »",
+            "Le serveur cherche la page.",
+            "Le serveur envoie une **réponse**. Elle contient un code et la page.",
+            "Le navigateur lit la réponse et affiche la page."
+          ]
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            {
+              "terme": "Une requête",
+              "definition": "Le mot des informaticiens pour « une demande ». Le client envoie une requête au serveur."
+            },
+            {
+              "terme": "Une réponse",
+              "definition": "Ce que le serveur renvoie. Il y a toujours un code, comme un tampon sur un colis."
+            },
+            {
+              "terme": "HTTP",
+              "definition": "La langue que parlent le navigateur et le serveur. C'est pour cela que les adresses commencent par http ou https."
+            }
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s6-e05",
+          "type": "qcm_unique",
+          "question": "Vous tapez une adresse et vous appuyez sur Entrée. Quelle est l'étape suivante ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le serveur envoie la page."
+            },
+            {
+              "id": "b",
+              "texte": "Le DNS trouve l'adresse IP du serveur."
+            },
+            {
+              "id": "c",
+              "texte": "Le navigateur affiche la page."
+            },
+            {
+              "id": "d",
+              "texte": "Le serveur cherche la page."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "D'abord, il faut savoir à qui écrire. Le DNS trouve le numéro du serveur. Ensuite seulement, le navigateur peut envoyer sa demande.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s6-e06",
+          "type": "qcm_unique",
+          "question": "Qui affiche la page sur votre écran ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le serveur."
+            },
+            {
+              "id": "b",
+              "texte": "Le DNS."
+            },
+            {
+              "id": "c",
+              "texte": "Le navigateur."
+            },
+            {
+              "id": "d",
+              "texte": "La box internet."
+            }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "Le serveur envoie les fichiers. Mais c'est le navigateur, sur votre ordinateur, qui les lit et qui dessine la page.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s6-e07",
+          "type": "qcm_unique",
+          "question": "Comment appelle-t-on la demande que le client envoie au serveur ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Une requête."
+            },
+            {
+              "id": "b",
+              "texte": "Un favori."
+            },
+            {
+              "id": "c",
+              "texte": "Un onglet."
+            },
+            {
+              "id": "d",
+              "texte": "Un historique."
+            }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "Une requête, c'est une demande. Le client envoie une requête. Le serveur renvoie une réponse.",
+          "difficulte": "facile"
+        }
+      ]
+    },
+    {
+      "id": "s6-etape-4",
+      "titre": "Une page, plusieurs fichiers",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Une page web arrive rarement en un seul morceau."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "C'est comme un meuble en kit. Il est livré en plusieurs colis : la notice, les planches, les vis, la peinture."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Pour une page web, le navigateur reçoit d'abord un fichier principal. Ce fichier lui dit quels autres fichiers demander. Le navigateur envoie alors une requête pour chacun."
+        },
+        {
+          "type": "tableau",
+          "legende": "Les fichiers d'une page web",
+          "entetes": [
+            "Fichier",
+            "Son rôle",
+            "Dans le meuble en kit"
+          ],
+          "lignes": [
+            [
+              "HTML",
+              "Le contenu et la structure : titres, textes, boutons.",
+              "La notice et les planches."
+            ],
+            [
+              "CSS",
+              "L'apparence : couleurs, tailles, placement.",
+              "La peinture et la décoration."
+            ],
+            [
+              "JavaScript",
+              "Les actions : ce qui bouge, ce qui réagit quand on clique.",
+              "Les charnières et les tiroirs qui s'ouvrent."
+            ],
+            [
+              "Images",
+              "Les photos, les dessins, les icônes.",
+              "Les poignées et les finitions."
+            ]
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "À retenir",
+          "texte": "Une seule page peut demander des dizaines de fichiers. Chaque fichier = une requête et une réponse."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s6-e08",
+          "type": "qcm_unique",
+          "question": "Quel fichier donne les couleurs et la mise en forme d'une page ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le fichier HTML."
+            },
+            {
+              "id": "b",
+              "texte": "Le fichier CSS."
+            },
+            {
+              "id": "c",
+              "texte": "Une image."
+            },
+            {
+              "id": "d",
+              "texte": "Le DNS."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le CSS s'occupe de l'apparence : couleurs, tailles, placement. Le HTML s'occupe du contenu.",
+          "difficulte": "facile"
+        },
+        {
+          "id": "s6-e09",
+          "type": "qcm_multiple",
+          "question": "Quels fichiers une page web peut-elle demander au serveur ? Cochez toutes les bonnes réponses.",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Un fichier HTML."
+            },
+            {
+              "id": "b",
+              "texte": "Un fichier CSS."
+            },
+            {
+              "id": "c",
+              "texte": "Des images."
+            },
+            {
+              "id": "d",
+              "texte": "Un fichier JavaScript."
+            },
+            {
+              "id": "e",
+              "texte": "Le mot de passe de votre boîte mail."
+            }
+          ],
+          "reponsesCorrectes": [
+            "a",
+            "b",
+            "c",
+            "d"
+          ],
+          "explicationCorrection": "Une page peut demander du HTML, du CSS, du JavaScript et des images. Elle ne demande jamais votre mot de passe en cachette : le serveur ne peut pas lire ce qui est sur votre ordinateur.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s6-e10",
+          "type": "qcm_unique",
+          "question": "Une page contient 1 fichier HTML, 1 fichier CSS et 3 images. Combien de requêtes le navigateur envoie-t-il, au minimum ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "1"
+            },
+            {
+              "id": "b",
+              "texte": "3"
+            },
+            {
+              "id": "c",
+              "texte": "5"
+            },
+            {
+              "id": "d",
+              "texte": "0"
+            }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "1 + 1 + 3 = 5. Chaque fichier demande une requête. C'est pour cela qu'une page avec beaucoup d'images est plus lente à charger.",
+          "difficulte": "difficile",
+          "tempsMinimumSecondes": 20
+        }
+      ]
+    },
+    {
+      "id": "s6-etape-5",
+      "titre": "Les réponses du serveur",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Le serveur répond toujours avec un **code**. C'est un nombre de 3 chiffres."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "C'est comme le tampon de la poste sur un courrier : il dit ce qui s'est passé."
+        },
+        {
+          "type": "tableau",
+          "legende": "Les codes de réponse les plus courants",
+          "entetes": [
+            "Code",
+            "Ce qu'il veut dire",
+            "Comme à la poste"
+          ],
+          "lignes": [
+            [
+              "200",
+              "Tout va bien. Voici le fichier.",
+              "Le colis est livré."
+            ],
+            [
+              "301",
+              "Le fichier a déménagé. Voici sa nouvelle adresse.",
+              "Le destinataire a déménagé. La lettre suit."
+            ],
+            [
+              "304",
+              "Rien n'a changé. Gardez la version que vous avez déjà.",
+              "Vous avez déjà reçu ce courrier."
+            ],
+            [
+              "404",
+              "Ce fichier n'existe pas ici.",
+              "Destinataire inconnu à cette adresse."
+            ],
+            [
+              "500",
+              "Le serveur a un problème.",
+              "Le bureau de poste est en panne."
+            ]
+          ]
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Une astuce de technicien"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Un code qui commence par **4** : le problème vient de la demande. Par exemple, une adresse mal tapée.",
+            "Un code qui commence par **5** : le problème vient du serveur. Vous ne pouvez rien y faire."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Dans les métiers du numérique",
+          "texte": "Un technicien support regarde ces codes pour savoir d'où vient une panne. C'est la première question à se poser : le problème est-il chez moi ou chez le serveur ?"
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s6-e11",
+          "type": "qcm_unique",
+          "question": "Le serveur répond avec le code 200. Qu'est-ce que cela veut dire ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Tout va bien. Le fichier est envoyé."
+            },
+            {
+              "id": "b",
+              "texte": "La page n'existe pas."
+            },
+            {
+              "id": "c",
+              "texte": "Le serveur est en panne."
+            },
+            {
+              "id": "d",
+              "texte": "Il faut 200 secondes pour charger."
+            }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "200 veut dire « tout va bien ». C'est la réponse la plus fréquente. Vous ne la voyez jamais, car la page s'affiche normalement.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 10
+        },
+        {
+          "id": "s6-e12",
+          "type": "qcm_unique",
+          "question": "Vous tapez une adresse avec une faute. Le site affiche « Erreur 404 ». Que faites-vous en premier ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Je redémarre l'ordinateur."
+            },
+            {
+              "id": "b",
+              "texte": "Je vérifie l'adresse dans la barre d'adresse."
+            },
+            {
+              "id": "c",
+              "texte": "J'appelle le serveur."
+            },
+            {
+              "id": "d",
+              "texte": "J'attends une heure."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "404 veut dire « cette page n'existe pas ici ». Le code commence par 4 : le problème vient souvent de la demande. Une faute dans l'adresse est la cause la plus fréquente.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s6-e13",
+          "type": "qcm_unique",
+          "question": "Un site affiche « Erreur 500 ». D'où vient le problème ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "De votre clavier."
+            },
+            {
+              "id": "b",
+              "texte": "De votre adresse mal tapée."
+            },
+            {
+              "id": "c",
+              "texte": "Du serveur du site."
+            },
+            {
+              "id": "d",
+              "texte": "De votre navigateur."
+            }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "Un code qui commence par 5 veut dire : le serveur a un problème. Vous ne pouvez pas le réparer. Vous pouvez réessayer plus tard, ou prévenir le site.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s6-e14",
+          "type": "qcm_unique",
+          "question": "Vous voyez « Erreur 404 » sur une page. Le serveur du site marche-t-il ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Non, le serveur est éteint."
+            },
+            {
+              "id": "b",
+              "texte": "Oui. Le serveur a répondu, mais il n'a pas trouvé la page demandée."
+            },
+            {
+              "id": "c",
+              "texte": "On ne peut pas savoir."
+            },
+            {
+              "id": "d",
+              "texte": "Non, c'est le DNS qui est en panne."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Pour envoyer le code 404, le serveur doit être allumé. Il a bien reçu la demande. Il répond simplement : « Je n'ai pas cette page. » C'est comme la poste qui renvoie une lettre avec « destinataire inconnu ».",
+          "difficulte": "difficile",
+          "tempsMinimumSecondes": 20
+        }
+      ]
+    },
+    {
+      "id": "s6-etape-6",
+      "titre": "Ce que je retiens",
+      "blocs": [
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "À retenir",
+          "elements": [
+            "Le DNS est l'annuaire du web. Il donne l'adresse IP d'un site.",
+            "Le client envoie une requête. Le serveur renvoie une réponse avec un code.",
+            "Une page web est faite de plusieurs fichiers : HTML, CSS, JavaScript, images.",
+            "200 : tout va bien. 404 : introuvable. 500 : le serveur a un problème."
+          ]
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Cet après-midi, dans la séance 7, vous allez **voir** ces requêtes et ces codes de vos propres yeux."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Avant la pause de midi",
+          "texte": "Cliquez sur « Enregistrer mon travail dans un fichier ». Si l'ordinateur s'éteint, votre travail est en sécurité."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s6-e15",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Expliquez avec vos mots la différence entre une erreur 404 et une erreur 500.",
+          "reponseModele": "404 : le serveur marche, mais la page demandée n'existe pas. Souvent, l'adresse est fausse. 500 : le serveur lui-même a un problème. Je ne peux rien y faire.",
+          "explicationCorrection": "Votre réponse n'a pas besoin d'être identique. L'important : 4 = problème dans la demande, 5 = problème dans le serveur.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 30
+        }
+      ]
+    }
+  ]
+}

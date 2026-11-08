@@ -1,6 +1,6 @@
 # Atelier « Culture informatique et Web »
 
-Application web interactive pour les stagiaires d'un ESRP. Elle reprend les 5 séances du livret « Culture informatique et environnement Web », en FALC (Facile à lire et à comprendre).
+Application web interactive pour les stagiaires d'un ESRP. Elle reprend les 5 séances du livret « Culture informatique et environnement Web », complétées par 2 séances sur le client/serveur, en FALC (Facile à lire et à comprendre).
 
 - **Aucun serveur, aucun compte, aucune base de données.** Le site est statique et hébergé sur GitHub Pages.
 - **Tout le contenu est dans des fichiers JSON** (dossier `content/`). Vous pouvez ajouter ou modifier des exercices **sans toucher au code**.
@@ -60,7 +60,9 @@ culture-web/
 │   ├── seance-2.json           Séance 2 : Comment ça marche ?
 │   ├── seance-3.json           Séance 3 : Chercher et vérifier
 │   ├── seance-4.json           Séance 4 : Problèmes et solutions
-│   └── seance-5.json           Séance 5 : Sécurité, fiabilité et bilan
+│   ├── seance-5.json           Séance 5 : Sécurité, fiabilité et bilan
+│   ├── seance-6.json           Séance 6 : Client et serveur : le trajet d'une page
+│   └── seance-7.json           Séance 7 : Enquête : observer les échanges avec F12
 │
 └── assets/
     └── images/                 Les 9 illustrations (renommées et compressées)
