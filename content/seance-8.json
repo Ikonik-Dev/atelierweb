@@ -29,7 +29,7 @@
           "elements": [
             "Le matin : les étapes 2 à 5. Rappel, page toute prête ou fabriquée, formulaires, cookies.",
             "L'après-midi : les étapes 6 à 10. Où l'atelier garde votre travail, le cache, les données brutes, le cas du technicien.",
-            "Rendez-vous sur Teams avec le formateur : au début de la journée, à midi et en fin de journée."
+            "Rendez-vous sur Discord avec le formateur : au début de la journée, à midi et en fin de journée."
           ]
         },
         {
@@ -51,7 +51,7 @@
           "type": "encadre",
           "style": "astuce",
           "titre": "Si vous êtes bloqué",
-          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Teams. Dites le numéro de la séance et de l'exercice."
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Discord. Dites le numéro de la séance et de l'exercice."
         },
         {
           "type": "paragraphe",
@@ -432,7 +432,7 @@
           "type": "encadre",
           "style": "astuce",
           "titre": "Si vous êtes bloqué",
-          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Teams. Dites le numéro de la séance et de l'exercice."
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Discord. Dites le numéro de la séance et de l'exercice."
         }
       ],
       "exercices": [
@@ -766,13 +766,13 @@
           "type": "encadre",
           "style": "info",
           "titre": "Si vous ne pouvez pas utiliser ces outils",
-          "texte": "Par exemple avec un lecteur d'écran ou un fort zoom. Prévenez le formateur sur Teams. Puis utilisez le tableau « Ce que l'on voit » pour répondre."
+          "texte": "Par exemple avec un lecteur d'écran ou un fort zoom. Prévenez le formateur sur Discord. Puis utilisez le tableau « Ce que l'on voit » pour répondre."
         },
         {
           "type": "encadre",
           "style": "astuce",
           "titre": "Si vous êtes bloqué",
-          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Teams. Dites le numéro de la séance et de l'exercice."
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Discord. Dites le numéro de la séance et de l'exercice."
         }
       ],
       "exercices": [
@@ -811,7 +811,7 @@
             },
             {
               "id": "d",
-              "texte": "Sur Teams."
+              "texte": "Sur Discord."
             }
           ],
           "reponseCorrecte": "b",
@@ -1139,7 +1139,7 @@
           "type": "encadre",
           "style": "astuce",
           "titre": "Si l'adresse ne répond pas",
-          "texte": "Le service de l'État est peut-être en maintenance. Notez-le, prévenez le formateur sur Teams, puis répondez avec le tableau « Ce que l'on voit »."
+          "texte": "Le service de l'État est peut-être en maintenance. Notez-le, prévenez le formateur sur Discord, puis répondez avec le tableau « Ce que l'on voit »."
         },
         {
           "type": "paragraphe",
@@ -1426,7 +1426,7 @@
         {
           "type": "encadre",
           "style": "attention",
-          "titre": "Avant le rendez-vous Teams de fin de journée",
+          "titre": "Avant le rendez-vous Discord de fin de journée",
           "elements": [
             "Cliquez sur « Enregistrer mon travail dans un fichier », en bas de la page.",
             "Le fichier est souvent dans le dossier « Téléchargements ».",

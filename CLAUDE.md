@@ -191,7 +191,7 @@ culture-web/
 ├── CLAUDE.md                   # Ce fichier : référence normative du projet
 │
 ├── css/
-│   └── styles.css              # Styles accessibles (contrastes, focus, lisibilité FALC)
+│   └── styles.css              # Styles accessibles (contrastes, focus, lisibilité FALC), style commun PPNI (D-011)
 │
 ├── js/
 │   ├── app.js                  # Démarrage : choix de la séance, navigation entre exercices
@@ -219,6 +219,7 @@ culture-web/
 │   └── seance-8.json           # Ce que le serveur fabrique, ce que le navigateur garde (D-010)
 │
 └── assets/
+    ├── polices/                # Polices locales et leurs licences SIL OFL (D-011)
     └── images/                 # Les 9 illustrations
         ├── 01-internet-web-navigateur-metro.png
         ├── 02-client-serveur-courrier.png
@@ -498,11 +499,11 @@ Une entrée par évolution majeure : règle ajoutée, modifiée ou supprimée, n
 - **Date** : 2026-11-08
 - **Statut** : Acceptée (demandée par le formateur)
 - **Demandée ou validée par** : formateur
-- **Contexte** : journée « Culture Web et fonctionnement client/serveur » pour un groupe ayant déjà fait les séances 1 à 5. Ce jour-là, les stagiaires sont en télétravail : autonomie, auto-correction, points Teams avec le formateur au début, à midi et en fin de journée, et envoi d'une preuve de travail. Deux règles du fichier étaient contredites : « 5 séances » (1.2) et « séance en présentiel » (1.4).
+- **Contexte** : journée « Culture Web et fonctionnement client/serveur » pour un groupe ayant déjà fait les séances 1 à 5. Ce jour-là, les stagiaires sont en télétravail : autonomie, auto-correction, points avec le formateur au début, à midi et en fin de journée (sur Discord, voir D-011 ; Teams était indiqué par erreur), et envoi d'une preuve de travail. Deux règles du fichier étaient contredites : « 5 séances » (1.2) et « séance en présentiel » (1.4).
 - **Décision** :
   - ajout de `seance-6.json` (DNS, requête et réponse, fichiers d'une page, codes 200/301/304/404/500) et `seance-7.json` (manipulations dans l'onglet Réseau des outils de développement, cas de technicien support) ; contenu uniquement en JSON, aucun changement de code ;
-  - les consignes de ces séances renvoient vers Teams plutôt que « levez la main » ;
-  - la preuve de travail est le fichier d'export existant (« Enregistrer mon travail dans un fichier »), envoyé au formateur sur Discord, en message privé (les points de la journée restent sur Teams) ;
+  - les consignes de ces séances renvoient vers le formateur à distance plutôt que « levez la main » (Teams à l'origine, Discord depuis D-011) ;
+  - la preuve de travail est le fichier d'export existant (« Enregistrer mon travail dans un fichier »), envoyé au formateur sur Discord, en message privé ;
   - chaque mission F12 a un tableau « Ce que l'on voit » : chemin équivalent pour un stagiaire qui ne peut pas utiliser les outils de développement (lecteur d'écran, fort zoom).
 - **Raison** : la séparation contenu/logique (D-001) permet d'ajouter des séances sans développeur ; les outils de développement sont présents dans Edge, Chrome, Firefox et Opera.
 - **Conséquences et limites acceptées** :
@@ -517,7 +518,7 @@ Une entrée par évolution majeure : règle ajoutée, modifiée ou supprimée, n
 - **Date** : 2026-11-15
 - **Statut** : Acceptée (demandée par le formateur ; contenu à valider par lui, non essayé avec des stagiaires)
 - **Demandée ou validée par** : formateur
-- **Contexte** : nouvelle journée « Culture Web et fonctionnement client/serveur », en télétravail, pour le même groupe, qui a fini les séances 6 et 7. Même organisation que D-009 : autonomie, points Teams au début, à midi et en fin de journée, preuve de travail envoyée sur Discord.
+- **Contexte** : nouvelle journée « Culture Web et fonctionnement client/serveur », en télétravail, pour le même groupe, qui a fini les séances 6 et 7. Même organisation que D-009 : autonomie, points sur Discord au début, à midi et en fin de journée, preuve de travail envoyée sur Discord.
 - **Décision** :
   - ajout de `seance-8.json` : 11 étapes, 34 exercices `s8-e01` à `s8-e34`, dont 2 au choix (étape 10) ;
   - contenu : échauffement sur les séances 6 et 7 ; site statique ou dynamique (self-service ou restaurant) ; formulaires GET et POST (carte postale ou enveloppe), avec une mission sur l'adresse d'une page de résultats (`?q=`) ; cookies et sessions (ticket de vestiaire), règle française du refus aussi simple que l'acceptation ; **mission sur le stockage local de l'atelier lui-même** (clé `culture-web-progression`), qui explique le bouton « Enregistrer mon travail dans un fichier » ; le cache, le code 304 et Ctrl + F5 (le placard) ; une API publique de l'État en JSON (`geo.api.gouv.fr`) ; 3 cas de technicien support ;
@@ -534,3 +535,25 @@ Une entrée par évolution majeure : règle ajoutée, modifiée ou supprimée, n
   - le moteur de cet atelier n'a pas de champ `rappel` : chaque question est rédigée pour se comprendre seule ;
   - questions et corrigés rédigés par une IA, à relire par le formateur ; test NVDA non réalisé (contenu seul, aucun composant nouveau). Chargement des 45 écrans vérifié en navigateur automatisé à 360 px de large.
 - **Sections du CLAUDE.md impactées** : 1.2, 3.1
+
+### D-011 — Style commun des ateliers PPNI, couleur propre à Culture Web ; points sur Discord
+
+- **Date** : 2026-11-15
+- **Statut** : Acceptée (demandée par le formateur ; tests NVDA, clavier et zoom 200 % à refaire)
+- **Demandée ou validée par** : formateur
+- **Contexte** :
+  - le formateur veut le même style que l'atelier IA (dépôt `atelieria`, décision D-021 de ce dépôt), avec des couleurs différentes : il prévoit de regrouper ses ateliers derrière un portail « PPNI » ;
+  - les points de la journée en télétravail se font **sur Discord, pas sur Teams** : les séances 6, 7 et 8 et les décisions D-009 et D-010 l'indiquaient par erreur.
+- **Décision** :
+  - `css/styles.css` est remplacé par la feuille de l'atelier IA : en-tête sur une ligne, colonne « programme » à gauche sur grand écran, thèmes clair et sombre (`prefers-color-scheme`), surligneur sous le grand titre ;
+  - **seules les valeurs des variables de couleur diffèrent** : Culture Web en bleu-vert pétrole (`#00676f` en clair, `#5fd4cc` en sombre), fond gris-vert, surligneur pêche (`#ffc4a3`) ; l'atelier IA garde l'indigo et le jaune. Les couleurs de sens (juste, faux, attention, astuce) sont les mêmes dans les deux ateliers ;
+  - **signalé au formateur, règle 2.6** : les polices (Bricolage Grotesque, IBM Plex Sans, IBM Plex Mono) sont copiées dans `assets/polices/` avec leurs licences SIL OFL, jamais chargées depuis un service tiers ;
+  - contrastes vérifiés (règle 2.5) : en clair, texte 13,6:1, texte secondaire 5,7:1, couleur principale 6:1, contours 3,5:1, texte sur surligneur 9,8:1 ; en sombre, texte 15,8:1, texte secondaire 7:1, couleur principale 10,3:1, contours 3,7:1 ;
+  - « Teams » remplacé par « Discord » dans les séances 6, 7 et 8 (consignes et une option de réponse fausse de `s8-e19`) ; aucun identifiant modifié ;
+  - aucun changement de HTML ni de JavaScript : la structure de la page est la même que celle de l'atelier IA.
+- **Raison** : un seul style à maintenir pour tous les ateliers, une couleur par atelier pour s'y retrouver dans le futur portail.
+- **Conséquences et limites acceptées** :
+  - la feuille contient des règles propres à l'atelier IA (case « Pourquoi ? », rappel, téléchargement) qui ne servent pas ici : sans effet ;
+  - pour un futur atelier, il suffira de recopier la feuille et de changer les variables de couleur, en recalculant les contrastes ;
+  - tests faits en navigateur automatisé (thèmes clair et sombre, 320 px de large, aucune erreur) ; tests NVDA, clavier et zoom 200 % à refaire.
+- **Sections du CLAUDE.md impactées** : 2.5 et 2.6 (appliquées, non modifiées) ; 3.1 (`assets/polices/`)

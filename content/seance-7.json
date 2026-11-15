@@ -60,13 +60,13 @@
           "type": "encadre",
           "style": "info",
           "titre": "Si vous ne pouvez pas utiliser ces outils",
-          "texte": "Par exemple avec un lecteur d'écran ou un fort zoom. Prévenez le formateur sur Teams. Puis utilisez le tableau « Ce que l'on voit » de chaque mission pour répondre."
+          "texte": "Par exemple avec un lecteur d'écran ou un fort zoom. Prévenez le formateur sur Discord. Puis utilisez le tableau « Ce que l'on voit » de chaque mission pour répondre."
         },
         {
           "type": "encadre",
           "style": "astuce",
           "titre": "Si vous êtes bloqué",
-          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Teams. Dites le numéro de la séance et de l'exercice."
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Discord. Dites le numéro de la séance et de l'exercice."
         }
       ],
       "exercices": [
@@ -643,7 +643,7 @@
         {
           "type": "encadre",
           "style": "attention",
-          "titre": "Avant le rendez-vous Teams de fin de journée",
+          "titre": "Avant le rendez-vous Discord de fin de journée",
           "elements": [
             "Cliquez sur « Enregistrer mon travail dans un fichier », en bas de la page.",
             "Le fichier est souvent dans le dossier « Téléchargements ».",

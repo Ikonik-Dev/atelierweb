@@ -24,7 +24,7 @@
           "elements": [
             "Le matin : la séance 6, sur le trajet d'une page web.",
             "L'après-midi : la séance 7, une enquête avec les outils du navigateur.",
-            "Rendez-vous sur Teams avec le formateur : au début de la journée, à midi et en fin de journée."
+            "Rendez-vous sur Discord avec le formateur : au début de la journée, à midi et en fin de journée."
           ]
         },
         {
@@ -40,7 +40,7 @@
           "type": "encadre",
           "style": "astuce",
           "titre": "Si vous êtes bloqué",
-          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Teams. Dites le numéro de la séance et de l'exercice."
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Discord. Dites le numéro de la séance et de l'exercice."
         },
         {
           "type": "paragraphe",

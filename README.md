@@ -66,6 +66,7 @@ culture-web/
 │   └── seance-8.json           Séance 8 : Ce que le serveur fabrique, ce que le navigateur garde (D-010)
 │
 └── assets/
+    ├── polices/                Polices locales (titres, texte, repères) et leurs licences SIL OFL (D-011)
     └── images/                 Les 9 illustrations (renommées et compressées)
 ```
 
