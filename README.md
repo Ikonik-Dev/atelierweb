@@ -62,7 +62,8 @@ culture-web/
 │   ├── seance-4.json           Séance 4 : Problèmes et solutions
 │   ├── seance-5.json           Séance 5 : Sécurité, fiabilité et bilan
 │   ├── seance-6.json           Séance 6 : Client et serveur : le trajet d'une page
-│   └── seance-7.json           Séance 7 : Enquête : observer les échanges avec F12
+│   ├── seance-7.json           Séance 7 : Enquête : observer les échanges avec F12
+│   └── seance-8.json           Séance 8 : Ce que le serveur fabrique, ce que le navigateur garde (D-010)
 │
 └── assets/
     └── images/                 Les 9 illustrations (renommées et compressées)

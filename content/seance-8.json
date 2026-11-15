@@ -1,0 +1,1451 @@
+{
+  "version": 1,
+  "id": "seance-8",
+  "titre": "Ce que le serveur fabrique, ce que le navigateur garde",
+  "objectifs": [
+    "faire la différence entre une page toute prête et une page fabriquée pour vous ;",
+    "voir comment un formulaire envoie vos informations au serveur ;",
+    "comprendre comment un site se souvient de vous : les cookies ;",
+    "savoir où l'atelier garde votre travail, et pourquoi il faut l'enregistrer ;",
+    "dépanner un utilisateur qui voit une ancienne version d'un site."
+  ],
+  "etapes": [
+    {
+      "id": "s8-etape-1",
+      "titre": "Une nouvelle journée en autonomie",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Aujourd'hui, vous travaillez depuis chez vous. Vous avancez seul, à votre rythme."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Cette séance continue les séances 6 et 7. Vous savez déjà ce qu'est une requête, une réponse et un code comme 200 ou 404. Vous savez ouvrir les outils du navigateur avec F12."
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Le programme de la journée",
+          "elements": [
+            "Le matin : les étapes 2 à 5. Rappel, page toute prête ou fabriquée, formulaires, cookies.",
+            "L'après-midi : les étapes 6 à 10. Où l'atelier garde votre travail, le cache, les données brutes, le cas du technicien.",
+            "Rendez-vous sur Teams avec le formateur : au début de la journée, à midi et en fin de journée."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "À la fin de la journée",
+          "elements": [
+            "Cliquez sur « Enregistrer mon travail dans un fichier ». Ce bouton est en bas de la page.",
+            "Envoyez ce fichier au formateur sur Discord, en message privé. C'est la preuve de votre travail."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Écrivez de vraies réponses",
+          "texte": "Dans les questions où l'on écrit, un point ou un mot seul ne suffit pas. Écrivez au moins une phrase avec vos mots. Le formateur lit vos réponses."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous êtes bloqué",
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Teams. Dites le numéro de la séance et de l'exercice."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Pour commencer, une question sans note. Écrivez ce que vous pensez. Ce soir, vous comparerez avec ce que vous avez appris."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s8-e01",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Hier, vous vous êtes connecté à un site. Aujourd'hui, vous revenez : le site vous reconnaît sans redemander votre mot de passe. D'après vous, comment fait-il ?",
+          "reponseModele": "Un exemple de réponse possible : « Il garde une trace de ma connexion quelque part. » Vous verrez à l'étape 5 si c'est juste, et où.",
+          "explicationCorrection": "Il n'y a pas de mauvaise réponse ici. Vous allez découvrir la réponse à l'étape 5. Ce soir, vous répondrez à la même question.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 30
+        }
+      ]
+    },
+    {
+      "id": "s8-etape-2",
+      "titre": "Échauffement : ce que vous savez déjà",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Trois questions pour vous remettre en route. Elles portent sur les séances 6 et 7."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Si vous hésitez, retournez voir la séance 6 dans le menu."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s8-e02",
+          "type": "qcm_unique",
+          "question": "Vous tapez « service-public.fr ». Qui trouve l'adresse IP du serveur ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le DNS, l'annuaire du web."
+            },
+            {
+              "id": "b",
+              "texte": "Le serveur du site."
+            },
+            {
+              "id": "c",
+              "texte": "La carte graphique."
+            },
+            {
+              "id": "d",
+              "texte": "Le moteur de recherche."
+            }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "C'est le DNS. Comme les contacts de votre téléphone : vous donnez un nom, il trouve le numéro.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 10
+        },
+        {
+          "id": "s8-e03",
+          "type": "qcm_unique",
+          "question": "Dans l'onglet Réseau, une ligne affiche le code 404. Qu'est-ce que cela veut dire ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Tout va bien."
+            },
+            {
+              "id": "b",
+              "texte": "Le fichier demandé n'existe pas à cette adresse."
+            },
+            {
+              "id": "c",
+              "texte": "Le serveur est en panne."
+            },
+            {
+              "id": "d",
+              "texte": "Internet est coupé."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "404 : le fichier n'est pas à cette adresse. Le serveur marche, puisqu'il a répondu. Un code qui commence par 4 : le problème vient de la demande.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 10
+        },
+        {
+          "id": "s8-e04",
+          "type": "qcm_unique",
+          "question": "Une page web contient du HTML, du CSS, du JavaScript et des images. Combien de requêtes le navigateur envoie-t-il ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Une seule, pour toute la page."
+            },
+            {
+              "id": "b",
+              "texte": "Une par fichier."
+            },
+            {
+              "id": "c",
+              "texte": "Aucune : tout est déjà sur l'ordinateur."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Une requête par fichier. Comme un meuble en kit livré en plusieurs colis : chaque colis a son bon de livraison.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 10
+        }
+      ]
+    },
+    {
+      "id": "s8-etape-3",
+      "titre": "La page toute prête et la page fabriquée pour vous",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Tous les serveurs ne travaillent pas de la même façon."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Au restaurant"
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Dans un self-service, les plats sont déjà prêts sur le comptoir. Tout le monde reçoit la même assiette."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Dans un restaurant, le cuisinier prépare votre plat quand vous commandez. Votre assiette est différente de celle de votre voisin."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Sur le web, c'est pareil"
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            {
+              "terme": "Un site statique",
+              "definition": "Le serveur envoie des fichiers déjà prêts. Tout le monde reçoit les mêmes fichiers. C'est le self-service."
+            },
+            {
+              "terme": "Un site dynamique",
+              "definition": "Le serveur fabrique la page au moment où vous la demandez. Il va chercher vos informations dans une base de données. C'est le restaurant."
+            },
+            {
+              "terme": "Une base de données",
+              "definition": "Un grand classeur rangé, sur le serveur. Il garde par exemple les comptes, les commandes, les messages."
+            }
+          ]
+        },
+        {
+          "type": "tableau",
+          "legende": "Des exemples",
+          "entetes": [
+            "Site",
+            "Type",
+            "Pourquoi"
+          ],
+          "lignes": [
+            [
+              "Cet atelier",
+              "Statique",
+              "Tout le monde reçoit les mêmes fichiers : les séances, les styles, les programmes."
+            ],
+            [
+              "Votre espace sur le site de la CAF ou d'Ameli",
+              "Dynamique",
+              "La page montre vos droits, vos remboursements. Elle est fabriquée pour vous."
+            ],
+            [
+              "Un site de vente en ligne",
+              "Dynamique",
+              "Votre panier, vos commandes, les stocks changent tout le temps."
+            ]
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Une question à se poser",
+          "texte": "Si deux personnes ouvrent la même adresse, voient-elles exactement la même chose ? Si oui, le site est sans doute statique. Si non, il est dynamique."
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Dans les métiers du numérique",
+          "texte": "Un site statique est simple, rapide et peu cher à héberger. Un site dynamique fait plus de choses, mais il a besoin d'un serveur qui calcule et d'une base de données à protéger."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s8-e05",
+          "type": "qcm_unique",
+          "question": "L'atelier que vous utilisez est un site statique. Qu'est-ce que cela veut dire ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le site ne bouge jamais, il n'y a rien à cliquer."
+            },
+            {
+              "id": "b",
+              "texte": "Le serveur envoie les mêmes fichiers tout prêts à tout le monde."
+            },
+            {
+              "id": "c",
+              "texte": "Le site ne marche pas sans Internet."
+            },
+            {
+              "id": "d",
+              "texte": "Le site garde votre travail dans une base de données."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Statique ne veut pas dire « immobile » : l'atelier a des boutons et des exercices. Cela veut dire que le serveur envoie les mêmes fichiers à tout le monde. Ce qui change, c'est le programme JavaScript qui tourne dans votre navigateur.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s8-e06",
+          "type": "qcm_unique",
+          "question": "Votre relevé de remboursements sur le site d'Ameli : statique ou dynamique ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Statique : c'est une page comme les autres."
+            },
+            {
+              "id": "b",
+              "texte": "Dynamique : le serveur fabrique la page avec vos informations."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Dynamique. La page montre vos remboursements à vous. Le serveur va les chercher dans sa base de données et fabrique la page pour vous.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s8-e07",
+          "type": "qcm_unique",
+          "question": "Où un site dynamique garde-t-il les comptes de ses utilisateurs ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Dans le navigateur de chaque utilisateur."
+            },
+            {
+              "id": "b",
+              "texte": "Dans une base de données, sur le serveur."
+            },
+            {
+              "id": "c",
+              "texte": "Dans le DNS."
+            },
+            {
+              "id": "d",
+              "texte": "Dans le fichier CSS."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Dans une base de données, sur le serveur. C'est pour cela qu'on peut se connecter à son compte depuis n'importe quel ordinateur.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s8-e08",
+          "type": "qcm_unique",
+          "question": "Deux collègues ouvrent la même adresse. L'un voit « Bonjour Karim », l'autre « Bonjour Sonia ». Ce site est…",
+          "options": [
+            {
+              "id": "a",
+              "texte": "statique."
+            },
+            {
+              "id": "b",
+              "texte": "dynamique."
+            },
+            {
+              "id": "c",
+              "texte": "en panne."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Chacun voit une page différente, avec son prénom : le serveur fabrique la page pour chaque personne. Le site est dynamique.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        }
+      ]
+    },
+    {
+      "id": "s8-etape-4",
+      "titre": "Mission 1 : quand vous envoyez un formulaire",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Quand vous remplissez un champ de recherche et appuyez sur Entrée, vous envoyez un **formulaire**. Le navigateur envoie vos mots au serveur."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Il y a deux façons principales d'envoyer un formulaire."
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            {
+              "terme": "GET : comme une carte postale",
+              "definition": "Vos informations sont écrites dans l'adresse de la page. Tout le monde peut les lire : elles restent dans l'historique et dans le lien si vous le partagez."
+            },
+            {
+              "terme": "POST : comme une lettre dans une enveloppe",
+              "definition": "Vos informations voyagent dans le corps de la requête, pas dans l'adresse. On s'en sert pour un mot de passe ou un formulaire long."
+            }
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "L'enveloppe ne suffit pas",
+          "texte": "POST cache vos informations de l'adresse. Mais c'est le cadenas (HTTPS) qui les protège pendant le trajet. Sur un site sans cadenas, ne tapez jamais de mot de passe."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "La mission"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Ouvrez un nouvel onglet. Allez sur le moteur de recherche que vous utilisez d'habitude.",
+            "Cherchez : **bibliothèque de quartier**.",
+            "Regardez l'adresse de la page de résultats, en haut. Cherchez le point d'interrogation **?**.",
+            "Dans cette adresse, remplacez le mot **bibliothèque** par **piscine**. Appuyez sur Entrée.",
+            "Regardez les résultats : ils ont changé."
+          ],
+          "numerotee": true
+        },
+        {
+          "type": "tableau",
+          "legende": "Ce que l'on voit",
+          "entetes": [
+            "Moteur de recherche",
+            "Exemple d'adresse de résultats"
+          ],
+          "lignes": [
+            [
+              "Google",
+              "https://www.google.com/search?q=bibliothèque+de+quartier"
+            ],
+            [
+              "Bing",
+              "https://www.bing.com/search?q=bibliothèque+de+quartier"
+            ],
+            [
+              "Qwant",
+              "https://www.qwant.com/?q=bibliothèque+de+quartier"
+            ],
+            [
+              "DuckDuckGo",
+              "https://duckduckgo.com/?q=bibliothèque+de+quartier"
+            ]
+          ]
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Le navigateur peut afficher les accents et les espaces autrement, par exemple %C3%A8 ou %20. C'est le même texte, écrit pour les ordinateurs."
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            {
+              "terme": "Le paramètre",
+              "definition": "Ce qui vient après le « ? » dans l'adresse. Ici : q=bibliothèque+de+quartier. « q » veut dire « question » ou « requête »."
+            }
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous êtes bloqué",
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Teams. Dites le numéro de la séance et de l'exercice."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s8-e09",
+          "type": "qcm_unique",
+          "question": "Dans l'adresse des résultats, qu'est-ce qui vient juste après « q= » ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le nom du moteur de recherche."
+            },
+            {
+              "id": "b",
+              "texte": "Les mots que vous avez cherchés."
+            },
+            {
+              "id": "c",
+              "texte": "Votre adresse IP."
+            },
+            {
+              "id": "d",
+              "texte": "Votre mot de passe."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Après « q= », on trouve vos mots de recherche. Le formulaire a été envoyé avec GET : vos mots sont écrits dans l'adresse, comme sur une carte postale.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s8-e10",
+          "type": "qcm_unique",
+          "question": "Vous avez remplacé « bibliothèque » par « piscine » directement dans l'adresse. Que s'est-il passé ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Rien : il faut retaper dans le champ de recherche."
+            },
+            {
+              "id": "b",
+              "texte": "Les résultats parlent maintenant de piscines."
+            },
+            {
+              "id": "c",
+              "texte": "Le site affiche une erreur 500."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "L'adresse est la requête. Changer l'adresse, c'est envoyer une autre demande au serveur. Pas besoin du champ de recherche.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s8-e11",
+          "type": "qcm_unique",
+          "question": "Vous partagez le lien d'une page de résultats avec un collègue. Que voit-il ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Une page vide."
+            },
+            {
+              "id": "b",
+              "texte": "Les mêmes mots de recherche que vous, dans l'adresse."
+            },
+            {
+              "id": "c",
+              "texte": "Votre mot de passe."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Les mots de recherche sont dans l'adresse : votre collègue les voit et obtient la même recherche. C'est pratique, mais cela veut dire aussi qu'on ne met jamais d'information secrète dans une adresse.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s8-e12",
+          "type": "qcm_unique",
+          "question": "Un formulaire de connexion envoie le mot de passe. Quelle méthode faut-il utiliser ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "GET : le mot de passe est écrit dans l'adresse."
+            },
+            {
+              "id": "b",
+              "texte": "POST : le mot de passe voyage dans le corps de la requête, avec le cadenas HTTPS."
+            },
+            {
+              "id": "c",
+              "texte": "Aucune : le mot de passe reste sur l'ordinateur."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "POST, et toujours avec HTTPS. Avec GET, le mot de passe resterait dans l'historique et dans les liens. POST le sort de l'adresse, et le cadenas le protège pendant le trajet.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        }
+      ]
+    },
+    {
+      "id": "s8-etape-5",
+      "titre": "Comment un site se souvient de vous : les cookies",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Un serveur web a très peu de mémoire. Chaque requête arrive comme si c'était la première fois."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Alors comment un site sait-il que vous êtes connecté, d'une page à l'autre ?"
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Au vestiaire"
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Au théâtre, vous déposez votre manteau. Le vestiaire vous donne un ticket avec un numéro."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "À la sortie, vous montrez le ticket. On vous rend votre manteau. Personne n'a besoin de se souvenir de votre visage."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Sur le web, c'est pareil"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Vous vous connectez. Le serveur vérifie votre mot de passe.",
+            "Le serveur donne à votre navigateur un petit ticket : un **cookie**.",
+            "À chaque nouvelle requête vers ce site, le navigateur montre le ticket.",
+            "Le serveur lit le ticket et sait que c'est vous."
+          ],
+          "numerotee": true
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            {
+              "terme": "Un cookie",
+              "definition": "Un petit morceau de texte qu'un site demande à votre navigateur de garder. Le navigateur le renvoie à ce site à chaque requête."
+            },
+            {
+              "terme": "Une session",
+              "definition": "Le temps pendant lequel vous restez connecté. Quand la session expire, le ticket ne marche plus : il faut se reconnecter."
+            }
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Les bandeaux « Accepter les cookies »",
+          "elements": [
+            "Certains cookies sont indispensables : rester connecté, garder un panier.",
+            "D'autres servent à mesurer les visites ou à afficher de la publicité.",
+            "En France, le site doit vous demander votre accord pour les cookies qui ne sont pas indispensables. Refuser doit être aussi simple qu'accepter."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Un cookie de connexion vaut une clé",
+          "texte": "Si quelqu'un vole votre cookie de connexion, il peut entrer dans votre compte sans mot de passe. C'est pour cela qu'on se déconnecte sur un ordinateur partagé."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s8-e13",
+          "type": "qcm_unique",
+          "question": "À quoi sert un cookie de connexion ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "À rendre la page plus jolie."
+            },
+            {
+              "id": "b",
+              "texte": "À montrer au serveur que vous êtes déjà connecté."
+            },
+            {
+              "id": "c",
+              "texte": "À trouver l'adresse IP du site."
+            },
+            {
+              "id": "d",
+              "texte": "À accélérer Internet."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le cookie est le ticket du vestiaire. Le navigateur le montre à chaque requête, et le serveur sait que c'est vous.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s8-e14",
+          "type": "qcm_unique",
+          "question": "Où est gardé le cookie ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Dans votre navigateur, sur votre ordinateur."
+            },
+            {
+              "id": "b",
+              "texte": "Dans le DNS."
+            },
+            {
+              "id": "c",
+              "texte": "Sur une clé USB."
+            }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "Le cookie est gardé par votre navigateur. C'est pour cela que, sur un autre ordinateur, le site ne vous reconnaît pas : il faut vous reconnecter.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s8-e15",
+          "type": "qcm_unique",
+          "question": "Vous avez utilisé l'ordinateur de la médiathèque pour aller sur votre messagerie. Que faites-vous avant de partir ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Je ferme simplement l'onglet."
+            },
+            {
+              "id": "b",
+              "texte": "Je clique sur « Se déconnecter », puis je ferme le navigateur."
+            },
+            {
+              "id": "c",
+              "texte": "J'éteins l'écran."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Fermer l'onglet ne suffit pas toujours : le cookie peut rester valable. « Se déconnecter » demande au serveur d'annuler le ticket. La personne suivante ne pourra pas entrer dans votre messagerie.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s8-e16",
+          "type": "qcm_unique",
+          "question": "Un bandeau propose « Tout accepter » en gros, et « Refuser » caché dans un menu. Est-ce correct en France ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Oui, le site fait ce qu'il veut."
+            },
+            {
+              "id": "b",
+              "texte": "Non : refuser doit être aussi simple qu'accepter."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "En France, la CNIL demande que refuser soit aussi simple qu'accepter. Un bouton « Refuser » caché n'est pas correct.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        }
+      ]
+    },
+    {
+      "id": "s8-etape-6",
+      "titre": "Mission 2 : où l'atelier garde votre travail",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Bonne reprise après la pause de midi. Cette mission porte sur l'atelier lui-même."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "L'atelier est un site statique. Il n'a pas de base de données. Alors où garde-t-il vos réponses ?"
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Réponse : dans votre navigateur, dans une petite zone appelée le **stockage local** (en anglais : **Local Storage**). C'est un peu comme un tiroir que le navigateur réserve à chaque site."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "La mission : regarder sans toucher"
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Ne modifiez rien, ne supprimez rien",
+          "texte": "Dans cette mission, vous regardez seulement. Si vous supprimez une ligne, vous perdez votre travail."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Ouvrez les outils avec **F12**.",
+            "Avec Chrome ou Edge : cliquez sur l'onglet **Application**. Avec Firefox : cliquez sur l'onglet **Stockage**. Si vous ne voyez pas l'onglet, cliquez sur les doubles flèches **»** pour voir les autres onglets.",
+            "Dans la colonne de gauche, ouvrez **Stockage local** (Local Storage).",
+            "Cliquez sur la ligne qui commence par **https://ikonik-dev.github.io**.",
+            "Regardez la liste : chaque ligne a une **clé** (un nom) et une **valeur** (le contenu)."
+          ],
+          "numerotee": true
+        },
+        {
+          "type": "tableau",
+          "legende": "Ce que l'on voit",
+          "entetes": [
+            "Clé",
+            "Valeur"
+          ],
+          "lignes": [
+            [
+              "culture-web-progression",
+              "Un long texte qui commence par une accolade {. On y reconnaît des identifiants d'exercices comme « s6-e02 » et vos réponses."
+            ],
+            [
+              "D'autres clés, parfois",
+              "Si vous avez utilisé un autre atelier du formateur sur ce site, il a son propre tiroir, avec un autre nom."
+            ]
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Pourquoi le bouton « Enregistrer mon travail dans un fichier » existe",
+          "elements": [
+            "Votre travail est dans le navigateur de cet ordinateur, et seulement là.",
+            "Sur un autre ordinateur, ou si on efface les données du navigateur, le tiroir est vide.",
+            "Le fichier enregistré est une copie de ce tiroir. Vous pouvez le reprendre ailleurs."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Si vous ne pouvez pas utiliser ces outils",
+          "texte": "Par exemple avec un lecteur d'écran ou un fort zoom. Prévenez le formateur sur Teams. Puis utilisez le tableau « Ce que l'on voit » pour répondre."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous êtes bloqué",
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Teams. Dites le numéro de la séance et de l'exercice."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s8-e17",
+          "type": "texte_libre",
+          "mode": "comparaison",
+          "question": "Quel est le nom (la clé) de la ligne où l'atelier garde votre travail ? Recopiez-le.",
+          "reponsesAcceptees": [
+            "culture-web-progression",
+            "culture web progression",
+            "culture_web_progression"
+          ],
+          "reponseModele": "culture-web-progression",
+          "explicationCorrection": "La clé s'appelle « culture-web-progression ». C'est le nom du tiroir de cet atelier dans votre navigateur.",
+          "difficulte": "moyen",
+          "fautesAcceptees": 2,
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s8-e18",
+          "type": "qcm_unique",
+          "question": "Votre travail est dans le stockage local. Où se trouve-t-il exactement ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Sur le serveur de GitHub, dans une base de données."
+            },
+            {
+              "id": "b",
+              "texte": "Dans le navigateur de l'ordinateur que vous utilisez."
+            },
+            {
+              "id": "c",
+              "texte": "Dans votre messagerie."
+            },
+            {
+              "id": "d",
+              "texte": "Sur Teams."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Dans le navigateur de cet ordinateur. Le serveur de l'atelier ne garde rien : il envoie seulement les mêmes fichiers à tout le monde.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s8-e19",
+          "type": "qcm_unique",
+          "question": "Demain, vous travaillez sur un autre ordinateur. Que faut-il faire pour retrouver votre travail ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Rien : il vous suivra tout seul."
+            },
+            {
+              "id": "b",
+              "texte": "Enregistrer mon travail dans un fichier aujourd'hui, puis le reprendre demain avec « Reprendre un travail enregistré »."
+            },
+            {
+              "id": "c",
+              "texte": "Envoyer un mail au serveur."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le travail ne voyage pas tout seul. Le fichier enregistré est la copie qui vous permet de le reprendre sur un autre ordinateur.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s8-e20",
+          "type": "qcm_multiple",
+          "question": "Dans quels cas perdez-vous le travail gardé dans le navigateur ? Cochez toutes les bonnes réponses.",
+          "options": [
+            {
+              "id": "a",
+              "texte": "J'efface les données de navigation (historique, cookies, données des sites)."
+            },
+            {
+              "id": "b",
+              "texte": "Je travaille en navigation privée, puis je ferme la fenêtre."
+            },
+            {
+              "id": "c",
+              "texte": "Je change d'ordinateur."
+            },
+            {
+              "id": "d",
+              "texte": "Je recharge la page avec F5."
+            }
+          ],
+          "reponsesCorrectes": [
+            "a",
+            "b",
+            "c"
+          ],
+          "explicationCorrection": "Effacer les données, fermer une fenêtre privée ou changer d'ordinateur vide le tiroir, ou vous donne un tiroir vide. Recharger la page avec F5 ne perd rien : le tiroir reste.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 25
+        }
+      ]
+    },
+    {
+      "id": "s8-etape-7",
+      "titre": "Le cache : le navigateur garde des copies",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Le navigateur garde aussi des copies des fichiers qu'il a déjà reçus : les images, les styles, les programmes. C'est le **cache**."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "À la maison"
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Vous ne faites pas les courses chaque fois que vous avez soif. Vous avez des bouteilles dans le placard."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Le cache, c'est le placard du navigateur. Il évite de redemander un fichier au serveur à chaque fois. La page s'affiche plus vite."
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Le problème du placard",
+          "texte": "Si le magasin change la recette, la bouteille du placard reste l'ancienne. De même, si un site change, le navigateur peut encore afficher l'ancienne copie."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "La mission"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Ouvrez les outils avec F12, onglet **Réseau** (Network).",
+            "**Décochez** la case « Désactiver le cache » (Disable cache). Le navigateur peut maintenant utiliser son placard.",
+            "Rechargez l'atelier avec **F5**. Regardez la colonne **Taille** (Size) ou **Transféré** (Transferred).",
+            "Ensuite, rechargez avec **Ctrl + F5**. Regardez de nouveau."
+          ],
+          "numerotee": true
+        },
+        {
+          "type": "tableau",
+          "legende": "Ce que l'on voit (cela change selon le navigateur)",
+          "entetes": [
+            "Rechargement",
+            "Ce qui s'affiche"
+          ],
+          "lignes": [
+            [
+              "F5",
+              "Pour beaucoup de lignes : le mot « cache », par exemple « (disk cache) », « (memory cache) » ou « en cache ». Parfois le code 304."
+            ],
+            [
+              "Ctrl + F5",
+              "Des tailles en ko pour presque toutes les lignes, et le code 200 : tout est redemandé au serveur."
+            ]
+          ]
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            {
+              "terme": "Le code 304",
+              "definition": "Le serveur répond : « Ce fichier n'a pas changé. Gardez votre copie. » Il n'envoie pas le fichier une deuxième fois."
+            },
+            {
+              "terme": "Ctrl + F5",
+              "definition": "Un rechargement forcé : le navigateur ignore son placard et redemande tout au serveur."
+            }
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Un geste de technicien",
+          "texte": "« Le site a changé, mais moi je vois l'ancienne version. » Le premier réflexe : Ctrl + F5. Si cela ne suffit pas, essayer en navigation privée."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "N'oubliez pas",
+          "texte": "Après la mission, vous pouvez recocher « Désactiver le cache » si vous voulez. Cela ne change rien pour les autres sites quand les outils sont fermés."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s8-e21",
+          "type": "qcm_unique",
+          "question": "Pourquoi le navigateur garde-t-il des copies des fichiers ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Pour espionner l'utilisateur."
+            },
+            {
+              "id": "b",
+              "texte": "Pour afficher les pages plus vite, sans tout redemander au serveur."
+            },
+            {
+              "id": "c",
+              "texte": "Pour que le site soit dynamique."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le cache évite de refaire les courses à chaque fois. Moins de requêtes vers le serveur : la page s'affiche plus vite.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s8-e22",
+          "type": "qcm_unique",
+          "question": "Avec F5, plusieurs lignes affichent le mot « cache ». Que veut dire ce mot ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le fichier est caché à l'utilisateur."
+            },
+            {
+              "id": "b",
+              "texte": "Le fichier vient de la copie gardée par le navigateur, pas du serveur."
+            },
+            {
+              "id": "c",
+              "texte": "Le fichier est en erreur."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "« Cache » veut dire que le navigateur a pris sa copie dans le placard. Le serveur n'a pas eu à renvoyer le fichier.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s8-e23",
+          "type": "qcm_unique",
+          "question": "Le serveur répond avec le code 304. Que veut-il dire ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le fichier a été supprimé."
+            },
+            {
+              "id": "b",
+              "texte": "Le fichier n'a pas changé : gardez votre copie."
+            },
+            {
+              "id": "c",
+              "texte": "Le serveur est en panne."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "304 : « pas de changement ». Le navigateur utilise sa copie. C'est une bonne nouvelle, pas une erreur.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s8-e24",
+          "type": "qcm_unique",
+          "question": "Une utilisatrice dit : « Le site de l'association a un nouveau logo, mais moi je vois toujours l'ancien. » Que lui conseillez-vous en premier ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "D'acheter un nouvel ordinateur."
+            },
+            {
+              "id": "b",
+              "texte": "De recharger la page avec Ctrl + F5."
+            },
+            {
+              "id": "c",
+              "texte": "D'appeler l'hébergeur du site."
+            },
+            {
+              "id": "d",
+              "texte": "De désinstaller le navigateur."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Son navigateur affiche sans doute l'ancienne copie du logo. Ctrl + F5 force le navigateur à tout redemander au serveur. Le geste est simple, gratuit et sans risque.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        }
+      ]
+    },
+    {
+      "id": "s8-etape-8",
+      "titre": "Mission 3 : des données sans la page",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Parfois, ce n'est pas une personne qui demande quelque chose au serveur. C'est un programme."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Le programme n'a pas besoin de couleurs ni de mise en page. Il veut seulement les **données** : des noms, des nombres, des dates."
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            {
+              "terme": "Une API",
+              "definition": "Une porte d'entrée d'un serveur, faite pour les programmes. On lui envoie une requête, elle répond avec des données brutes."
+            },
+            {
+              "terme": "Le format JSON",
+              "definition": "Une façon d'écrire des données que les programmes lisent facilement. On reconnaît les accolades { }, les crochets [ ] et les paires « nom » : « valeur »."
+            }
+          ]
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Au restaurant, encore"
+        },
+        {
+          "type": "paragraphe",
+          "texte": "La salle du restaurant présente les plats sur de belles assiettes : c'est la page web."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "La cuisine reçoit seulement la liste des commandes, sans décoration : ce sont les données. L'API, c'est le passe-plat entre les deux."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "La mission"
+        },
+        {
+          "type": "paragraphe",
+          "texte": "L'État propose une API publique et gratuite sur les communes de France."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Ouvrez un nouvel onglet.",
+            "Tapez cette adresse, puis appuyez sur Entrée : **https://geo.api.gouv.fr/communes?codePostal=93100**",
+            "Lisez la réponse. Cherchez le mot **nom**.",
+            "Dans l'adresse, remplacez **93100** par le code postal de votre ville. Appuyez sur Entrée."
+          ],
+          "numerotee": true
+        },
+        {
+          "type": "tableau",
+          "legende": "Ce que l'on voit",
+          "entetes": [
+            "Élément",
+            "Exemple"
+          ],
+          "lignes": [
+            [
+              "Le début de la réponse",
+              "Un crochet [ puis une accolade {."
+            ],
+            [
+              "Des paires « nom » : « valeur »",
+              "\"nom\": \"Montreuil\", un code, un numéro de département, une population…"
+            ],
+            [
+              "Avec Firefox",
+              "Une présentation en tableau. L'onglet « Données brutes » montre le texte."
+            ]
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si l'adresse ne répond pas",
+          "texte": "Le service de l'État est peut-être en maintenance. Notez-le, prévenez le formateur sur Teams, puis répondez avec le tableau « Ce que l'on voit »."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Vous connaissez déjà ce format sans le savoir. Dans la séance 7, l'atelier chargeait des fichiers qui finissent par .json : ce sont ses séances, rangées en données."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s8-e25",
+          "type": "qcm_unique",
+          "question": "La réponse de l'API s'affiche. À quoi ressemble-t-elle ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "À une belle page avec des images et des couleurs."
+            },
+            {
+              "id": "b",
+              "texte": "À du texte avec des accolades, des crochets et des paires nom et valeur."
+            },
+            {
+              "id": "c",
+              "texte": "À une page d'erreur 404."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "C'est du JSON : des données brutes, sans mise en page. Elles sont faites pour être lues par des programmes.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s8-e26",
+          "type": "qcm_unique",
+          "question": "Vous avez changé le code postal dans l'adresse. Qu'est-ce que cela montre ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Que l'adresse ne sert à rien."
+            },
+            {
+              "id": "b",
+              "texte": "Que l'adresse contient la demande, comme pour le moteur de recherche."
+            },
+            {
+              "id": "c",
+              "texte": "Que le site est statique."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Comme dans la mission 1 : ce qui vient après le « ? » est la demande. Changer le code postal, c'est poser une autre question au serveur.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s8-e27",
+          "type": "qcm_unique",
+          "question": "Une application de météo sur votre téléphone affiche la température de votre ville. D'où vient ce chiffre, le plus souvent ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "L'application l'invente."
+            },
+            {
+              "id": "b",
+              "texte": "L'application le demande à l'API d'un serveur de météo, puis l'affiche joliment."
+            },
+            {
+              "id": "c",
+              "texte": "Le téléphone le mesure tout seul."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "L'application envoie une requête à une API. Elle reçoit des données brutes, puis elle les met en forme. La salle et la cuisine, encore.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        }
+      ]
+    },
+    {
+      "id": "s8-etape-9",
+      "titre": "Mission 4 : jouer au technicien",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Vous êtes technicien support. Des utilisateurs vous appellent. Utilisez tout ce que vous avez vu aujourd'hui."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "La bonne méthode",
+          "texte": "Observer, chercher la cause, puis agir. Commencez toujours par le geste le plus simple et le moins risqué."
+        },
+        {
+          "type": "tableau",
+          "legende": "Votre boîte à outils",
+          "entetes": [
+            "Situation",
+            "Premier geste"
+          ],
+          "lignes": [
+            [
+              "Une ancienne version s'affiche",
+              "Ctrl + F5, puis essai en navigation privée."
+            ],
+            [
+              "« Le site ne me reconnaît plus »",
+              "La session a sans doute expiré : se reconnecter."
+            ],
+            [
+              "Ça marche chez un collègue, pas chez moi",
+              "Essayer en navigation privée : sans cache ni cookies."
+            ],
+            [
+              "Code en 4 ou en 5",
+              "Relire la séance 6 : la demande ou le serveur."
+            ]
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s8-e28",
+          "type": "qcm_unique",
+          "question": "Un utilisateur dit : « Ce matin, le site me reconnaissait. Cet après-midi, il me demande de me reconnecter. » Qu'est-ce qui s'est probablement passé ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le site a été piraté."
+            },
+            {
+              "id": "b",
+              "texte": "Sa session a expiré : son ticket (le cookie) n'est plus valable."
+            },
+            {
+              "id": "c",
+              "texte": "Le DNS est en panne."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Les sessions ont une durée limitée, souvent pour la sécurité. Il suffit de se reconnecter. Ce n'est pas une panne.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s8-e29",
+          "type": "qcm_unique",
+          "question": "Une collègue dit : « Le site de réservation marche chez Karim, mais pas chez moi. » Quel est un bon premier test ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Ouvrir le site en navigation privée sur son ordinateur."
+            },
+            {
+              "id": "b",
+              "texte": "Réinstaller Windows."
+            },
+            {
+              "id": "c",
+              "texte": "Appeler l'hébergeur tout de suite."
+            }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "La navigation privée part sans cache et sans cookies. Si le site marche ainsi, le problème vient des copies ou des cookies gardés par son navigateur. On peut alors les effacer pour ce site.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 25
+        },
+        {
+          "id": "s8-e30",
+          "type": "qcm_unique",
+          "question": "Un stagiaire dit : « J'ai perdu tout mon travail sur l'atelier ! » Il a changé d'ordinateur ce matin. Que lui répondez-vous ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "« Le serveur a dû effacer ton travail. »"
+            },
+            {
+              "id": "b",
+              "texte": "« Ton travail est resté dans le navigateur de l'autre ordinateur. As-tu enregistré un fichier ? Si oui, reprends-le. »"
+            },
+            {
+              "id": "c",
+              "texte": "« Recharge la page avec F5, il va revenir. »"
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le travail est dans le stockage local de l'ancien ordinateur. Le fichier enregistré permet de le reprendre ailleurs. Sinon, il faut retourner sur l'ancien ordinateur.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 25
+        },
+        {
+          "id": "s8-e31",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Un ami vous dit : « Les cookies, c'est forcément de l'espionnage. » Que lui répondez-vous, en deux ou trois phrases ?",
+          "reponseModele": "Pas forcément. Certains cookies sont indispensables : sans eux, on ne pourrait pas rester connecté. D'autres servent à la publicité : pour ceux-là, on peut refuser.",
+          "explicationCorrection": "Une bonne réponse distingue deux familles. Les cookies indispensables servent à rester connecté ou à garder un panier. Les cookies de mesure ou de publicité peuvent suivre ce que l'on fait : pour ceux-là, le site doit demander l'accord, et on peut refuser.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 45
+        }
+      ]
+    },
+    {
+      "id": "s8-etape-10",
+      "titre": "Pour aller plus loin (au choix)",
+      "auChoix": true,
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Cette étape est **au choix**, si vous avez fini en avance."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Enquête sur les cookies d'un site"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Choisissez un site que vous utilisez souvent, par exemple un site d'information.",
+            "Ouvrez les outils (F12). Avec Chrome ou Edge : onglet **Application**, puis **Cookies** dans la colonne de gauche. Avec Firefox : onglet **Stockage**, puis **Cookies**.",
+            "Cliquez sur l'adresse du site. Comptez à peu près les lignes.",
+            "Regardez s'il y a d'autres adresses que celle du site dans la liste de gauche. Ce sont souvent des cookies d'autres entreprises.",
+            "Ne modifiez rien."
+          ],
+          "numerotee": true
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s8-e32",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Quel site avez-vous choisi ? Combien de cookies avez-vous vus, à peu près ? Avez-vous vu des cookies d'autres entreprises ?",
+          "reponseModele": "Un exemple de réponse : « Un site d'information. Une trentaine de cookies. Dans la colonne de gauche, il y avait aussi des adresses d'autres entreprises, sans doute pour la publicité. »",
+          "explicationCorrection": "Il n'y a pas de bon chiffre : il change d'un site à l'autre, et selon ce que vous avez accepté dans le bandeau. Un site d'information a souvent plus de cookies qu'un site public, à cause de la publicité et de la mesure d'audience.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 60
+        },
+        {
+          "id": "s8-e33",
+          "type": "qcm_unique",
+          "question": "Vous refusez les cookies non indispensables sur ce site, puis vous recommencez l'enquête. Que devriez-vous voir, le plus souvent ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Plus de cookies."
+            },
+            {
+              "id": "b",
+              "texte": "Moins de cookies."
+            },
+            {
+              "id": "c",
+              "texte": "Exactement les mêmes."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "En refusant, vous dites au site de ne pas déposer les cookies de mesure et de publicité. Il en reste moins. Les cookies indispensables restent.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        }
+      ]
+    },
+    {
+      "id": "s8-etape-11",
+      "titre": "Bilan et preuve de travail",
+      "blocs": [
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "À retenir",
+          "elements": [
+            "Un site statique envoie les mêmes fichiers à tout le monde. Un site dynamique fabrique la page pour vous, avec une base de données.",
+            "Un formulaire envoie vos informations au serveur. Avec GET, elles sont dans l'adresse. Avec POST, elles sont dans le corps de la requête.",
+            "Un cookie est un ticket de vestiaire : il permet au site de vous reconnaître.",
+            "L'atelier garde votre travail dans le stockage local du navigateur. D'où le fichier à enregistrer.",
+            "Le cache garde des copies. Ctrl + F5 force le navigateur à tout redemander.",
+            "Une API répond avec des données brutes, souvent en JSON, pour des programmes."
+          ]
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Ce matin, vous avez répondu à une question. Répondez à la même question maintenant. Puis comparez."
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Avant le rendez-vous Teams de fin de journée",
+          "elements": [
+            "Cliquez sur « Enregistrer mon travail dans un fichier », en bas de la page.",
+            "Le fichier est souvent dans le dossier « Téléchargements ».",
+            "Envoyez-le au formateur sur Discord, en message privé."
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s8-e34",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Un site vous reconnaît le lendemain sans redemander votre mot de passe. Comment fait-il ? Répondez avec vos mots, puis comparez avec votre réponse de ce matin.",
+          "reponseModele": "Le site a donné à mon navigateur un cookie, comme un ticket de vestiaire. Mon navigateur le renvoie à chaque visite, alors le serveur sait que c'est moi. Sur un autre ordinateur, il faudra me reconnecter.",
+          "explicationCorrection": "L'idée importante : le site a laissé un cookie dans votre navigateur. Le navigateur le renvoie à chaque visite, et le serveur vous reconnaît. Sur un autre ordinateur, il n'y a pas ce cookie : il faut se reconnecter.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 45
+        }
+      ]
+    }
+  ]
+}

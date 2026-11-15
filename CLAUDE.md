@@ -6,7 +6,7 @@
 >
 > Si une demande contredit une règle de ce fichier, **le signaler explicitement avant d'implémenter**. Ne jamais trancher en silence (voir section 5).
 
-**Dernière mise à jour** : 2026-11-08
+**Dernière mise à jour** : 2026-11-15
 
 ---
 
@@ -33,7 +33,7 @@
 
 - **FALC** (Facile à lire et à comprendre) : phrases courtes, une idée par phrase, mots du quotidien, tout mot technique expliqué.
 - **Analogies de la vie quotidienne en Île-de-France** : métro parisien, courrier postal, adresse postale, bibliothèque de quartier, feux de signalisation, etc.
-- Découpage : **7 séances** (5 séances du livret d'origine + 2 séances client/serveur, voir D-009), illustrées par **9 illustrations**.
+- Découpage : **8 séances** (5 séances du livret d'origine + 3 séances client/serveur, voir D-009 et D-010), illustrées par **9 illustrations**.
 
 ### 1.3 Objectif technique
 
@@ -215,7 +215,8 @@ culture-web/
 │   ├── seance-4.json
 │   ├── seance-5.json
 │   ├── seance-6.json           # Client et serveur : le trajet d'une page (D-009)
-│   └── seance-7.json           # Enquête avec F12, onglet Réseau (D-009)
+│   ├── seance-7.json           # Enquête avec F12, onglet Réseau (D-009)
+│   └── seance-8.json           # Ce que le serveur fabrique, ce que le navigateur garde (D-010)
 │
 └── assets/
     └── images/                 # Les 9 illustrations
@@ -510,3 +511,26 @@ Une entrée par évolution majeure : règle ajoutée, modifiée ou supprimée, n
   - les textes d'accueil communs (`interface.json`) parlent encore de « lever la main » : non modifiés, car les autres jours restent en présentiel ;
   - test NVDA non réalisé lors de cet ajout (contenu seul, aucun composant nouveau).
 - **Sections du CLAUDE.md impactées** : 1.2, 1.4, 3.1
+
+### D-010 — Séance 8 « Ce que le serveur fabrique, ce que le navigateur garde »
+
+- **Date** : 2026-11-15
+- **Statut** : Acceptée (demandée par le formateur ; contenu à valider par lui, non essayé avec des stagiaires)
+- **Demandée ou validée par** : formateur
+- **Contexte** : nouvelle journée « Culture Web et fonctionnement client/serveur », en télétravail, pour le même groupe, qui a fini les séances 6 et 7. Même organisation que D-009 : autonomie, points Teams au début, à midi et en fin de journée, preuve de travail envoyée sur Discord.
+- **Décision** :
+  - ajout de `seance-8.json` : 11 étapes, 34 exercices `s8-e01` à `s8-e34`, dont 2 au choix (étape 10) ;
+  - contenu : échauffement sur les séances 6 et 7 ; site statique ou dynamique (self-service ou restaurant) ; formulaires GET et POST (carte postale ou enveloppe), avec une mission sur l'adresse d'une page de résultats (`?q=`) ; cookies et sessions (ticket de vestiaire), règle française du refus aussi simple que l'acceptation ; **mission sur le stockage local de l'atelier lui-même** (clé `culture-web-progression`), qui explique le bouton « Enregistrer mon travail dans un fichier » ; le cache, le code 304 et Ctrl + F5 (le placard) ; une API publique de l'État en JSON (`geo.api.gouv.fr`) ; 3 cas de technicien support ;
+  - chaque mission F12 garde un tableau « Ce que l'on voit », comme en D-009 ;
+  - la question d'ouverture (comment un site vous reconnaît) est reposée en fin de journée, comme `s6-e01` et `s7-e14` ;
+  - un encadré de l'étape 1 demande d'écrire au moins une phrase dans les réponses libres : des réponses réduites à « . » ont été observées dans un autre atelier du formateur ;
+  - contenu uniquement en JSON, aucun changement de code.
+- **Raison** : prolonger le trajet requête-réponse vers ce que le navigateur garde (cookies, stockage, cache) et ce que le serveur calcule, avec des gestes de technicien directement utiles (Ctrl + F5, navigation privée, se reconnecter).
+- **Conséquences et limites acceptées** :
+  - **la mission 2 montre aux stagiaires où l'atelier stocke leur progression**, consigne « ne rien modifier ». Un stagiaire peut ensuite modifier ou effacer ce stockage pour refaire un exercice : risque déjà accepté par D-002 ;
+  - la mission 3 dépend de l'API `geo.api.gouv.fr` (service de l'État, gratuit, sans clé) : **à tester la veille** ; si elle ne répond pas, l'étape prévoit de répondre avec le tableau « Ce que l'on voit » ;
+  - les noms des onglets (Application, Stockage, Taille, Transféré) et l'affichage du cache varient selon le navigateur et sa langue : les questions portent sur des mots-clés (« cache », 304), pas sur des chiffres ;
+  - la règle sur les cookies est simplifiée pour un public FALC (accord pour les cookies non indispensables, refus aussi simple que l'acceptation) ;
+  - le moteur de cet atelier n'a pas de champ `rappel` : chaque question est rédigée pour se comprendre seule ;
+  - questions et corrigés rédigés par une IA, à relire par le formateur ; test NVDA non réalisé (contenu seul, aucun composant nouveau). Chargement des 45 écrans vérifié en navigateur automatisé à 360 px de large.
+- **Sections du CLAUDE.md impactées** : 1.2, 3.1
