@@ -542,7 +542,7 @@ Une entrée par évolution majeure : règle ajoutée, modifiée ou supprimée, n
 - **Statut** : Acceptée (demandée par le formateur ; tests NVDA, clavier et zoom 200 % à refaire)
 - **Demandée ou validée par** : formateur
 - **Contexte** :
-  - le formateur veut le même style que l'atelier IA (dépôt `atelieria`, décision D-021 de ce dépôt), avec des couleurs différentes : il prévoit de regrouper ses ateliers derrière un portail « PPNI » ;
+  - le formateur veut le même style que l'atelier IA (dépôt `atelieria`, décision D-021 de ce dépôt-là), avec des couleurs différentes : il prévoit de regrouper ses ateliers derrière un portail « PPNI » ;
   - les points de la journée en télétravail se font **sur Discord, pas sur Teams** : les séances 6, 7 et 8 et les décisions D-009 et D-010 l'indiquaient par erreur.
 - **Décision** :
   - `css/styles.css` est remplacé par la feuille de l'atelier IA : en-tête sur une ligne, colonne « programme » à gauche sur grand écran, thèmes clair et sombre (`prefers-color-scheme`), surligneur sous le grand titre ;
