@@ -2,7 +2,7 @@
   "version": 1,
   "application": {
     "titre": "Culture informatique et Web",
-    "sousTitre": "Atelier en 8 séances",
+    "sousTitre": "Atelier en 9 séances",
     "langueDates": "fr-FR"
   },
   "seances": [
@@ -13,7 +13,8 @@
     "seance-5.json",
     "seance-6.json",
     "seance-7.json",
-    "seance-8.json"
+    "seance-8.json",
+    "seance-9.json"
   ],
   "titrePage": {
     "accueil": "Accueil — {application}",

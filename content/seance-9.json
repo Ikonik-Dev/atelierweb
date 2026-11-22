@@ -1,0 +1,1204 @@
+{
+  "version": 1,
+  "id": "seance-9",
+  "titre": "Adresses IP, ports et hébergement",
+  "objectifs": [
+    "savoir ce qu'est une adresse IP, et faire la différence entre adresse publique et adresse privée ;",
+    "comprendre à quoi sert un port, et reconnaître les ports 80 et 443 ;",
+    "savoir ce qu'est un nom de domaine et un hébergeur ;",
+    "suivre le trajet complet d'une page, du nom jusqu'au serveur ;",
+    "faire un premier diagnostic quand « Internet ne marche pas »."
+  ],
+  "etapes": [
+    {
+      "id": "s9-etape-1",
+      "titre": "Une nouvelle journée en autonomie",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Aujourd'hui, vous travaillez depuis chez vous. Vous avancez seul, à votre rythme."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Cette séance continue les séances 6, 7 et 8. Vous savez déjà ce que font le DNS, une requête, une réponse, un cookie et le cache."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Aujourd'hui, une question : **où se trouve vraiment un site web, et comment votre ordinateur le trouve-t-il ?**"
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Le programme de la journée",
+          "elements": [
+            "Le matin : les étapes 2 à 5. Rappel, l'adresse IP, votre adresse sur votre ordinateur, les ports.",
+            "L'après-midi : les étapes 6 à 9. Le nom de domaine, l'hébergement, le trajet complet de l'atelier, le cas du technicien.",
+            "Rendez-vous sur Discord avec le formateur : au début de la journée, à midi et en fin de journée."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Écrivez de vraies réponses",
+          "texte": "Dans les questions où l'on écrit, un point ou un mot seul ne suffit pas. Écrivez au moins une phrase avec vos mots. Le formateur lit vos réponses."
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Pour rendre votre travail, ce soir",
+          "elements": [
+            "Utilisez le bouton « Enregistrer mon travail dans un fichier ».",
+            "N'utilisez pas Ctrl + S ni « Enregistrer la page sous » : cela enregistre la page, mais pas vos réponses.",
+            "Envoyez le fichier au formateur sur Discord, en message privé."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous êtes bloqué",
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Discord. Dites le numéro de la séance et de l'exercice."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Pour commencer, une question sans note. Ce soir, vous répondrez à la même question."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e01",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Un site web, où se trouve-t-il, d'après vous ? Comment votre ordinateur fait-il pour le trouver ?",
+          "reponseModele": "Un exemple de réponse possible : « Le site est sur un ordinateur quelque part. Mon ordinateur trouve son adresse grâce au nom que je tape. »",
+          "explicationCorrection": "Il n'y a pas de mauvaise réponse ici. Ce soir, vous comparerez avec ce que vous aurez appris.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 30
+        }
+      ]
+    },
+    {
+      "id": "s9-etape-2",
+      "titre": "Échauffement : ce que vous savez déjà",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Trois questions pour vous remettre en route. Elles portent sur les séances 6 et 8. Si vous hésitez, retournez les voir dans le menu."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e02",
+          "type": "qcm_unique",
+          "question": "À quoi sert le DNS ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "À trouver l'adresse IP d'un site à partir de son nom."
+            },
+            {
+              "id": "b",
+              "texte": "À garder les mots de passe."
+            },
+            {
+              "id": "c",
+              "texte": "À afficher les images plus vite."
+            }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "Le DNS est l'annuaire du web : vous donnez un nom, il trouve l'adresse IP. Aujourd'hui, vous allez voir à quoi ressemble cette adresse.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 10
+        },
+        {
+          "id": "s9-e03",
+          "type": "qcm_unique",
+          "question": "Un utilisateur voit une ancienne version d'un site. Quel est le premier geste ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Recharger avec Ctrl + F5."
+            },
+            {
+              "id": "b",
+              "texte": "Réinstaller le navigateur."
+            },
+            {
+              "id": "c",
+              "texte": "Changer de mot de passe."
+            }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "Ctrl + F5 force le navigateur à redemander tous les fichiers au serveur, sans utiliser son cache.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 10
+        },
+        {
+          "id": "s9-e04",
+          "type": "qcm_unique",
+          "question": "L'atelier est un site statique. Qu'est-ce que cela veut dire ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le serveur envoie les mêmes fichiers tout prêts à tout le monde."
+            },
+            {
+              "id": "b",
+              "texte": "Le site ne bouge jamais."
+            },
+            {
+              "id": "c",
+              "texte": "Le site garde votre travail dans une base de données."
+            }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "Statique : les mêmes fichiers pour tout le monde. Votre travail, lui, est gardé dans votre navigateur.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 10
+        }
+      ]
+    },
+    {
+      "id": "s9-etape-3",
+      "titre": "L'adresse IP : l'adresse d'une machine",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Sur un réseau, chaque appareil a une adresse : l'**adresse IP**. Sans elle, les messages ne savent pas où aller. C'est comme une adresse postale pour le courrier."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "À quoi ressemble une adresse IP"
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            {
+              "terme": "IPv4",
+              "definition": "La forme la plus connue : 4 nombres séparés par des points. Chaque nombre va de 0 à 255. Exemple : 192.168.1.20"
+            },
+            {
+              "terme": "IPv6",
+              "definition": "Une forme plus récente et plus longue, avec des deux-points. Exemple : 2001:db8::1. Elle existe parce qu'il n'y a plus assez d'adresses IPv4 : environ 4,3 milliards, pour beaucoup plus d'appareils."
+            }
+          ]
+        },
+        {
+          "type": "sous_titre",
+          "texte": "L'immeuble et les appartements"
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Imaginez un immeuble. Il a **une seule adresse dans la rue**. À l'intérieur, chaque appartement a **son numéro**. Le gardien reçoit le courrier et le distribue dans le bon appartement."
+        },
+        {
+          "type": "tableau",
+          "legende": "À la maison, c'est pareil",
+          "entetes": [
+            "Dans l'immeuble",
+            "Sur votre réseau"
+          ],
+          "lignes": [
+            [
+              "L'adresse de l'immeuble, dans la rue",
+              "L'**adresse IP publique** : celle de votre box, visible sur Internet. Tous les appareils de la maison la partagent."
+            ],
+            [
+              "Le numéro d'appartement",
+              "L'**adresse IP privée** : celle de chaque appareil, à l'intérieur de la maison. Elle n'est pas visible sur Internet."
+            ],
+            [
+              "Le gardien",
+              "La **box** : elle donne une adresse privée à chaque appareil, et elle fait passer les messages entre la maison et Internet."
+            ]
+          ]
+        },
+        {
+          "type": "tableau",
+          "legende": "Reconnaître une adresse privée",
+          "entetes": [
+            "Une adresse qui commence par…",
+            "C'est…"
+          ],
+          "lignes": [
+            [
+              "192.168.",
+              "une adresse privée, très courante à la maison"
+            ],
+            [
+              "10.",
+              "une adresse privée, courante en entreprise"
+            ],
+            [
+              "172.16. à 172.31.",
+              "une adresse privée"
+            ],
+            [
+              "127.0.0.1",
+              "« moi-même » : l'ordinateur se parle à lui-même (on dit aussi « localhost »)"
+            ],
+            [
+              "Autre chose",
+              "en général, une adresse publique"
+            ]
+          ]
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            {
+              "terme": "DHCP",
+              "definition": "Le service de la box qui distribue automatiquement les adresses privées aux appareils qui se connectent. Comme le gardien qui attribue les boîtes aux lettres."
+            }
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "L'adresse IP publique est une donnée personnelle",
+          "texte": "Elle permet de retrouver votre connexion. Ne la publiez pas sur Discord ni ailleurs. Votre adresse privée (192.168…) ne pose pas ce problème : des millions de maisons utilisent les mêmes."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e05",
+          "type": "qcm_unique",
+          "question": "Laquelle de ces adresses IPv4 n'est **pas** valable ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "192.168.1.20"
+            },
+            {
+              "id": "b",
+              "texte": "10.0.0.5"
+            },
+            {
+              "id": "c",
+              "texte": "192.168.1.300"
+            },
+            {
+              "id": "d",
+              "texte": "8.8.8.8"
+            }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "Dans une adresse IPv4, chaque nombre va de 0 à 255. 300 est trop grand : l'adresse 192.168.1.300 n'existe pas.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e06",
+          "type": "qcm_unique",
+          "question": "L'adresse 192.168.1.35 est…",
+          "options": [
+            {
+              "id": "a",
+              "texte": "une adresse publique, visible sur Internet."
+            },
+            {
+              "id": "b",
+              "texte": "une adresse privée, à l'intérieur d'un réseau comme celui de la maison."
+            },
+            {
+              "id": "c",
+              "texte": "une adresse IPv6."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Une adresse qui commence par 192.168. est privée. C'est le numéro d'appartement, pas l'adresse de l'immeuble.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s9-e07",
+          "type": "qcm_unique",
+          "question": "Chez vous, votre téléphone et votre ordinateur vont sur le même site. Le site voit-il deux adresses IP différentes ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Oui : chaque appareil a sa propre adresse visible sur Internet."
+            },
+            {
+              "id": "b",
+              "texte": "Non : il voit la même adresse publique, celle de la box."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Vu d'Internet, tout le courrier part de l'adresse de l'immeuble : l'adresse publique de la box. Les adresses privées restent à l'intérieur de la maison.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e08",
+          "type": "qcm_unique",
+          "question": "À quoi sert l'adresse 127.0.0.1 ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "À joindre le site de Google."
+            },
+            {
+              "id": "b",
+              "texte": "À parler à son propre ordinateur."
+            },
+            {
+              "id": "c",
+              "texte": "À joindre la box."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "127.0.0.1, ou « localhost », veut dire « moi-même ». Les développeurs s'en servent pour tester un site sur leur propre ordinateur, avant de le publier.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        }
+      ]
+    },
+    {
+      "id": "s9-etape-4",
+      "titre": "Mission 1 : l'adresse de votre ordinateur",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Vous allez lire l'adresse IP privée de votre ordinateur, et celle de votre box."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Avec Windows"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Appuyez sur la touche **Windows** du clavier.",
+            "Tapez **cmd**, puis appuyez sur **Entrée**. Une fenêtre noire s'ouvre : c'est l'invite de commandes.",
+            "Tapez **ipconfig**, puis appuyez sur **Entrée**.",
+            "Cherchez la ligne **Adresse IPv4**, puis la ligne **Passerelle par défaut**."
+          ],
+          "numerotee": true
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Pas de panique",
+          "texte": "La commande ipconfig lit seulement des informations. Elle ne modifie rien sur votre ordinateur."
+        },
+        {
+          "type": "tableau",
+          "legende": "Ce que l'on voit",
+          "entetes": [
+            "Ligne",
+            "Exemple",
+            "Ce que c'est"
+          ],
+          "lignes": [
+            [
+              "Adresse IPv4",
+              "192.168.1.23",
+              "L'adresse privée de votre ordinateur : le numéro d'appartement."
+            ],
+            [
+              "Masque de sous-réseau",
+              "255.255.255.0",
+              "La taille du réseau de la maison."
+            ],
+            [
+              "Passerelle par défaut",
+              "192.168.1.1 ou 192.168.1.254",
+              "L'adresse de votre box : le gardien. Tout ce qui sort de la maison passe par elle."
+            ]
+          ]
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Il peut y avoir plusieurs blocs, par exemple « Carte Ethernet » (câble) et « Carte réseau sans fil Wi-Fi ». Regardez celui qui a une passerelle par défaut : c'est celui qui est connecté."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Avec un Mac ou sans invite de commandes",
+          "texte": "Sur un Mac : menu Pomme, Réglages Système, Réseau, puis cliquez sur la connexion active. Si vous ne pouvez pas faire la manipulation (lecteur d'écran, ordinateur prêté), utilisez le tableau « Ce que l'on voit » pour répondre."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous êtes bloqué",
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Discord. Dites le numéro de la séance et de l'exercice."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e09",
+          "type": "qcm_unique",
+          "question": "Avec ipconfig, quelle adresse IPv4 a-t-on le plus de chances de voir pour un ordinateur connecté à une box, à la maison ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "192.168.1.23"
+            },
+            {
+              "id": "b",
+              "texte": "185.199.108.153"
+            },
+            {
+              "id": "c",
+              "texte": "127.0.0.1"
+            }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "À la maison, la box donne des adresses privées, le plus souvent en 192.168. (parfois en 10.). 185.199.108.153 est une adresse publique de serveur, et 127.0.0.1 désigne l'ordinateur lui-même. Si votre adresse à vous commence par 169.254., votre ordinateur n'a pas reçu d'adresse de la box : vous verrez ce cas à l'étape 8.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e10",
+          "type": "qcm_unique",
+          "question": "À quoi correspond la ligne « Passerelle par défaut » ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "À l'adresse du site que vous visitez."
+            },
+            {
+              "id": "b",
+              "texte": "À l'adresse de votre box, par où tout passe pour sortir de la maison."
+            },
+            {
+              "id": "c",
+              "texte": "À votre mot de passe Wi-Fi."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "La passerelle, c'est la porte de sortie du réseau de la maison : la box. Pour un technicien, c'est une information clé pour dépanner une connexion.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e11",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Avec vos mots : pourquoi peut-on montrer son adresse 192.168.1.23 sans risque, mais pas son adresse IP publique ?",
+          "reponseModele": "L'adresse 192.168.1.23 existe dans des millions de maisons, elle ne dit pas qui je suis. L'adresse publique désigne ma connexion à moi sur Internet : c'est une donnée personnelle.",
+          "explicationCorrection": "L'idée importante : l'adresse privée n'existe qu'à l'intérieur de la maison, et des millions de maisons utilisent les mêmes. L'adresse publique, elle, désigne votre connexion sur Internet.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 45
+        }
+      ]
+    },
+    {
+      "id": "s9-etape-5",
+      "titre": "Les ports : les guichets d'un même bâtiment",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Un serveur peut rendre plusieurs services à la fois : des pages web, des mails, des connexions à distance. Comment savoir à quel service on s'adresse ?"
+        },
+        {
+          "type": "sous_titre",
+          "texte": "À la poste"
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Le bureau de poste a une seule adresse. Mais à l'intérieur, il y a plusieurs guichets : un pour les colis, un pour les lettres, un pour la banque."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Sur un serveur, chaque guichet a un numéro : c'est le **port**."
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            {
+              "terme": "Un port",
+              "definition": "Un numéro, de 0 à 65535, qui dit à quel service on s'adresse sur une machine."
+            },
+            {
+              "terme": "L'adresse complète",
+              "definition": "L'adresse IP et le port, séparés par deux-points. Exemple : 185.199.108.153:443. L'adresse IP dit quel bâtiment, le port dit quel guichet."
+            }
+          ]
+        },
+        {
+          "type": "tableau",
+          "legende": "Les ports à connaître",
+          "entetes": [
+            "Port",
+            "Service",
+            "Pour comparer"
+          ],
+          "lignes": [
+            [
+              "80",
+              "Le web sans cadenas (HTTP)",
+              "Le guichet des cartes postales"
+            ],
+            [
+              "443",
+              "Le web avec cadenas (HTTPS)",
+              "Le guichet des lettres fermées"
+            ],
+            [
+              "53",
+              "Le DNS",
+              "Le guichet des renseignements"
+            ],
+            [
+              "22",
+              "La connexion à distance sécurisée (SSH), pour administrer un serveur",
+              "La porte de service, réservée au personnel"
+            ]
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Pourquoi on ne voit pas le port dans l'adresse",
+          "texte": "Le navigateur l'ajoute tout seul : 443 pour une adresse en https, 80 pour une adresse en http. On l'écrit seulement quand on utilise un autre port. Par exemple, un développeur teste son site sur http://localhost:8000."
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Dans les métiers du réseau",
+          "texte": "Un pare-feu est un portier : il laisse passer certains ports et en bloque d'autres. Quand un service « ne répond pas », le technicien vérifie souvent si le bon port est ouvert."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e12",
+          "type": "qcm_unique",
+          "question": "Dans l'adresse complète 185.199.108.153:443, que veut dire 443 ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le numéro de la page."
+            },
+            {
+              "id": "b",
+              "texte": "Le port : le service HTTPS, le web avec cadenas."
+            },
+            {
+              "id": "c",
+              "texte": "Le nombre de visiteurs."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Après les deux-points, c'est le port. 443, c'est le guichet du web avec cadenas.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s9-e13",
+          "type": "qcm_unique",
+          "question": "Vous ouvrez une adresse qui commence par https://. Sur quel port le navigateur se connecte-t-il, si rien d'autre n'est indiqué ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "80"
+            },
+            {
+              "id": "b",
+              "texte": "443"
+            },
+            {
+              "id": "c",
+              "texte": "22"
+            },
+            {
+              "id": "d",
+              "texte": "53"
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "https = port 443. Le navigateur l'ajoute tout seul, c'est pour cela qu'on ne le voit pas dans l'adresse.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s9-e14",
+          "type": "qcm_unique",
+          "question": "L'adresse IP et le port, c'est comme…",
+          "options": [
+            {
+              "id": "a",
+              "texte": "le nom et le prénom d'une personne."
+            },
+            {
+              "id": "b",
+              "texte": "l'adresse d'un bâtiment, et le numéro du guichet à l'intérieur."
+            },
+            {
+              "id": "c",
+              "texte": "le code postal et la ville."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "L'adresse IP trouve le bâtiment, le port trouve le bon guichet dans le bâtiment.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        }
+      ]
+    },
+    {
+      "id": "s9-etape-6",
+      "titre": "Le nom de domaine et l'hébergeur",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Bonne reprise après la pause de midi."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Personne ne retient 185.199.108.153. On retient un nom. Ce nom, c'est le **nom de domaine**."
+        },
+        {
+          "type": "definitions",
+          "elements": [
+            {
+              "terme": "Un nom de domaine",
+              "definition": "Le nom d'un site, par exemple service-public.fr. Il se loue, en général à l'année, auprès d'un bureau d'enregistrement. Pour les noms en .fr, c'est l'Afnic qui tient le registre."
+            },
+            {
+              "terme": "Un sous-domaine",
+              "definition": "Un nom placé devant un nom de domaine. Dans ikonik-dev.github.io, le domaine est github.io, qui appartient à GitHub. ikonik-dev est le sous-domaine donné au formateur."
+            },
+            {
+              "terme": "Un hébergeur",
+              "definition": "Une entreprise qui garde les fichiers d'un site sur ses serveurs, allumés jour et nuit, et qui les envoie aux visiteurs."
+            },
+            {
+              "terme": "Un datacenter",
+              "definition": "Un grand bâtiment rempli de serveurs, avec la climatisation, l'électricité de secours et la surveillance."
+            }
+          ]
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Le nom de domaine et l'hébergeur ne sont pas la même chose"
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Le nom de domaine, c'est le nom sur la boîte aux lettres. L'hébergeur, c'est le logement. On peut garder le même nom et changer de logement : il suffit de mettre à jour l'annuaire, le DNS."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Les façons d'héberger un site"
+        },
+        {
+          "type": "tableau",
+          "legende": "Pour comparer avec le logement",
+          "entetes": [
+            "Type d'hébergement",
+            "Pour comparer",
+            "Pour quoi faire"
+          ],
+          "lignes": [
+            [
+              "Hébergement statique gratuit (comme GitHub Pages)",
+              "Une chambre prêtée",
+              "Un petit site statique : cet atelier, un portfolio."
+            ],
+            [
+              "Hébergement mutualisé",
+              "La colocation : plusieurs sites partagent le même serveur",
+              "Le site d'une association, d'un artisan. Pas cher, mais on partage les ressources."
+            ],
+            [
+              "Serveur dédié",
+              "Une maison entière pour soi",
+              "Un gros site, ou un besoin de tout contrôler. Plus cher, et il faut l'entretenir."
+            ],
+            [
+              "Cloud",
+              "Le Vélib' : on prend ce qu'il faut, quand il faut, et on paie à l'usage",
+              "Un service qui doit grandir ou rétrécir vite."
+            ]
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e15",
+          "type": "qcm_unique",
+          "question": "Dans l'adresse ikonik-dev.github.io, quel est le nom de domaine qui appartient à GitHub ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "ikonik-dev"
+            },
+            {
+              "id": "b",
+              "texte": "github.io"
+            },
+            {
+              "id": "c",
+              "texte": "io"
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le domaine est github.io, à GitHub. ikonik-dev est un sous-domaine que GitHub prête au formateur pour son site.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e16",
+          "type": "qcm_unique",
+          "question": "Une association veut changer d'hébergeur, mais garder son adresse lesassociations-du-quartier.fr. Est-ce possible ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Non : le nom est collé à l'hébergeur."
+            },
+            {
+              "id": "b",
+              "texte": "Oui : on déménage les fichiers, puis on met à jour le DNS pour donner la nouvelle adresse IP."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le nom de domaine et l'hébergeur sont séparés. On déménage, et on met à jour l'annuaire : les visiteurs arrivent au nouveau logement sans changer leurs habitudes.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 25
+        },
+        {
+          "id": "s9-e17",
+          "type": "qcm_unique",
+          "question": "Un artisan veut un petit site vitrine pas cher, sans s'occuper du serveur. Quel hébergement lui conseiller ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Un serveur dédié."
+            },
+            {
+              "id": "b",
+              "texte": "Un hébergement mutualisé."
+            },
+            {
+              "id": "c",
+              "texte": "Un datacenter à lui."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le mutualisé, c'est la colocation : pas cher, et l'hébergeur s'occupe du serveur. Un serveur dédié serait trop cher et demanderait de l'entretien.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e18",
+          "type": "qcm_unique",
+          "question": "Pourquoi un datacenter a-t-il de l'électricité de secours et de la climatisation ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Pour le confort des visiteurs."
+            },
+            {
+              "id": "b",
+              "texte": "Parce que les serveurs doivent rester allumés jour et nuit, et qu'ils chauffent beaucoup."
+            },
+            {
+              "id": "c",
+              "texte": "C'est obligatoire pour tous les bâtiments."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Un site doit répondre à toute heure. Une coupure de courant ou une surchauffe arrêterait les serveurs, et donc les sites.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        }
+      ]
+    },
+    {
+      "id": "s9-etape-7",
+      "titre": "Mission 2 : le trajet complet de l'atelier",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Vous allez suivre le trajet d'une page de cet atelier, du nom jusqu'au serveur."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Le trajet, en 4 temps"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Vous tapez **ikonik-dev.github.io**.",
+            "Le **DNS** donne l'adresse IP d'un serveur de GitHub.",
+            "Le navigateur se connecte à cette adresse, sur le **port 443** (le cadenas).",
+            "Le **serveur de GitHub Pages**, l'hébergeur, envoie les fichiers de l'atelier."
+          ],
+          "numerotee": true
+        },
+        {
+          "type": "sous_titre",
+          "texte": "La mission : voir l'adresse du serveur dans F12"
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Ouvrez les outils avec **F12**, onglet **Réseau** (Network).",
+            "Rechargez l'atelier avec **Ctrl + F5**, pour que tout soit redemandé au serveur.",
+            "Cliquez sur la première ligne de la liste.",
+            "Dans l'onglet **En-têtes** (Headers), cherchez la ligne **Adresse distante** (Remote Address). Avec Firefox, cherchez la ligne **Adresse**."
+          ],
+          "numerotee": true
+        },
+        {
+          "type": "tableau",
+          "legende": "Ce que l'on voit",
+          "entetes": [
+            "Élément",
+            "Exemple"
+          ],
+          "lignes": [
+            [
+              "Adresse distante",
+              "185.199.108.153:443 (le troisième nombre peut être 108, 109, 110 ou 111)"
+            ],
+            [
+              "Parfois",
+              "Une adresse IPv6, plus longue, avec des deux-points et entre crochets [ ]."
+            ],
+            [
+              "Si la ligne est absente",
+              "Le fichier vient du cache : refaites Ctrl + F5."
+            ]
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Pourquoi plusieurs adresses ?",
+          "texte": "GitHub a plusieurs serveurs pour le même service. Si l'un est occupé ou en panne, un autre répond. Le DNS peut donner l'une ou l'autre adresse."
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Si vous ne pouvez pas utiliser ces outils",
+          "texte": "Par exemple avec un lecteur d'écran ou un fort zoom. Prévenez le formateur sur Discord, puis utilisez le tableau « Ce que l'on voit » pour répondre."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous êtes bloqué",
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Discord. Dites le numéro de la séance et de l'exercice."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e19",
+          "type": "texte_libre",
+          "mode": "comparaison",
+          "question": "Dans l'adresse distante, quel nombre vient après les deux-points ? Écrivez seulement le nombre.",
+          "reponsesAcceptees": [
+            "443"
+          ],
+          "fautesAcceptees": 0,
+          "reponseModele": "443",
+          "explicationCorrection": "443 : c'est le port du web avec cadenas (HTTPS). L'atelier est servi en https, donc sur le port 443.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e20",
+          "type": "qcm_unique",
+          "question": "L'adresse distante commence par 185.199. Est-ce une adresse privée ou publique ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Privée : comme celle de ma box."
+            },
+            {
+              "id": "b",
+              "texte": "Publique : c'est l'adresse d'un serveur de GitHub, sur Internet."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Elle ne commence ni par 192.168., ni par 10., ni par 172.16. à 172.31. : c'est une adresse publique, celle d'un serveur de l'hébergeur.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e21",
+          "type": "qcm_unique",
+          "question": "Dans quel ordre se passe le trajet d'une page ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le serveur envoie les fichiers, puis le DNS trouve l'adresse, puis je tape le nom."
+            },
+            {
+              "id": "b",
+              "texte": "Je tape le nom, le DNS trouve l'adresse IP, le navigateur se connecte sur le port 443, le serveur envoie les fichiers."
+            },
+            {
+              "id": "c",
+              "texte": "Le navigateur se connecte sur le port 443, puis je tape le nom, puis le DNS répond."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "D'abord le nom, puis l'annuaire, puis la connexion au bon guichet, puis la réponse du serveur.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 25
+        },
+        {
+          "id": "s9-e22",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Expliquez le trajet de l'atelier à quelqu'un qui débute, en 3 ou 4 phrases, avec vos mots. Utilisez les mots : nom, DNS, adresse IP, port, hébergeur.",
+          "reponseModele": "Je tape le nom ikonik-dev.github.io. Le DNS, l'annuaire, me donne l'adresse IP d'un serveur de GitHub. Mon navigateur se connecte à ce serveur sur le port 443, celui du cadenas. GitHub, l'hébergeur, m'envoie les fichiers de l'atelier.",
+          "explicationCorrection": "Vérifiez que votre explication suit l'ordre du trajet et utilise les 5 mots. Si vous pouvez la dire à voix haute sans la lire, c'est gagné.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 60
+        }
+      ]
+    },
+    {
+      "id": "s9-etape-8",
+      "titre": "Mission 3 : jouer au technicien réseau",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Vous êtes technicien support. Des utilisateurs vous appellent : « Internet ne marche pas. » Avec ce que vous savez maintenant, vous pouvez chercher où est le problème."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "La bonne méthode",
+          "texte": "Suivre le trajet dans l'ordre : l'appareil a-t-il une adresse ? La box répond-elle ? Le DNS répond-il ? Le serveur répond-il ?"
+        },
+        {
+          "type": "tableau",
+          "legende": "Votre boîte à outils",
+          "entetes": [
+            "Ce que l'on observe",
+            "Ce que cela veut dire"
+          ],
+          "lignes": [
+            [
+              "L'adresse IPv4 commence par 169.254.",
+              "L'ordinateur n'a pas reçu d'adresse de la box (le DHCP n'a pas répondu). Vérifier le câble, le Wi-Fi, redémarrer la box."
+            ],
+            [
+              "Le site s'ouvre avec son adresse IP, mais pas avec son nom",
+              "Le DNS ne répond pas, ou se trompe."
+            ],
+            [
+              "Tous les sites marchent, sauf un",
+              "Le problème vient sans doute de ce site, ou de son hébergeur, pas de l'ordinateur."
+            ],
+            [
+              "« La connexion a été refusée » sur un port inhabituel",
+              "Le service n'écoute pas sur ce port, ou un pare-feu le bloque."
+            ]
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e23",
+          "type": "qcm_unique",
+          "question": "Un utilisateur dit : « Internet ne marche plus. » Son adresse IPv4 est 169.254.12.7. Quelle est la cause la plus probable ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le site qu'il visite est en panne."
+            },
+            {
+              "id": "b",
+              "texte": "Son ordinateur n'a pas reçu d'adresse de la box : problème de connexion au réseau de la maison."
+            },
+            {
+              "id": "c",
+              "texte": "Son mot de passe est faux."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Une adresse en 169.254. est une adresse « de secours » que Windows se donne quand la box ne lui a pas répondu. Le problème est entre l'ordinateur et la box : câble, Wi-Fi, ou box à redémarrer.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 25
+        },
+        {
+          "id": "s9-e24",
+          "type": "qcm_unique",
+          "question": "Une utilisatrice ne peut ouvrir aucun site par son nom. Mais quand le technicien tape directement l'adresse IP d'un serveur, ça marche. Qu'est-ce qui ne va pas ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "La carte réseau."
+            },
+            {
+              "id": "b",
+              "texte": "Le DNS : l'annuaire ne répond pas."
+            },
+            {
+              "id": "c",
+              "texte": "Le port 443 est fermé partout."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "La connexion marche, puisque l'adresse IP répond. C'est l'annuaire qui ne trouve plus les adresses : le DNS.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 25
+        },
+        {
+          "id": "s9-e25",
+          "type": "qcm_unique",
+          "question": "Dans une entreprise, tous les sites marchent, sauf le site de réservation des salles. Les collègues ont le même problème. Où chercher d'abord ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Sur l'ordinateur de chaque collègue."
+            },
+            {
+              "id": "b",
+              "texte": "Du côté du site de réservation ou de son hébergeur."
+            },
+            {
+              "id": "c",
+              "texte": "Dans la box de chaque collègue."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Si tout le monde a le même problème, sur un seul site, ce n'est pas un problème d'ordinateur. On regarde du côté du serveur ou de l'hébergeur de ce site.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 25
+        },
+        {
+          "id": "s9-e26",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Un ami vous dit : « Internet ne marche pas chez moi. » Écrivez les 3 premières questions que vous lui posez, dans l'ordre.",
+          "reponseModele": "1. Est-ce que d'autres appareils de la maison ont Internet ? 2. Est-ce que tous les sites ne marchent pas, ou un seul ? 3. Quelle est l'adresse IPv4 de ton ordinateur avec ipconfig ?",
+          "explicationCorrection": "Plusieurs réponses sont possibles. Une bonne série suit le trajet : d'abord l'appareil et la box, puis le DNS, puis le site.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 60
+        }
+      ]
+    },
+    {
+      "id": "s9-etape-9",
+      "titre": "Pour aller plus loin : interroger le DNS vous-même (au choix)",
+      "auChoix": true,
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Cette étape est **au choix**, si vous avez fini en avance. Elle demande l'invite de commandes de Windows."
+        },
+        {
+          "type": "liste",
+          "elements": [
+            "Ouvrez l'invite de commandes : touche Windows, tapez **cmd**, Entrée.",
+            "Tapez **nslookup ikonik-dev.github.io**, puis Entrée.",
+            "Lisez la réponse. Cherchez les lignes **Nom** et **Addresses**."
+          ],
+          "numerotee": true
+        },
+        {
+          "type": "tableau",
+          "legende": "Ce que l'on voit",
+          "entetes": [
+            "Ligne",
+            "Ce que c'est"
+          ],
+          "lignes": [
+            [
+              "Serveur",
+              "Le serveur DNS qui vous répond, souvent celui de votre box ou de votre fournisseur d'accès."
+            ],
+            [
+              "Réponse ne faisant pas autorité",
+              "Le serveur DNS répond avec ce qu'il a déjà en mémoire. C'est normal."
+            ],
+            [
+              "Addresses",
+              "Les adresses IP du site : souvent plusieurs, en 185.199., et parfois des adresses IPv6."
+            ]
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Ce que fait nslookup",
+          "texte": "nslookup pose la question au DNS, comme le navigateur le fait en cachette. Un technicien s'en sert pour vérifier que l'annuaire donne la bonne adresse."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e27",
+          "type": "qcm_unique",
+          "question": "Combien d'adresses IPv4 nslookup vous a-t-il données pour ikonik-dev.github.io ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Une seule."
+            },
+            {
+              "id": "b",
+              "texte": "Plusieurs."
+            },
+            {
+              "id": "c",
+              "texte": "Aucune : j'ai eu un message d'erreur."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le plus souvent, plusieurs : ce sont les différents serveurs de GitHub Pages. Si vous avez eu une erreur, vérifiez l'orthographe du nom, et notez le message pour le formateur.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s9-e28",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Comparez : l'adresse distante vue dans F12 (mission 2) fait-elle partie des adresses données par nslookup ? Qu'est-ce que cela montre ?",
+          "reponseModele": "Oui, 185.199.108.153 est dans la liste. Cela montre que le navigateur a demandé l'adresse au DNS, puis s'est connecté à l'une des adresses données.",
+          "explicationCorrection": "L'adresse vue dans F12 est en général l'une de celles données par nslookup : le navigateur a utilisé la réponse du DNS.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 45
+        }
+      ]
+    },
+    {
+      "id": "s9-etape-10",
+      "titre": "Bilan et preuve de travail",
+      "blocs": [
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "À retenir",
+          "elements": [
+            "Une adresse IP est l'adresse d'une machine. À la maison, la box a l'adresse publique, chaque appareil a une adresse privée (192.168…).",
+            "Un port est le numéro du guichet : 443 pour le web avec cadenas, 80 sans cadenas.",
+            "Un nom de domaine est le nom sur la boîte aux lettres. L'hébergeur est le logement. Le DNS fait le lien entre les deux.",
+            "Le trajet : je tape le nom, le DNS donne l'adresse IP, le navigateur se connecte sur le port 443, le serveur envoie les fichiers.",
+            "Pour dépanner, on suit le trajet dans l'ordre : l'appareil, la box, le DNS, le serveur."
+          ]
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Ce matin, vous avez répondu à une question. Répondez à la même question maintenant, puis comparez."
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Avant le rendez-vous Discord de fin de journée",
+          "elements": [
+            "Ouvrez « Plan de la séance », en bas de la page. Vérifiez qu'aucun exercice n'est marqué « (à faire) ».",
+            "Cliquez sur « Enregistrer mon travail dans un fichier ». N'utilisez pas Ctrl + S.",
+            "Envoyez le fichier au formateur sur Discord, en message privé."
+          ]
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e29",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Un site web, où se trouve-t-il ? Comment votre ordinateur fait-il pour le trouver ? Répondez avec vos mots, puis comparez avec votre réponse de ce matin.",
+          "reponseModele": "Le site est sur un serveur, chez un hébergeur, souvent dans un datacenter. Mon ordinateur demande l'adresse IP du serveur au DNS grâce au nom, puis il se connecte sur le port 443 et reçoit les fichiers.",
+          "explicationCorrection": "L'idée importante : le site est sur un serveur, chez un hébergeur, dans un datacenter. Mon ordinateur demande son adresse IP au DNS, puis se connecte à ce serveur sur le bon port.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 45
+        }
+      ]
+    }
+  ]
+}

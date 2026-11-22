@@ -6,7 +6,7 @@
 >
 > Si une demande contredit une règle de ce fichier, **le signaler explicitement avant d'implémenter**. Ne jamais trancher en silence (voir section 5).
 
-**Dernière mise à jour** : 2026-11-15
+**Dernière mise à jour** : 2026-11-22
 
 ---
 
@@ -33,7 +33,7 @@
 
 - **FALC** (Facile à lire et à comprendre) : phrases courtes, une idée par phrase, mots du quotidien, tout mot technique expliqué.
 - **Analogies de la vie quotidienne en Île-de-France** : métro parisien, courrier postal, adresse postale, bibliothèque de quartier, feux de signalisation, etc.
-- Découpage : **8 séances** (5 séances du livret d'origine + 3 séances client/serveur, voir D-009 et D-010), illustrées par **9 illustrations**.
+- Découpage : **9 séances** (5 séances du livret d'origine + 4 séances client/serveur, voir D-009, D-010 et D-012), illustrées par **9 illustrations**.
 
 ### 1.3 Objectif technique
 
@@ -216,7 +216,8 @@ culture-web/
 │   ├── seance-5.json
 │   ├── seance-6.json           # Client et serveur : le trajet d'une page (D-009)
 │   ├── seance-7.json           # Enquête avec F12, onglet Réseau (D-009)
-│   └── seance-8.json           # Ce que le serveur fabrique, ce que le navigateur garde (D-010)
+│   ├── seance-8.json           # Ce que le serveur fabrique, ce que le navigateur garde (D-010)
+│   └── seance-9.json           # Adresses IP, ports et hébergement (D-012)
 │
 └── assets/
     ├── polices/                # Polices locales et leurs licences SIL OFL (D-011)
@@ -557,3 +558,24 @@ Une entrée par évolution majeure : règle ajoutée, modifiée ou supprimée, n
   - pour un futur atelier, il suffira de recopier la feuille et de changer les variables de couleur, en recalculant les contrastes ;
   - tests faits en navigateur automatisé (thèmes clair et sombre, 320 px de large, aucune erreur) ; tests NVDA, clavier et zoom 200 % à refaire.
 - **Sections du CLAUDE.md impactées** : 2.5 et 2.6 (appliquées, non modifiées) ; 3.1 (`assets/polices/`)
+
+### D-012 — Séance 9 « Adresses IP, ports et hébergement »
+
+- **Date** : 2026-11-22
+- **Statut** : Acceptée (demandée par le formateur ; contenu à valider par lui, non essayé avec des stagiaires)
+- **Demandée ou validée par** : formateur
+- **Contexte** : journée « Culture Web et fonctionnement client/serveur » du lundi 23 novembre 2026, en télétravail, pour le même groupe, qui a fini la séance 8. Organisation de D-009 et D-011 : autonomie, points sur Discord au début, à midi et en fin de journée, preuve de travail envoyée sur Discord. Thème choisi par le formateur parmi trois propositions : adresses IP, ports, hébergement.
+- **Décision** :
+  - ajout de `seance-9.json` : 10 étapes, 29 exercices `s9-e01` à `s9-e29`, dont 2 au choix (étape 9) ;
+  - contenu : l'adresse IP (IPv4, IPv6, publique et privée avec l'analogie de l'immeuble et du gardien, DHCP, 127.0.0.1) ; **mission `ipconfig`** (adresse IPv4, passerelle par défaut) ; les ports (les guichets du bureau de poste : 80, 443, 53, 22 ; notation IP:port ; pare-feu) ; nom de domaine, sous-domaine, hébergeur, datacenter, 4 types d'hébergement comparés au logement (chambre prêtée, colocation, maison, Vélib') ; **mission F12 « Adresse distante »** sur l'atelier lui-même (port 443, adresses de GitHub Pages) ; 3 cas de technicien réseau (adresse en 169.254., DNS en panne, panne d'un seul site) ; étape au choix avec `nslookup` ;
+  - l'adresse IP publique est présentée comme une donnée personnelle, à ne pas publier ; la mission `ipconfig` ne montre que l'adresse privée ;
+  - reprend les leçons de l'atelier IA (D-022 de ce dépôt-là) : encadré « Pour rendre votre travail » (le bouton d'export, pas Ctrl + S), demande d'écrire au moins une phrase, vérification du plan de la séance avant de partir ;
+  - sous-titre de l'en-tête (`interface.json`) : « Atelier en 9 séances » ; contenu uniquement en JSON, aucun changement de code.
+- **Raison** : prolonger le trajet de la page (séances 6 à 8) jusqu'à la machine qui répond, avec des gestes de technicien réseau directement utiles (`ipconfig`, lecture de la passerelle, `nslookup`, diagnostic dans l'ordre du trajet).
+- **Conséquences et limites acceptées** :
+  - les missions `ipconfig` et `nslookup` supposent Windows et l'invite de commandes ; une variante Mac est indiquée, et le tableau « Ce que l'on voit » permet de répondre sans faire la manipulation ;
+  - les adresses de GitHub Pages (185.199.108.153 à 185.199.111.153) sont celles documentées par GitHub ; elles peuvent changer : les questions portent sur le port (443) et sur le caractère public de l'adresse, pas sur l'adresse exacte ;
+  - les libellés des outils de développement (« Adresse distante », « Adresse » dans Firefox) varient selon le navigateur et sa langue ;
+  - simplifications assumées pour un public FALC : plages privées sans notation CIDR, DHCP et NAT décrits par le « gardien » ;
+  - questions et corrigés rédigés par une IA, à relire par le formateur ; test NVDA non réalisé (contenu seul). Chargement des 39 écrans vérifié en navigateur automatisé à 360 px de large.
+- **Sections du CLAUDE.md impactées** : 1.2, 3.1

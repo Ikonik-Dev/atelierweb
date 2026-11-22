@@ -63,7 +63,8 @@ culture-web/
 │   ├── seance-5.json           Séance 5 : Sécurité, fiabilité et bilan
 │   ├── seance-6.json           Séance 6 : Client et serveur : le trajet d'une page
 │   ├── seance-7.json           Séance 7 : Enquête : observer les échanges avec F12
-│   └── seance-8.json           Séance 8 : Ce que le serveur fabrique, ce que le navigateur garde (D-010)
+│   ├── seance-8.json           Séance 8 : Ce que le serveur fabrique, ce que le navigateur garde (D-010)
+│   └── seance-9.json           Séance 9 : Adresses IP, ports et hébergement (D-012)
 │
 └── assets/
     ├── polices/                Polices locales (titres, texte, repères) et leurs licences SIL OFL (D-011)
