@@ -1199,6 +1199,932 @@
           "tempsMinimumSecondes": 45
         }
       ]
+    },
+    {
+      "id": "s9-etape-11",
+      "titre": "Module en plus : entraînement aux adresses",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Vous avez fini la séance. Bravo. Ce module en plus vous entraîne, pendant que le formateur corrige votre travail."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Il dure environ 1 h 30. Vous pouvez le faire dans l'ordre, à votre rythme."
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "Le programme du module",
+          "elements": [
+            "Étape 11 : reconnaître des adresses et des ports.",
+            "Étape 12 : conseiller une association pour son site web.",
+            "Étape 13 : écrire votre fiche de dépannage réseau.",
+            "Étape 14 : un quiz de révision des séances 6 à 9.",
+            "Étape 15 : renvoyer votre fichier au formateur."
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Votre fichier change",
+          "texte": "Les exercices de ce module sont marqués « (à faire) » dans le plan. C'est normal. À la fin du module, vous enregistrerez à nouveau votre travail et vous enverrez le nouveau fichier."
+        },
+        {
+          "type": "sous_titre",
+          "texte": "Rappel : les familles d'adresses"
+        },
+        {
+          "type": "tableau",
+          "legende": "Les familles d'adresses IPv4",
+          "entetes": [
+            "L'adresse commence par…",
+            "Ce que c'est"
+          ],
+          "lignes": [
+            [
+              "192.168.",
+              "Adresse privée, le plus souvent à la maison."
+            ],
+            [
+              "10.",
+              "Adresse privée, souvent en entreprise."
+            ],
+            [
+              "172.16. à 172.31.",
+              "Adresse privée. Attention : 172.15. ou 172.32. sont publiques."
+            ],
+            [
+              "127.0.0.1",
+              "L'ordinateur lui-même (« moi-même »)."
+            ],
+            [
+              "169.254.",
+              "Adresse de secours : l'ordinateur n'a pas reçu d'adresse de la box."
+            ],
+            [
+              "Autre chose",
+              "Adresse publique, visible sur Internet."
+            ]
+          ]
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Rappel : chaque nombre va de 0 à 255. Une adresse avec un nombre plus grand n'existe pas."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous êtes bloqué",
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Discord. Dites le numéro de la séance et de l'exercice."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e30",
+          "type": "qcm_unique",
+          "question": "L'adresse 10.12.0.4 : de quelle famille est-elle ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "L'ordinateur lui-même."
+            },
+            {
+              "id": "b",
+              "texte": "Une adresse impossible."
+            },
+            {
+              "id": "c",
+              "texte": "Une adresse privée."
+            },
+            {
+              "id": "d",
+              "texte": "Une adresse publique."
+            }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "Elle commence par 10. : c'est une adresse privée, comme un numéro d'appartement à l'intérieur d'un immeuble. On en trouve souvent en entreprise.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s9-e31",
+          "type": "qcm_unique",
+          "question": "L'adresse 172.32.0.1 : de quelle famille est-elle ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Une adresse privée, car elle commence par 172."
+            },
+            {
+              "id": "b",
+              "texte": "Une adresse publique."
+            },
+            {
+              "id": "c",
+              "texte": "Une adresse de secours."
+            },
+            {
+              "id": "d",
+              "texte": "Une adresse impossible."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Piège : les adresses privées en 172. vont seulement de 172.16. à 172.31. Ici, le deuxième nombre est 32 : c'est donc une adresse publique.",
+          "difficulte": "difficile",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e32",
+          "type": "qcm_unique",
+          "question": "L'adresse 256.10.1.1 : de quelle famille est-elle ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Une adresse publique."
+            },
+            {
+              "id": "b",
+              "texte": "Une adresse privée."
+            },
+            {
+              "id": "c",
+              "texte": "Une adresse impossible."
+            },
+            {
+              "id": "d",
+              "texte": "Une adresse de secours."
+            }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "Chaque nombre d'une adresse IPv4 va de 0 à 255. 256 est trop grand : cette adresse n'existe pas.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s9-e33",
+          "type": "qcm_multiple",
+          "question": "Cochez toutes les adresses privées.",
+          "options": [
+            {
+              "id": "a",
+              "texte": "192.168.0.12"
+            },
+            {
+              "id": "b",
+              "texte": "8.8.8.8"
+            },
+            {
+              "id": "c",
+              "texte": "172.20.5.1"
+            },
+            {
+              "id": "d",
+              "texte": "10.0.0.1"
+            },
+            {
+              "id": "e",
+              "texte": "185.199.108.153"
+            }
+          ],
+          "reponsesCorrectes": [
+            "a",
+            "c",
+            "d"
+          ],
+          "explicationCorrection": "192.168.0.12, 172.20.5.1 (entre 172.16. et 172.31.) et 10.0.0.1 sont privées. 8.8.8.8 et 185.199.108.153 sont publiques : ce sont des adresses de serveurs sur Internet.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 25
+        },
+        {
+          "id": "s9-e34",
+          "type": "qcm_unique",
+          "question": "Un collègue vous dit : « Mon adresse IPv4 est 169.254.40.2. » Que pouvez-vous lui dire ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Tout va bien, c'est l'adresse normale de la box."
+            },
+            {
+              "id": "b",
+              "texte": "Ton ordinateur n'a pas reçu d'adresse de la box : vérifions le câble ou le Wi-Fi."
+            },
+            {
+              "id": "c",
+              "texte": "Le site que tu veux voir est en panne."
+            },
+            {
+              "id": "d",
+              "texte": "Ton adresse est publique, tout le monde la voit."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "169.254. est l'adresse de secours. L'ordinateur se la donne lui-même quand la box ne lui répond pas. Le problème est entre l'ordinateur et la box.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e35",
+          "type": "texte_libre",
+          "mode": "comparaison",
+          "question": "Lisez l'adresse suivante : http://localhost:8080. Quel est le numéro du port ? Écrivez seulement le nombre.",
+          "reponsesAcceptees": [
+            "8080"
+          ],
+          "fautesAcceptees": 0,
+          "reponseModele": "8080",
+          "explicationCorrection": "Le port s'écrit après les deux-points, à la fin du nom : ici 8080. « localhost » veut dire « cet ordinateur-ci », comme 127.0.0.1. Les développeurs utilisent souvent ce genre d'adresse pour tester un site sur leur propre poste.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 10
+        },
+        {
+          "id": "s9-e36",
+          "type": "qcm_unique",
+          "question": "L'adresse https://service-public.fr n'écrit aucun port. Sur quel port le navigateur se connecte-t-il ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Sur le port 80."
+            },
+            {
+              "id": "b",
+              "texte": "Sur le port 443."
+            },
+            {
+              "id": "c",
+              "texte": "Sur le port 22."
+            },
+            {
+              "id": "d",
+              "texte": "Sur aucun port."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Quand le port n'est pas écrit, le navigateur prend le port habituel : 443 pour https (avec cadenas), 80 pour http. C'est comme un guichet tellement connu qu'on n'a pas besoin de le dire.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        }
+      ]
+    },
+    {
+      "id": "s9-etape-12",
+      "titre": "Étude de cas : le site d'une association",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Vous êtes technicien. Une association vous demande conseil. Lisez bien la demande : toutes les questions de l'étape parlent d'elle."
+        },
+        {
+          "type": "encadre",
+          "style": "info",
+          "titre": "La demande de l'association",
+          "elements": [
+            "L'association s'appelle « Les Jardins partagés du quartier ». Elle est fictive.",
+            "Elle a 3 bénévoles. Aucun ne connaît l'informatique.",
+            "Elle veut d'abord un site simple : qui nous sommes, les horaires, une carte, des photos.",
+            "L'an prochain, elle veut que les habitants puissent s'inscrire aux ateliers sur le site (nom, adresse mail, téléphone).",
+            "Elle a un petit budget, quelques euros par mois.",
+            "Elle voudrait une adresse facile à retenir, par exemple jardins-du-quartier.fr."
+          ]
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Pour répondre, servez-vous de ce que vous avez vu : site statique ou dynamique (séance 8), hébergement et nom de domaine (séance 9), cadenas et port 443."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous êtes bloqué",
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Discord. Dites le numéro de la séance et de l'exercice."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e37",
+          "type": "qcm_unique",
+          "question": "L'association des Jardins partagés veut d'abord un site simple : présentation, horaires, carte, photos. De quel site a-t-elle besoin pour commencer ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Il faut un site dynamique avec une base de données."
+            },
+            {
+              "id": "b",
+              "texte": "Il faut un serveur dédié dans un datacenter."
+            },
+            {
+              "id": "c",
+              "texte": "Il ne faut pas de site : un compte de réseau social suffit toujours."
+            },
+            {
+              "id": "d",
+              "texte": "Un site statique suffit : les pages sont les mêmes pour tout le monde."
+            }
+          ],
+          "reponseCorrecte": "d",
+          "explicationCorrection": "Des pages qui sont les mêmes pour tout le monde, c'est un site statique : le self-service, les plats sont déjà prêts. C'est simple, peu cher et facile à entretenir.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e38",
+          "type": "qcm_unique",
+          "question": "L'an prochain, les habitants pourront s'inscrire aux ateliers des Jardins partagés sur le site. Qu'est-ce que cela change ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Rien : un site statique garde les inscriptions tout seul."
+            },
+            {
+              "id": "b",
+              "texte": "Il faut un traitement côté serveur pour recevoir et garder les inscriptions."
+            },
+            {
+              "id": "c",
+              "texte": "Les inscriptions seront gardées dans le cache du navigateur de chaque habitant."
+            },
+            {
+              "id": "d",
+              "texte": "Il faut changer de nom de domaine."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Un site statique envoie des pages déjà prêtes. Il ne sait pas recevoir et garder des données. Pour des inscriptions, il faut un programme côté serveur : c'est le restaurant, qui fabrique à la demande. Un service extérieur de formulaire peut aussi le faire, mais c'est toujours un serveur, quelque part, qui garde les données.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 25
+        },
+        {
+          "id": "s9-e39",
+          "type": "qcm_unique",
+          "question": "Les 3 bénévoles des Jardins partagés ne connaissent pas l'informatique, et le budget est de quelques euros par mois. Quel hébergement leur conseiller ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Un serveur dédié : la maison entière, à entretenir soi-même."
+            },
+            {
+              "id": "b",
+              "texte": "Un hébergement mutualisé : la colocation, l'hébergeur s'occupe du serveur."
+            },
+            {
+              "id": "c",
+              "texte": "Un serveur installé chez un bénévole, allumé jour et nuit."
+            },
+            {
+              "id": "d",
+              "texte": "Aucun hébergement : le site peut rester sur une clé USB."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le mutualisé, c'est la colocation : pas cher, et l'hébergeur entretient le serveur. Un serveur dédié coûte plus cher et demande des compétences. Un serveur chez un bénévole s'arrête dès que l'ordinateur ou la box s'éteint.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e40",
+          "type": "qcm_unique",
+          "question": "L'association veut l'adresse jardins-du-quartier.fr. Que doit-elle faire ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "L'acheter une fois pour toutes à la mairie."
+            },
+            {
+              "id": "b",
+              "texte": "Le déclarer à son fournisseur d'accès à Internet."
+            },
+            {
+              "id": "c",
+              "texte": "Rien : le nom est donné gratuitement avec chaque site."
+            },
+            {
+              "id": "d",
+              "texte": "Louer le nom auprès d'un bureau d'enregistrement, et le renouveler chaque année."
+            }
+          ],
+          "reponseCorrecte": "d",
+          "explicationCorrection": "Un nom de domaine se loue, en général à l'année, auprès d'un bureau d'enregistrement. Pour les noms en .fr, c'est l'Afnic qui tient le registre. Si l'association oublie de renouveler, le nom peut être loué par quelqu'un d'autre.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e41",
+          "type": "qcm_unique",
+          "question": "Dans deux ans, l'association change d'hébergeur. Elle veut garder jardins-du-quartier.fr. Que faut-il modifier pour que les visiteurs arrivent sur le nouveau serveur ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le nom de domaine : il faut en louer un nouveau."
+            },
+            {
+              "id": "b",
+              "texte": "L'enregistrement DNS : le nom doit pointer vers l'adresse IP du nouveau serveur."
+            },
+            {
+              "id": "c",
+              "texte": "Le navigateur de chaque visiteur."
+            },
+            {
+              "id": "d",
+              "texte": "Le port 443 du site."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le nom reste le même. Ce qui change, c'est l'adresse IP du serveur. On met donc à jour le DNS, l'annuaire, pour que le nom donne la nouvelle adresse. C'est comme faire suivre son courrier après un déménagement.",
+          "difficulte": "difficile",
+          "tempsMinimumSecondes": 25
+        },
+        {
+          "id": "s9-e42",
+          "type": "qcm_multiple",
+          "question": "Le formulaire d'inscription des Jardins partagés demande le nom, l'adresse mail et le téléphone. Cochez les bons conseils.",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Utiliser https (le cadenas, port 443), pour protéger les données pendant le trajet."
+            },
+            {
+              "id": "b",
+              "texte": "Ne demander que ce qui est utile pour l'inscription."
+            },
+            {
+              "id": "c",
+              "texte": "Demander aussi la date de naissance et l'état de santé, au cas où."
+            },
+            {
+              "id": "d",
+              "texte": "Publier la liste des inscrits sur la page d'accueil."
+            },
+            {
+              "id": "e",
+              "texte": "Savoir qui, dans l'association, peut lire les inscriptions."
+            }
+          ],
+          "reponsesCorrectes": [
+            "a",
+            "b",
+            "e"
+          ],
+          "explicationCorrection": "Nom, adresse mail et téléphone sont des données personnelles. Le cadenas protège le trajet, comme une enveloppe fermée. On ne demande que l'utile, et on sait qui peut lire les données. On ne les publie jamais.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 30
+        },
+        {
+          "id": "s9-e43",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Écrivez un court message à la présidente de l'association. Donnez-lui vos conseils pour son site, en 3 à 5 phrases, avec des mots simples.",
+          "reponseModele": "Bonjour Madame la Présidente. Pour commencer, un site simple, avec des pages fixes, suffit. Je vous conseille un hébergement mutualisé : ce n'est pas cher et l'hébergeur s'occupe de l'entretien. Il faut louer le nom jardins-du-quartier.fr et penser à le renouveler chaque année. Pour les inscriptions, l'an prochain, il faudra un formulaire traité par le serveur, avec le cadenas (https), et ne demander que le nom, l'adresse mail et le téléphone.",
+          "explicationCorrection": "Un bon message parle simplement : le type de site (statique d'abord, un traitement côté serveur plus tard pour les inscriptions), l'hébergement mutualisé, la location du nom de domaine chaque année, et le cadenas pour protéger les données. Il évite les mots techniques sans explication.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 60
+        }
+      ]
+    },
+    {
+      "id": "s9-etape-13",
+      "titre": "Ma fiche de dépannage réseau",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Quand « Internet ne marche pas », un technicien suit le trajet dans l'ordre. Il ne change pas tout au hasard."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Dans cette étape, vous écrivez votre propre fiche. Vous pourrez la garder pour vos stages."
+        },
+        {
+          "type": "tableau",
+          "legende": "Le trajet, de votre ordinateur jusqu'au site",
+          "entetes": [
+            "Étape du trajet",
+            "Une question à se poser",
+            "Un geste possible"
+          ],
+          "lignes": [
+            [
+              "1. L'appareil",
+              "Mon ordinateur a-t-il une adresse normale ?",
+              "ipconfig : l'adresse commence-t-elle par 169.254. ?"
+            ],
+            [
+              "2. La box",
+              "Mon ordinateur parle-t-il à la box ?",
+              "Vérifier le câble ou le Wi-Fi, regarder la passerelle par défaut, redémarrer la box."
+            ],
+            [
+              "3. Le DNS",
+              "Le nom donne-t-il une adresse IP ?",
+              "Un seul nom ne marche pas, mais les autres oui ? nslookup sur ce nom."
+            ],
+            [
+              "4. Le serveur",
+              "Le site répond-il ?",
+              "Essayer depuis un autre appareil ou un autre réseau ; regarder le code reçu (404, 500)."
+            ]
+          ]
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous êtes bloqué",
+          "texte": "Essayez d'abord seul quelques minutes. Ensuite, écrivez au formateur sur Discord. Dites le numéro de la séance et de l'exercice."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e44",
+          "type": "qcm_unique",
+          "question": "Un utilisateur dit : « Internet ne marche plus. » Par quoi commencez-vous ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Changer le nom de domaine."
+            },
+            {
+              "id": "b",
+              "texte": "Vérifier son appareil : a-t-il une adresse normale, le Wi-Fi est-il connecté ?"
+            },
+            {
+              "id": "c",
+              "texte": "Appeler l'hébergeur du site."
+            },
+            {
+              "id": "d",
+              "texte": "Réinstaller le navigateur."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "On suit le trajet dans l'ordre, en partant du plus proche : l'appareil, puis la box, puis le DNS, puis le serveur. Commencer par le plus simple évite de perdre du temps.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e45",
+          "type": "qcm_unique",
+          "question": "Tous les sites marchent, sauf un. Sur un téléphone en 4G, ce site ne marche pas non plus. Où est le problème, le plus probablement ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Dans l'ordinateur de l'utilisateur."
+            },
+            {
+              "id": "b",
+              "texte": "Dans la box de l'utilisateur."
+            },
+            {
+              "id": "c",
+              "texte": "Du côté du site : son serveur ou son nom de domaine."
+            },
+            {
+              "id": "d",
+              "texte": "Dans le câble réseau."
+            }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "Les autres sites marchent : l'ordinateur et la box vont bien. Le site ne marche pas non plus en 4G, donc sur un autre réseau : le problème est du côté du site, pas chez l'utilisateur.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 25
+        },
+        {
+          "id": "s9-e46",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Écrivez votre fiche de dépannage en 4 étapes, dans l'ordre du trajet. Pour chaque étape, écrivez une question à se poser et un geste à faire.",
+          "reponseModele": "1. L'appareil : est-ce que mon ordinateur a une adresse normale ? Je tape ipconfig et je regarde si l'adresse commence par 169.254. 2. La box : est-ce que je suis connecté ? Je vérifie le câble ou le Wi-Fi, puis je redémarre la box. 3. Le DNS : est-ce qu'un seul nom ne marche pas ? J'essaie nslookup avec ce nom. 4. Le serveur : est-ce que le site répond ailleurs ? J'essaie sur mon téléphone en 4G et je regarde le code d'erreur.",
+          "explicationCorrection": "Une bonne fiche suit l'ordre du trajet : l'appareil, la box, le DNS, le serveur. Chaque étape a une question et un geste concret. Vos mots comptent plus que les mots exacts.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 60
+        }
+      ]
+    },
+    {
+      "id": "s9-etape-14",
+      "titre": "Quiz de révision des séances 6 à 9",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Ce quiz reprend les idées importantes des séances 6, 7, 8 et 9. Il y a 10 questions."
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Répondez seul, sans revenir en arrière. Ce n'est pas un examen : le quiz montre au formateur ce qui est acquis, et ce qu'il faut revoir ensemble."
+        },
+        {
+          "type": "encadre",
+          "style": "astuce",
+          "titre": "Si vous ne savez pas",
+          "texte": "Choisissez la réponse qui vous semble la plus juste. Lisez bien la correction ensuite : c'est là que l'on apprend."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e47",
+          "type": "qcm_unique",
+          "question": "À quoi sert le DNS ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "À garder les mots de passe."
+            },
+            {
+              "id": "b",
+              "texte": "À accélérer l'ordinateur."
+            },
+            {
+              "id": "c",
+              "texte": "À donner l'adresse IP qui correspond à un nom de site."
+            },
+            {
+              "id": "d",
+              "texte": "À protéger les données avec un cadenas."
+            }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "Le DNS est l'annuaire d'Internet : on lui donne un nom, il répond avec l'adresse IP du serveur.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s9-e48",
+          "type": "qcm_unique",
+          "question": "Le serveur répond avec le code 404. Qu'est-ce que cela veut dire ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Tout va bien."
+            },
+            {
+              "id": "b",
+              "texte": "La page demandée n'existe pas à cette adresse."
+            },
+            {
+              "id": "c",
+              "texte": "Le serveur est en panne."
+            },
+            {
+              "id": "d",
+              "texte": "La page n'a pas changé depuis la dernière visite."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "404 veut dire « page introuvable » : le serveur répond, mais il n'a rien à cette adresse. Une panne du serveur, c'est plutôt 500.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s9-e49",
+          "type": "qcm_unique",
+          "question": "Le serveur répond avec le code 304. Qu'est-ce que cela veut dire ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "La page n'a pas changé : le navigateur utilise la copie de son cache."
+            },
+            {
+              "id": "b",
+              "texte": "La page a déménagé."
+            },
+            {
+              "id": "c",
+              "texte": "Accès interdit."
+            },
+            {
+              "id": "d",
+              "texte": "La page est introuvable."
+            }
+          ],
+          "reponseCorrecte": "a",
+          "explicationCorrection": "304 veut dire « pas modifié ». Le navigateur reprend la copie rangée dans son cache, comme un plat déjà dans le placard. Ctrl + F5 force à tout redemander.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s9-e50",
+          "type": "qcm_unique",
+          "question": "Le code 500 : de quel côté est le problème ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Du côté du navigateur."
+            },
+            {
+              "id": "b",
+              "texte": "Du côté du serveur."
+            },
+            {
+              "id": "c",
+              "texte": "Du côté de la box."
+            },
+            {
+              "id": "d",
+              "texte": "Du côté du DNS."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Les codes qui commencent par 5 signalent une erreur du serveur. L'utilisateur n'y peut rien, à part réessayer plus tard ou prévenir le site.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s9-e51",
+          "type": "qcm_unique",
+          "question": "Vous faites une recherche. L'adresse devient : …/recherche?q=velo. Comment le formulaire a-t-il envoyé votre recherche ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Avec la méthode POST : les données sont cachées dans l'enveloppe."
+            },
+            {
+              "id": "b",
+              "texte": "Avec un cookie."
+            },
+            {
+              "id": "c",
+              "texte": "Par le DNS."
+            },
+            {
+              "id": "d",
+              "texte": "Avec la méthode GET : les données sont écrites dans l'adresse."
+            }
+          ],
+          "reponseCorrecte": "d",
+          "explicationCorrection": "Avec GET, les données sont visibles dans l'adresse, comme sur une carte postale. C'est bien pour une recherche, jamais pour un mot de passe.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e52",
+          "type": "qcm_unique",
+          "question": "À quoi ressemble un cookie de session ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "À l'adresse IP du serveur."
+            },
+            {
+              "id": "b",
+              "texte": "À un programme dangereux."
+            },
+            {
+              "id": "c",
+              "texte": "À un ticket de vestiaire : il permet au site de vous reconnaître."
+            },
+            {
+              "id": "d",
+              "texte": "À une copie de la page dans le placard."
+            }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "Le site vous donne un numéro, le navigateur le garde et le montre à chaque requête. Le site sait ainsi que c'est vous, comme au vestiaire.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s9-e53",
+          "type": "qcm_unique",
+          "question": "Où cet atelier garde-t-il votre progression ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Sur un serveur, avec un compte à votre nom."
+            },
+            {
+              "id": "b",
+              "texte": "Dans le stockage local du navigateur, sur cet ordinateur seulement."
+            },
+            {
+              "id": "c",
+              "texte": "Sur Discord."
+            },
+            {
+              "id": "d",
+              "texte": "Dans le DNS."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "L'atelier n'a pas de serveur pour vos réponses. Elles restent dans le navigateur de cet ordinateur. C'est pour cela qu'il faut enregistrer votre travail dans un fichier.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s9-e54",
+          "type": "qcm_unique",
+          "question": "Quelle phrase est juste ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le nom de domaine est le logement du site, l'hébergeur est son nom."
+            },
+            {
+              "id": "b",
+              "texte": "Le nom de domaine est le nom sur la boîte aux lettres, l'hébergeur est le logement."
+            },
+            {
+              "id": "c",
+              "texte": "Le nom de domaine et l'hébergeur sont la même chose."
+            },
+            {
+              "id": "d",
+              "texte": "L'hébergeur donne les adresses IP des appareils de la maison."
+            }
+          ],
+          "reponseCorrecte": "b",
+          "explicationCorrection": "Le nom de domaine, c'est le nom que l'on tape. L'hébergeur, c'est l'entreprise qui loge le site sur ses serveurs. On peut changer d'hébergeur et garder son nom.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        },
+        {
+          "id": "s9-e55",
+          "type": "qcm_unique",
+          "question": "À la maison, qui donne une adresse privée à chaque appareil ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Le DNS."
+            },
+            {
+              "id": "b",
+              "texte": "L'hébergeur."
+            },
+            {
+              "id": "c",
+              "texte": "Le site web visité."
+            },
+            {
+              "id": "d",
+              "texte": "La box, grâce au DHCP."
+            }
+          ],
+          "reponseCorrecte": "d",
+          "explicationCorrection": "La box joue le gardien de l'immeuble : elle donne un numéro d'appartement (adresse privée) à chaque appareil. C'est le DHCP.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 15
+        },
+        {
+          "id": "s9-e56",
+          "type": "qcm_unique",
+          "question": "Votre adresse IP publique : pourquoi ne pas la publier sur un forum ?",
+          "options": [
+            {
+              "id": "a",
+              "texte": "Parce qu'elle contient votre mot de passe."
+            },
+            {
+              "id": "b",
+              "texte": "Parce qu'elle est fausse."
+            },
+            {
+              "id": "c",
+              "texte": "Parce qu'elle peut aider à vous localiser ou à viser votre box : c'est une donnée personnelle."
+            },
+            {
+              "id": "d",
+              "texte": "Parce qu'elle change toutes les secondes."
+            }
+          ],
+          "reponseCorrecte": "c",
+          "explicationCorrection": "L'adresse publique de votre box est liée à votre abonnement. Elle peut donner une idée de votre localisation et servir de cible. On la garde pour soi.",
+          "difficulte": "moyen",
+          "tempsMinimumSecondes": 20
+        }
+      ]
+    },
+    {
+      "id": "s9-etape-15",
+      "titre": "Fin du module : renvoyer votre travail",
+      "blocs": [
+        {
+          "type": "paragraphe",
+          "texte": "Vous avez fini le module. Merci pour votre travail."
+        },
+        {
+          "type": "encadre",
+          "style": "attention",
+          "titre": "Pour renvoyer votre travail",
+          "elements": [
+            "Ouvrez « Plan de la séance », en bas de la page. Vérifiez qu'aucun exercice n'est marqué « (à faire) ».",
+            "Cliquez à nouveau sur « Enregistrer mon travail dans un fichier ». N'utilisez pas Ctrl + S.",
+            "Envoyez ce nouveau fichier au formateur sur Discord, en message privé. Il remplace le précédent."
+          ]
+        },
+        {
+          "type": "paragraphe",
+          "texte": "Si vous avez encore du temps, relisez les corrections des questions où vous vous êtes trompé. Notez une question à poser au formateur au rendez-vous de fin de journée."
+        }
+      ],
+      "exercices": [
+        {
+          "id": "s9-e57",
+          "type": "texte_libre",
+          "mode": "modele",
+          "question": "Écrivez une question que vous aimeriez poser au formateur, sur les séances 6 à 9. Une chose pas encore claire pour vous.",
+          "reponseModele": "J'ai compris que le DNS donne l'adresse IP d'un nom. Mais je ne comprends pas bien pourquoi un seul site peut ne pas marcher alors que les autres marchent.",
+          "explicationCorrection": "Il n'y a pas de bonne réponse. Une bonne question est précise : elle dit ce que vous avez compris et ce qui bloque. Le formateur la lira pour préparer le rendez-vous de fin de journée.",
+          "difficulte": "facile",
+          "tempsMinimumSecondes": 30
+        }
+      ]
     }
   ]
 }

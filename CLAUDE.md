@@ -6,7 +6,7 @@
 >
 > Si une demande contredit une règle de ce fichier, **le signaler explicitement avant d'implémenter**. Ne jamais trancher en silence (voir section 5).
 
-**Dernière mise à jour** : 2026-11-22
+**Dernière mise à jour** : 2026-11-23
 
 ---
 
@@ -571,6 +571,7 @@ Une entrée par évolution majeure : règle ajoutée, modifiée ou supprimée, n
   - l'adresse IP publique est présentée comme une donnée personnelle, à ne pas publier ; la mission `ipconfig` ne montre que l'adresse privée ;
   - reprend les leçons de l'atelier IA (D-022 de ce dépôt-là) : encadré « Pour rendre votre travail » (le bouton d'export, pas Ctrl + S), demande d'écrire au moins une phrase, vérification du plan de la séance avant de partir ;
   - sous-titre de l'en-tête (`interface.json`) : « Atelier en 9 séances » ; contenu uniquement en JSON, aucun changement de code.
+  - **complément du 2026-11-23, après-midi** : le groupe ayant fini, ajout d'un **module en plus** à la fin de la séance, autonome, pendant que le formateur corrige : étapes 11 à 15, exercices `s9-e30` à `s9-e57` (la séance compte donc 15 étapes et 57 exercices). Contenu : entraînement aux familles d'adresses et aux ports écrits dans l'adresse ; étude de cas d'une association fictive (statique puis traitement côté serveur pour des inscriptions, mutualisé, location du nom, mise à jour du DNS, données personnelles du formulaire) ; fiche de dépannage dans l'ordre du trajet ; **quiz noté de 10 questions sur les séances 6 à 9**, pour que le formateur voie ce qui est acquis ; renvoi d'un nouveau fichier d'export sur Discord. Aucune manipulation technique ; la place de la bonne réponse varie car le moteur ne mélange pas les options.
 - **Raison** : prolonger le trajet de la page (séances 6 à 8) jusqu'à la machine qui répond, avec des gestes de technicien réseau directement utiles (`ipconfig`, lecture de la passerelle, `nslookup`, diagnostic dans l'ordre du trajet).
 - **Conséquences et limites acceptées** :
   - les missions `ipconfig` et `nslookup` supposent Windows et l'invite de commandes ; une variante Mac est indiquée, et le tableau « Ce que l'on voit » permet de répondre sans faire la manipulation ;
